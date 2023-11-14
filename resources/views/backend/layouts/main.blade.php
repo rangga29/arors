@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <title>Document</title>
+    <title>{{ $page_title }}</title>
 
     @yield('css')
     @vite(['resources/scss/app.scss', 'resources/scss/icons.scss', 'resources/js/head.js'])
 </head>
 <body>
     <div class="wrapper">
+        @include('backend.layouts.topbar')
+        @include('backend.layouts.sidebar')
         <div class="content-page">
             <div class="content">
                 @yield('content')

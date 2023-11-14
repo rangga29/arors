@@ -137,6 +137,9 @@ export default defineConfig({
                 'resources/js/pages/demo.google-maps.js',
                 'resources/js/pages/demo.vector-maps.js',
 
+                // Clinics
+                'resources/js/pages/clinics.js',
+
                 'node_modules/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js',
                 'node_modules/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js',
                 'bootstrap-timepicker/js/bootstrap-timepicker.min.js',

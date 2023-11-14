@@ -1,9 +1,3 @@
-/**
-* Theme: Attex - Responsive Bootstrap 5 Admin Dashboard
-* Author: Coderthemes
-* Module/App: Main Js
-*/
-
 import.meta.glob([
     '../assets/images/**',
 ]);
