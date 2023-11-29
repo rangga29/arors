@@ -6,28 +6,15 @@ use Illuminate\Http\Request;
 
 class RouteController extends Controller
 {
-    public function __construct()
-    {
-        // $this->
-        // middleware('auth')->
-        // except('index');
-    }
-
     public function index(Request $request)
     {
         return redirect('dashboard');
-//        if (Auth::user()) {
-//            return redirect('index');
-//        } else {
-//            return redirect('login');
-//        }
     }
 
     public function root($first)
     {
         if ($first == "assets")
             return redirect('home');
-
         return view($first);
     }
 
@@ -35,7 +22,6 @@ class RouteController extends Controller
     {
         if ($first == "assets")
             return redirect('home');
-
         return view($first .'.'. $second);
     }
 
@@ -43,7 +29,6 @@ class RouteController extends Controller
     {
         if ($first == "assets")
             return redirect('home');
-
         return view($first . '.' . $second . '.' . $third);
     }
 }

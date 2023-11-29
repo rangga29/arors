@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ClinicStoreRequest;
 use App\Http\Requests\ClinicUpdateRequest;
 use App\Models\Clinic;
+use App\Models\Log;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
-use function redirect;
+use function auth;
 
 class ClinicController extends Controller
 {
@@ -25,6 +27,13 @@ class ClinicController extends Controller
             $ucodeCheck = Clinic::where('cl_ucode', $validateData['cl_ucode'])->exists();
         } while ($ucodeCheck);
         Clinic::create($validateData);
+        Log::create([
+            'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
+            'lo_user' => auth()->user()->username,
+            'lo_ip' => \Request::ip(),
+            'lo_module' => 'CLINIC',
+            'lo_message' => 'CREATE : ' . $validateData['cl_code'] . ' - ' . $validateData['cl_name']
+        ]);
         return redirect()->route('clinics')->with('success', 'Data Klinik Berhasil Ditambahkan');
     }
 
@@ -45,13 +54,33 @@ class ClinicController extends Controller
                 ]);
             }
         }
-        $clinic->update($request->validated());
+        $clinic->update($validateData);
+        Log::create([
+            'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
+            'lo_user' => auth()->user()->username,
+            'lo_ip' => \Request::ip(),
+            'lo_module' => 'CLINIC',
+            'lo_message' => 'UPDATE : ' . $validateData['cl_code'] . ' - ' . $validateData['cl_name']
+        ]);
         return redirect()->route('clinics')->with('success', 'Data Klinik Berhasil Diubah');
     }
 
     public function destroy(Clinic $clinic)
     {
+        Log::create([
+            'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
+            'lo_user' => auth()->user()->username,
+            'lo_ip' => \Request::ip(),
+            'lo_module' => 'CLINIC',
+            'lo_message' => 'DELETE : ' . $clinic->cl_code . ' - ' . $clinic->cl_name
+        ]);
         $clinic->delete();
         return redirect()->route('clinics')->with('success', 'Data Klinik Berhasil Dihapus');
+    }
+
+    public function getLastOrder()
+    {
+        $data = Clinic::orderBy('cl_order', 'DESC')->first();
+        return response()->json($data);
     }
 }

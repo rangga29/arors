@@ -2,20 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasRoles, Notifiable;
 
-    protected $fillable = ['name', 'username', 'password'];
+    protected $fillable = ['name', 'username', 'password', 'created_by', 'updated_by'];
 
     protected $hidden = ['password', 'remember_token'];
 
-    protected $casts = [
-        'password' => 'hashed',
-    ];
+    protected $casts = ['password' => 'hashed'];
+
+    public function getRouteKeyName(): string
+    {
+        return 'username';
+    }
 }

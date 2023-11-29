@@ -1,10 +1,3 @@
-/**
- * Theme: Attex - Responsive Bootstrap 5 Admin Dashboard
- * Author: Coderthemes
- * Module/App: Data tables
- */
-
-
 import DataTable from "datatables.net";
 $.fn.dataTable = DataTable;
 
@@ -177,10 +170,4 @@ $(document).ready(function () {
       $('#basic-datatable_paginate').addClass('pagination-rounded');
     }
   });
-
-  // table.buttons().container()
-  //   .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-
-  // new $.fn.dataTable.FixedHeader(table);
-
 });

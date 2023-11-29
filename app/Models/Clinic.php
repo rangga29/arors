@@ -20,10 +20,10 @@ class Clinic extends Model
         parent::boot();
         static::creating(function ($clinic) {
             $clinic->cl_ucode = Str::random(10);
-            $clinic->created_by = Auth::user()->name;
+            $clinic->created_by = Auth::user()->username;
         });
         static::updating(function ($clinic) {
-            $clinic->updated_by = Auth::user()->name;
+            $clinic->updated_by = Auth::user()->username;
         });
     }
 }

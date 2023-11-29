@@ -32,14 +32,45 @@
             <li class="side-nav-title">Menu</li>
             <li class="side-nav-item">
                 <a href="{{ route('any', ['dashboard']) }}" class="side-nav-link">
-                    <i class="ri-calendar-event-line"></i>
+                    <i class="ri-dashboard-fill"></i>
                     <span> Dashboard </span>
                 </a>
             </li>
             <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarSchedule" aria-expanded="false" aria-controls="sidebarSchedule" class="side-nav-link">
+                    <i class="ri-calendar-todo-fill"></i>
+                    <span> Data Jadwal Dokter </span>
+                </a>
+                <div class="collapse" id="sidebarSchedule">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('second', ['schedules', 'dates']) }}">Data Tanggal</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['schedules',  \Carbon\Carbon::today()->format('Y-m-d')]) }}">Data Jadwal</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('third', ['schedules', 'history', 'dates']) }}">Data Histori Jadwal</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
                 <a href="{{ route('any', ['clinics']) }}" class="side-nav-link">
-                    <i class="ri-calendar-event-line"></i>
+                    <i class="ri-home-smile-2-fill"></i>
                     <span> Data Klinik </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ route('any', ['users']) }}" class="side-nav-link">
+                    <i class="ri-user-5-fill"></i>
+                    <span> Data User </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ route('any', ['logs']) }}" class="side-nav-link">
+                    <i class="ri-file-list-3-line"></i>
+                    <span> Data Logs </span>
                 </a>
             </li>
         </ul>
