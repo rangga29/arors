@@ -61,9 +61,13 @@
                                 <th colspan="3" class="text-center">Operational Time</th>
                                 <th colspan="2" class="text-center">Jenis Pasien</th>
                                 <th rowspan="2" class="align-middle text-center">Ketersediaan</th>
-                                <th rowspan="2" class="align-middle text-center">Created By</th>
-                                <th rowspan="2" class="align-middle text-center">Updated By</th>
-                                <th rowspan="2" class="align-middle text-center">Aksi</th>
+                                @hasanyrole('administrator|sisfo')
+                                    <th rowspan="2" class="align-middle text-center">Created By</th>
+                                    <th rowspan="2" class="align-middle text-center">Updated By</th>
+                                @endhasanyrole
+                                @can('update schedules')
+                                    <th rowspan="2" class="align-middle text-center">Aksi</th>
+                                @endcan
                             </tr>
                             <tr>
                                 <th>Kode</th>
@@ -115,22 +119,26 @@
                                             @endif
                                         </span>
                                     </td>
-                                    <td>{{ $schedule->created_by }}</td>
-                                    <td>{{ $schedule->updated_by }}</td>
-                                    <td>
-                                        <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}">
-                                            @csrf
-                                            @if($schedule->sc_available)
-                                                <button type="submit" class="btn btn-sm btn-danger" title="NON AKTIFKAN">
-                                                    <i class="ri-download-fill"></i>
-                                                </button>
-                                            @else
-                                                <button type="submit" class="btn btn-sm btn-success" title="AKTIFKAN">
-                                                    <i class="ri-upload-fill"></i>
-                                                </button>
-                                            @endif
-                                        </form>
-                                    </td>
+                                    @hasanyrole('administrator|sisfo')
+                                        <td>{{ $schedule->created_by }}</td>
+                                        <td>{{ $schedule->updated_by }}</td>
+                                    @endhasanyrole
+                                    @can('update schedules')
+                                        <td>
+                                            <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}">
+                                                @csrf
+                                                @if($schedule->sc_available)
+                                                    <button type="submit" class="btn btn-sm btn-danger" title="NON AKTIFKAN">
+                                                        <i class="ri-download-fill"></i>
+                                                    </button>
+                                                @else
+                                                    <button type="submit" class="btn btn-sm btn-success" title="AKTIFKAN">
+                                                        <i class="ri-upload-fill"></i>
+                                                    </button>
+                                                @endif
+                                            </form>
+                                        </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>

@@ -12,6 +12,8 @@ class ScheduleController extends Controller
 {
     public function index($date)
     {
+        $this->authorize('view', Schedule::class);
+
         return view('backend.schedules.view', [
             'date_original' => $date,
             'date' => Carbon::parse($date)->isoFormat('dddd, DD MMMM YYYY'),
@@ -26,6 +28,8 @@ class ScheduleController extends Controller
 
     public function available($date, Request $request, Schedule $schedule)
     {
+        $this->authorize('update', Schedule::class);
+
         $date = ScheduleDate::where('id', $schedule->sd_id)->first()->sd_date;
         if($schedule->sc_available) {
             $schedule->update([

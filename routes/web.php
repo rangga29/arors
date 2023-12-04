@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BusinessPartnerController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogController;
@@ -51,6 +52,15 @@ Route::prefix('administrator')->group(function () {
             Route::get('/{clinic}', [ClinicController::class, 'show'])->name('clinics.show');
             Route::put('/{clinic}', [ClinicController::class, 'update'])->name('clinics.update');
             Route::delete('/{clinic}', [ClinicController::class, 'destroy'])->name('clinics.destroy');
+        });
+
+        Route::prefix('businessPartners')->group(function () {
+            Route::get('/', [BusinessPartnerController::class, 'index'])->name('businessPartners');
+            Route::post('/store', [BusinessPartnerController::class, 'store'])->name('businessPartners.store');
+            Route::get('/lastOrder', [BusinessPartnerController::class, 'getLastOrder'])->name('businessPartners.get-last-order');
+            Route::get('/{businessPartner}', [BusinessPartnerController::class, 'show'])->name('businessPartners.show');
+            Route::put('/{businessPartner}', [BusinessPartnerController::class, 'update'])->name('businessPartners.update');
+            Route::delete('/{businessPartner}', [BusinessPartnerController::class, 'destroy'])->name('businessPartners.destroy');
         });
 
         Route::prefix('users')->group(function () {

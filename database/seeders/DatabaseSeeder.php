@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RolePermissionSeeder::class,
-            ClinicSeeder::class
+            ClinicSeeder::class,
+            BusinessPartnerSeeder::class
         ]);
 
         $currentDate = Carbon::now()->subMonth();

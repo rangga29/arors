@@ -55,24 +55,38 @@
                     </ul>
                 </div>
             </li>
-            <li class="side-nav-item">
-                <a href="{{ route('any', ['clinics']) }}" class="side-nav-link">
-                    <i class="ri-home-smile-2-fill"></i>
-                    <span> Data Klinik </span>
-                </a>
-            </li>
-            <li class="side-nav-item">
-                <a href="{{ route('any', ['users']) }}" class="side-nav-link">
-                    <i class="ri-user-5-fill"></i>
-                    <span> Data User </span>
-                </a>
-            </li>
-            <li class="side-nav-item">
-                <a href="{{ route('any', ['logs']) }}" class="side-nav-link">
-                    <i class="ri-file-list-3-line"></i>
-                    <span> Data Logs </span>
-                </a>
-            </li>
+            @can('view clinics')
+                <li class="side-nav-item">
+                    <a href="{{ route('any', ['clinics']) }}" class="side-nav-link">
+                        <i class="ri-hospital-fill"></i>
+                        <span> Data Klinik </span>
+                    </a>
+                </li>
+            @endcan
+            @can('view business partners')
+                <li class="side-nav-item">
+                    <a href="{{ route('any', ['businessPartners']) }}" class="side-nav-link">
+                        <i class="ri-briefcase-fill"></i>
+                        <span> Data Asuransi </span>
+                    </a>
+                </li>
+            @endcan
+            @can('view users')
+                <li class="side-nav-item">
+                    <a href="{{ route('any', ['users']) }}" class="side-nav-link">
+                        <i class="ri-user-3-fill"></i>
+                        <span> Data User </span>
+                    </a>
+                </li>
+            @endcan
+            @can('view logs')
+                <li class="side-nav-item">
+                    <a href="{{ route('any', ['logs']) }}" class="side-nav-link">
+                        <i class="ri-file-list-3-line"></i>
+                        <span> Data Logs </span>
+                    </a>
+                </li>
+            @endcan
         </ul>
         <div class="clearfix"></div>
     </div>

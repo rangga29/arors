@@ -20,8 +20,10 @@
                             <th>Nama</th>
                             <th>Username</th>
                             <th>Role</th>
-                            <th>Created By</th>
-                            <th>Updated By</th>
+                            @hasanyrole('administrator|sisfo')
+                                <th>Created By</th>
+                                <th>Updated By</th>
+                            @endhasanyrole
                             <th class="text-center">Aksi</th>
                         </tr>
                         </thead>
@@ -32,8 +34,10 @@
                                 <td><a href="{{ route('logs.user', $user->username) }}">{{ $user->name }}</a></td>
                                 <td>{{ $user->username }}</td>
                                 <td class="text-uppercase">{{ $user->roles->first()->name }}</td>
-                                <td>{{ $user->created_by }}</td>
-                                <td>{{ $user->updated_by }}</td>
+                                @hasanyrole('administrator|sisfo')
+                                    <td>{{ $user->created_by }}</td>
+                                    <td>{{ $user->updated_by }}</td>
+                                @endhasanyrole
                                 <td style="max-width: 30px;">
                                     <div class="d-flex align-content-center">
                                         <button type="button" class="btn btn-sm btn-warning ms-2 user-edit" title="EDIT DATA" data-bs-toggle="modal" data-bs-target="#edit-modal" data-user="{{ $user->username }}" {{ auth()->user()->name == $user->name ? 'disabled' : '' }}>

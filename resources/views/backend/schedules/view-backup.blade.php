@@ -61,8 +61,10 @@
                             <th colspan="3" class="text-center">Operational Time</th>
                             <th colspan="2" class="text-center">Jenis Pasien</th>
                             <th rowspan="2" class="align-middle text-center">Ketersediaan</th>
-                            <th rowspan="2" class="align-middle text-center">Created By</th>
-                            <th rowspan="2" class="align-middle text-center">Updated By</th>
+                            @hasanyrole('administrator|sisfo')
+                                <th rowspan="2" class="align-middle text-center">Created By</th>
+                                <th rowspan="2" class="align-middle text-center">Updated By</th>
+                            @endhasanyrole
                         </tr>
                         <tr>
                             <th>Kode</th>
@@ -88,34 +90,36 @@
                                 <td>{{ $schedule->scb_start_time }}</td>
                                 <td>{{ $schedule->scb_end_time }}</td>
                                 <td>
-                                        <span class="fs-20 px-1">
-                                            @if($schedule->scb_umum)
-                                                <i class="ri-checkbox-circle-fill text-success"></i>
-                                            @else
-                                                <i class="ri-close-circle-fill text-danger"></i>
-                                            @endif
-                                        </span>
+                                    <span class="fs-20 px-1">
+                                        @if($schedule->scb_umum)
+                                            <i class="ri-checkbox-circle-fill text-success"></i>
+                                        @else
+                                            <i class="ri-close-circle-fill text-danger"></i>
+                                        @endif
+                                    </span>
                                 </td>
                                 <td>
-                                        <span class="fs-20 px-1">
-                                            @if($schedule->scb_bpjs)
-                                                <i class="ri-checkbox-circle-fill text-success"></i>
-                                            @else
-                                                <i class="ri-close-circle-fill text-danger"></i>
-                                            @endif
-                                        </span>
+                                    <span class="fs-20 px-1">
+                                        @if($schedule->scb_bpjs)
+                                            <i class="ri-checkbox-circle-fill text-success"></i>
+                                        @else
+                                            <i class="ri-close-circle-fill text-danger"></i>
+                                        @endif
+                                    </span>
                                 </td>
                                 <td>
-                                        <span class="fs-20">
-                                            @if($schedule->scb_available)
-                                                <h5><span class="badge bg-success mt-1">AKTIF</span></h5>
-                                            @else
-                                                <h5><span class="badge bg-danger mt-1">TIDAK AKTIF</span></h5>
-                                            @endif
-                                        </span>
+                                    <span class="fs-20">
+                                        @if($schedule->scb_available)
+                                            <h5><span class="badge bg-success mt-1">AKTIF</span></h5>
+                                        @else
+                                            <h5><span class="badge bg-danger mt-1">TIDAK AKTIF</span></h5>
+                                        @endif
+                                    </span>
                                 </td>
-                                <td>{{ $schedule->created_by }}</td>
-                                <td>{{ $schedule->updated_by }}</td>
+                                @hasanyrole('administrator|sisfo')
+                                    <td>{{ $schedule->created_by }}</td>
+                                    <td>{{ $schedule->updated_by }}</td>
+                                @endhasanyrole
                             </tr>
                         @endforeach
                         </tbody>

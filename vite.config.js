@@ -38,6 +38,7 @@ export default defineConfig({
                 'resources/js/customs/schedule-dates.js',
                 'resources/js/customs/schedules.js',
                 'resources/js/customs/users.js',
+                'resources/js/customs/business-partners.js',
 
                 'node_modules/jquery/dist/jquery.js',
                 'node_modules/daterangepicker/moment.min.js',

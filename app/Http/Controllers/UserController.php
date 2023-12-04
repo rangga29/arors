@@ -12,12 +12,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
-use function auth;
 
 class UserController extends Controller
 {
     public function index()
     {
+        $this->authorize('view', User::class);
+
         return view('backend.users.view', [
             'users' => User::with('roles')->orderBy('name')->get(),
             'roles' => Role::orderBy('name')->get()
@@ -26,6 +27,8 @@ class UserController extends Controller
 
     public function store(UserStoreRequest $request)
     {
+        $this->authorize('create', User::class);
+
         $validateData = $request->validated();
         $user = User::create([
             'name' => $validateData['name'],
@@ -47,18 +50,24 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $this->authorize('view', User::class);
+
         $data = User::where('username', $user->username)->first();
         return response()->json($data);
     }
 
     public function getRoleByUser(User $user)
     {
+        $this->authorize('view', User::class);
+
         $data = $user->roles->first();
         return response()->json($data);
     }
 
     public function update(UserUpdateRequest $request, User $user)
     {
+        $this->authorize('edit', User::class);
+
         $validateData = $request->validated();
         if($validateData['password'] != null) {
             $user->update([
@@ -88,6 +97,8 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $this->authorize('delete', User::class);
+
         Log::create([
             'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
             'lo_user' => auth()->user()->username,

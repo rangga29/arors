@@ -27,6 +27,8 @@ class ScheduleDateController extends Controller
 
     public function index()
     {
+        $this->authorize('viewDate', ScheduleDate::class);
+
         return view('backend.schedules.view-date', [
             'schedule_dates' => ScheduleDate::where('sd_date', '>=', Carbon::today()->toDateString())->get(),
             'schedule_date_first' => ScheduleDate::orderBy('sd_date', 'ASC')->first()->sd_date,
@@ -36,11 +38,15 @@ class ScheduleDateController extends Controller
 
     public function showRedirect(Request $request)
     {
+        $this->authorize('view', Schedule::class);
+
         return redirect()->route('schedules', $request['schedule-date']);
     }
 
     public function store(Request $request)
     {
+        $this->authorize('createDate', ScheduleDate::class);
+
         $currentDate = Carbon::create(ScheduleDate::orderBy('sd_date', 'DESC')->first()->sd_date)->addDay();
         $endDate = Carbon::createFromFormat('Y-m-d', $request->download_date);
 
@@ -122,6 +128,8 @@ class ScheduleDateController extends Controller
 
     public function download(ScheduleDate $scheduleDate)
     {
+        $this->authorize('download', Schedule::class);
+
         $responses = [];
         $clinics = Clinic::where('cl_active', true)->orderBy('cl_name')->pluck('cl_code')->all();
         $schedule_date = Carbon::create($scheduleDate['sd_date'])->format('Ymd');
@@ -188,6 +196,8 @@ class ScheduleDateController extends Controller
 
     public function downloadUpdate(ScheduleDate $scheduleDate)
     {
+        $this->authorize('update', Schedule::class);
+
         $responses = [];
         $clinics = Clinic::where('cl_active', true)->orderBy('cl_name')->pluck('cl_code')->all();
         $schedule_date = Carbon::create($scheduleDate['sd_date'])->format('Ymd');
@@ -267,12 +277,16 @@ class ScheduleDateController extends Controller
 
     public function show(ScheduleDate $scheduleDate)
     {
+        $this->authorize('editDate', ScheduleDate::class);
+
         $data = ScheduleDate::where('sd_ucode', $scheduleDate->sd_ucode)->first();
         return response()->json($data);
     }
 
     public function update(Request $request, ScheduleDate $scheduleDate)
     {
+        $this->authorize('editDate', ScheduleDate::class);
+
         $validateData = $request->validate([
             'sd_is_holiday' => 'required|boolean',
             'sd_holiday_desc' => 'nullable|required_if:sd_is_holiday,false'
@@ -296,6 +310,8 @@ class ScheduleDateController extends Controller
 
     public function destroy(ScheduleDate $scheduleDate)
     {
+        $this->authorize('delete', Schedule::class);
+
         $schedules = Schedule::where('sd_id', $scheduleDate->id)->get();
         foreach ($schedules as $schedule) {
             $schedule->delete();

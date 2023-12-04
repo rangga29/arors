@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ClinicStoreRequest;
 use App\Http\Requests\ClinicUpdateRequest;
+use App\Models\BusinessPartner;
 use App\Models\Clinic;
 use App\Models\Log;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use function auth;
 
 class ClinicController extends Controller
 {
     public function index()
     {
+        $this->authorize('view', Clinic::class);
+
         return view('backend.clinics.view', [
             'clinics' => Clinic::orderBy('cl_order')->get()
         ]);
@@ -21,6 +23,8 @@ class ClinicController extends Controller
 
     public function store(ClinicStoreRequest $request)
     {
+        $this->authorize('create', Clinic::class);
+
         $validateData = $request->validated();
         do {
             $validateData['cl_ucode'] = Str::random(20);
@@ -39,12 +43,16 @@ class ClinicController extends Controller
 
     public function show(Clinic $clinic)
     {
+        $this->authorize('edit', Clinic::class);
+
         $data = Clinic::where('cl_ucode', $clinic->cl_ucode)->first();
         return response()->json($data);
     }
 
     public function update(ClinicUpdateRequest $request, Clinic $clinic)
     {
+        $this->authorize('edit', Clinic::class);
+
         $validateData = $request->validated();
         $duplicateCheck = Clinic::where('cl_order', $validateData['cl_order'])->first();
         if($duplicateCheck) {
@@ -67,6 +75,8 @@ class ClinicController extends Controller
 
     public function destroy(Clinic $clinic)
     {
+        $this->authorize('delete', Clinic::class);
+
         Log::create([
             'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
             'lo_user' => auth()->user()->username,
@@ -80,6 +90,8 @@ class ClinicController extends Controller
 
     public function getLastOrder()
     {
+        $this->authorize('create', Clinic::class);
+
         $data = Clinic::orderBy('cl_order', 'DESC')->first();
         return response()->json($data);
     }

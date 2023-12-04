@@ -49,8 +49,10 @@
                             <th>Download</th>
                             <th>Libur</th>
                             <th>Desc Libur</th>
-                            <th>Created By</th>
-                            <th>Updated By</th>
+                            @hasanyrole('administrator|sisfo')
+                                <th>Created By</th>
+                                <th>Updated By</th>
+                            @endhasanyrole
                             <th class="text-center">Aksi</th>
                         </tr>
                         </thead>
@@ -77,9 +79,11 @@
                                         @endif
                                      </span>
                                 </td>
-                            <td>{{ $schedule_date->sdb_holiday_desc }}</td>
-                                <td>{{ $schedule_date->created_by }}</td>
-                                <td>{{ $schedule_date->updated_by }}</td>
+                                <td>{{ $schedule_date->sdb_holiday_desc }}</td>
+                                @hasanyrole('administrator|sisfo')
+                                    <td>{{ $schedule_date->created_by }}</td>
+                                    <td>{{ $schedule_date->updated_by }}</td>
+                                @endhasanyrole
                                 <td style="max-width: 120px">
                                     <div class="d-flex justify-content-center">
                                         <a href="{{ route('schedules.backup', $schedule_date->sdb_date) }}" class="btn btn-sm btn-primary ms-2" title="LIHAT JADWAL">
