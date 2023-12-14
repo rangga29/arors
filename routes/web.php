@@ -10,7 +10,12 @@ use App\Http\Controllers\ScheduleBackupController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScheduleDateController;
 use App\Http\Controllers\UserController;
+use App\Livewire\CheckPatient;
+use App\Livewire\UmumForm;
 use Illuminate\Support\Facades\Route;
+
+Route::view('/', 'frontend.home')->name('home');
+Route::get('/umum', CheckPatient::class)->name('umum');
 
 Route::prefix('administrator')->group(function () {
     Route::middleware('guest')->group(function () {

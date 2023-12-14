@@ -11,10 +11,12 @@ use App\Models\ScheduleDateBackup;
 use App\Services\APIHeaderGenerator;
 use Carbon\Carbon;
 use Carbon\CarbonInterface;
-use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Exception\RequestException;
 
 class ScheduleDateController extends Controller
 {
@@ -138,12 +140,25 @@ class ScheduleDateController extends Controller
         $type = 'success'; // Default type
         $message = 'Download Jadwal Tanggal ' . Carbon::create($scheduleDate['sd_date'])->isoFormat('DD MMMM YYYY') . ' Berhasil Dilakukan.';
 
+        // Create a handler stack with retry middleware
+        $handlerStack = HandlerStack::create();
+        $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
+            // Retry up to 3 times on timeout errors
+            return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
+        }, function ($retry) {
+            // Calculate delay between retries (e.g., exponential backoff)
+            return 1000 * pow(2, $retry);
+        }));
+
         foreach ($clinics as $clinic) {
             try {
-                $response = Http::withHeaders($headers)->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}");
+                $client = new Client(['handler' => $handlerStack, 'verify' => false]); // Disable SSL verification
+                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}", [
+                    'headers' => $headers,
+                ]);
 
-                if ($response->successful()) {
-                    $data = json_decode($response->body(), true);
+                if ($response->getStatusCode() == 200) {
+                    $data = json_decode($response->getBody(), true);
                     if (!empty($data['Data'])) {
                         $dataField = json_decode($data['Data'], true);
                         for ($x = 0; $x < count($dataField); $x++) {
@@ -167,15 +182,14 @@ class ScheduleDateController extends Controller
                                 'sc_available' => true,
                                 'created_by' => auth()->user()->username,
                             ]);
-
-                            $scheduleDate->update([
-                                'sd_is_downloaded' => true
-                            ]);
                         }
                     }
+                    $scheduleDate->update([
+                        'sd_is_downloaded' => true
+                    ]);
                 } else {
                     $type = 'danger';
-                    $message = response()->json(['error' => 'Request failed'], $response->status());
+                    $message = response()->json(['error' => 'Request failed'], $response->getStatusCode());
                 }
             } catch (RequestException $e) {
                 $type = 'danger';
@@ -206,12 +220,25 @@ class ScheduleDateController extends Controller
         $type = 'success'; // Default type
         $message = 'Update Download Jadwal Tanggal ' . Carbon::create($scheduleDate['sd_date'])->isoFormat('DD MMMM YYYY') . ' Berhasil Dilakukan.';
 
+        // Create a handler stack with retry middleware
+        $handlerStack = HandlerStack::create();
+        $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
+            // Retry up to 3 times on timeout errors
+            return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
+        }, function ($retry) {
+            // Calculate delay between retries (e.g., exponential backoff)
+            return 1000 * pow(2, $retry);
+        }));
+
         foreach ($clinics as $clinic) {
             try {
-                $response = Http::withHeaders($headers)->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}");
+                $client = new Client(['handler' => $handlerStack, 'verify' => false]); // Disable SSL verification
+                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}", [
+                    'headers' => $headers,
+                ]);
 
-                if ($response->successful()) {
-                    $data = json_decode($response->body(), true);
+                if ($response->getStatusCode() == 200) {
+                    $data = json_decode($response->getBody(), true);
                     if (!empty($data['Data'])) {
                         $dataField = json_decode($data['Data'], true);
                         for ($x = 0; $x < count($dataField); $x++) {
@@ -256,7 +283,7 @@ class ScheduleDateController extends Controller
                     }
                 } else {
                     $type = 'danger';
-                    $message = response()->json(['error' => 'Request failed'], $response->status());
+                    $message = response()->json(['error' => 'Request failed'], $response->getStatusCode());
                 }
             } catch (RequestException $e) {
                 $type = 'danger';
