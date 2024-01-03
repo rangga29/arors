@@ -1,4 +1,4 @@
-@extends('backend.layouts.main', ['page_title' => 'Data User'])
+@extends('backend.layouts.main', ['page_title' => 'DATA USER'])
 
 @section('css')
     @vite([
@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    @include('backend.layouts.header', ['title' => 'Data User'])
+    @include('backend.layouts.header', ['title' => 'DATA USER'])
     <div class="row">
         <div class="col-12">
             <div class="card">

@@ -1,4 +1,4 @@
-@extends('backend.layouts.main', ['page_title' => 'Data Log'])
+@extends('backend.layouts.main', ['page_title' => 'DATA LOGS'])
 
 @section('css')
     @vite([
@@ -13,7 +13,7 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right"></div>
-                    <h4 class="page-title">Data Logs</h4>
+                    <h4 class="page-title">DATA LOGS</h4>
                 </div>
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

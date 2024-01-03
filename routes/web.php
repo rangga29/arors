@@ -10,12 +10,21 @@ use App\Http\Controllers\ScheduleBackupController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScheduleDateController;
 use App\Http\Controllers\UserController;
-use App\Livewire\CheckPatient;
-use App\Livewire\UmumForm;
+use App\Livewire\Fisio\FisioAppointment;
+use App\Livewire\Fisio\FisioFinal;
+use App\Livewire\Umum\AsuransiFinal;
+use App\Livewire\Umum\PatientCheck;
+use App\Livewire\Umum\UmumFinal;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'frontend.home')->name('home');
-Route::get('/umum', CheckPatient::class)->name('umum');
+
+Route::get('/umum', PatientCheck::class)->name('umum');
+Route::get('/umum/{code}', UmumFinal::class)->name('umum.final');
+Route::get('/asuransi/{code}', AsuransiFinal::class)->name('asuransi.final');
+
+Route::get('/fisioterapi', FisioAppointment::class)->name('fisioterapi');
+Route::get('/fisioterapi/{code}', FisioFinal::class)->name('fisioterapi.final');
 
 Route::prefix('administrator')->group(function () {
     Route::middleware('guest')->group(function () {
@@ -48,6 +57,7 @@ Route::prefix('administrator')->group(function () {
             });
             Route::get('/{date}', [ScheduleController::class, 'index'])->name('schedules');
             Route::post('/{date}/available/{schedule}', [ScheduleController::class, 'available'])->name('schedule.available');
+            Route::get('/{date}/update/{schedule}', [ScheduleController::class, 'update'])->name('schedule.update');
         });
 
         Route::prefix('clinics')->group(function () {

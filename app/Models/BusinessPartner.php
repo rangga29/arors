@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BusinessPartner extends Model
 {
@@ -11,5 +12,10 @@ class BusinessPartner extends Model
     public function getRouteKeyName(): string
     {
         return 'bp_ucode';
+    }
+
+    public function asuransiAppointments(): HasMany
+    {
+        return $this->hasMany(AsuransiAppointment::class);
     }
 }

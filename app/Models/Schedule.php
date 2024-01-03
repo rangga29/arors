@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Schedule extends Model
 {
@@ -22,8 +23,13 @@ class Schedule extends Model
         return $this->belongsTo(ScheduleDate::class);
     }
 
-//    public function appointments(): HasMany
-//    {
-//        return $this->hasMany(Appointment::class);
-//    }
+    public function asuransiAppointments(): HasMany
+    {
+        return $this->hasMany(AsuransiAppointment::class);
+    }
+
+    public function umumAppointments(): HasMany
+    {
+        return $this->hasMany(UmumAppointment::class);
+    }
 }

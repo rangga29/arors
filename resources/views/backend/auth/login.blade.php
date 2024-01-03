@@ -184,19 +184,16 @@
             <div class="row justify-content-center">
                 <div class="col-xxl-4 col-lg-5">
                     <div class="card">
-                        <div class="card-header py-4 text-center bg-primary">
+                        <div class="card-header py-3 text-center bg-primary">
                             <a href="{{ route('any', 'index') }}">
-                                <span><img src="{{ asset('images/logo.png') }}" alt="logo" height="22"></span>
+                                <span><img src="{{ asset('images/rsck.png') }}" alt="logo" height="60"></span>
                             </a>
                         </div>
-
                         <div class="card-body p-4">
-
                             <div class="text-center w-75 m-auto">
-                                <h3 class="text-dark-50 text-center pb-0 fw-bold">ARORS</h3>
+                                <h2 class="text-dark-50 text-center pb-0 fw-bold">ARORS</h2>
                                 <h5 class="text-dark-50 text-center pb-0 fw-bold">LOGIN ADMINISTRATOR</h5>
                             </div>
-
                             <form method="POST" action="{{ route('login') }}">
                                 @if (sizeof($errors) > 0)
                                     <ul>
@@ -210,9 +207,8 @@
                                     <label for="username" class="form-label">USERNAME</label>
                                     <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
                                 </div>
-
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
+                                    <label for="password" class="form-label">PASSWORD</label>
                                     <div class="input-group input-group-merge">
                                         <input type="password" class="form-control" name="password" id="password" value="password" required>
                                         <div class="input-group-text" data-password="false">
@@ -220,43 +216,22 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="mb-3 mb-3">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" name="checkbox-remember" id="checkbox-remember">
-                                        <label class="form-check-label" for="checkbox-remember">Remember me</label>
-                                    </div>
-                                </div>
-
                                 <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-primary" type="submit"> Login </button>
+                                    <button class="btn btn-primary fw-bolder" type="submit"> LOGIN </button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
-                    <!-- end card -->
-
-                    <div class="row mt-3">
-                        <div class="col-12 text-center">
-                            <p class="text-muted bg-body">Don't have an account? <a href="{{ route('second', ['auth', 'register']) }}" class="text-muted ms-1 link-offset-3 text-decoration-underline"><b>Sign Up</b></a></p>
-                        </div> <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                </div> <!-- end col -->
+                </div>
             </div>
-            <!-- end row -->
         </div>
-        <!-- end container -->
     </div>
-    <!-- end page -->
 
     <footer class="footer footer-alt fw-medium">
             <span class="bg-body">
                 <script>
                     document.write(new Date().getFullYear())
-                </script> © Attex - Coderthemes.com
+                </script> © RUMAH SAKIT CAHYA KAWALUYAN
             </span>
     </footer>
 

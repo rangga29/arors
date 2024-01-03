@@ -1,4 +1,4 @@
-@extends('backend.layouts.main', ['page_title' => 'Data My Profile'])
+@extends('backend.layouts.main', ['page_title' => 'MY PROFILE'])
 
 @section('css')
     @vite([
@@ -13,7 +13,7 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right"></div>
-                    <h4 class="page-title">My Profile</h4>
+                    <h4 class="page-title">MY PROFILE</h4>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-xl-3 col-lg-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <img src="{{ asset('/images/users/avatar-1.jpg') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                        <img src="{{ asset('images/rsck_logo.png') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
                         <h4 class="mb-1 mt-2">{{ $user->name }}</h4>
                         <p class="text-muted text-uppercase">{{ $user->roles->first()->name }}</p>
                         <hr>
@@ -70,7 +70,7 @@
                 @endif
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title mb-3">Data Log</h4>
+                        <h4 class="header-title mb-3">DATA LOG</h4>
                         <table id="basic-datatable" class="table table-striped table-bordered table-centered dt-responsive nowrap w-100">
                             <thead>
                             <tr>

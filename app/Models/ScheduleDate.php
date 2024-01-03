@@ -18,4 +18,9 @@ class ScheduleDate extends Model
     {
         return $this->hasMany(Schedule::class);
     }
+
+    public function fisioterapiAppointments(): HasMany
+    {
+        return $this->hasMany(FisioterapiAppointment::class);
+    }
 }

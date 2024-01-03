@@ -2,20 +2,20 @@
     <div class="topbar container-fluid">
         <div class="d-flex align-items-center gap-lg-2 gap-1">
             <div class="logo-topbar">
-                <a href="/" class="logo-light">
+                <a href="{{ route('dashboard') }}" class="logo-light">
                     <span class="logo-lg">
-                        <img src="{{ asset('/images/logo.png') }}" alt="logo">
+                        <img src="{{ asset('images/rsck_arors.png') }}" alt="logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="{{ asset('/images/logo-sm.png') }}" alt="small logo">
+                        <img src="{{ asset('images/rsck_logo.png') }}" alt="small logo">
                     </span>
                 </a>
-                <a href="/" class="logo-dark">
+                <a href="{{ route('dashboard') }}" class="logo-dark">
                     <span class="logo-lg">
-                        <img src="{{ asset('images/logo-dark.png') }}" alt="dark logo">
+                        <img src="{{ asset('images/rsck_arors_dark.png') }}" alt="logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="{{ asset('images/logo-sm.png') }}" alt="small logo">
+                        <img src="{{ asset('images/rsck_logo.png') }}" alt="small logo">
                     </span>
                 </a>
             </div>
@@ -44,13 +44,13 @@
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <span class="account-user-avatar">
-                        <img src="{{ asset('/images/users/avatar-1.jpg') }}" alt="user-image" width="32" class="rounded-circle">
+                        <img src="{{ asset('images/rsck_logo.png') }}" alt="user-image" width="32" class="rounded-circle">
                     </span>
                     <span class="d-lg-flex flex-column gap-1 d-none">
                         <h5 class="my-0">
                             {{ auth()->user()->name }}
                         </h5>
-                        <h6 class="my-0 fw-normal">Founder</h6>
+                        <h6 class="my-0 fw-normal">{{ auth()->user()->roles->first()->name }}</h6>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">

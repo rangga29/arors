@@ -124,19 +124,27 @@
                                         <td>{{ $schedule->updated_by }}</td>
                                     @endhasanyrole
                                     @can('update schedules')
-                                        <td>
-                                            <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}">
-                                                @csrf
-                                                @if($schedule->sc_available)
-                                                    <button type="submit" class="btn btn-sm btn-danger" title="NON AKTIFKAN">
-                                                        <i class="ri-download-fill"></i>
+                                        <td style="max-width: 120px">
+                                            <div class="d-flex justify-content-center">
+                                                <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}">
+                                                    @csrf
+                                                    @if($schedule->sc_available)
+                                                        <button type="submit" class="btn btn-sm btn-danger" title="NON AKTIFKAN">
+                                                            <i class="ri-download-fill"></i>
+                                                        </button>
+                                                    @else
+                                                        <button type="submit" class="btn btn-sm btn-success" title="AKTIFKAN">
+                                                            <i class="ri-upload-fill"></i>
+                                                        </button>
+                                                    @endif
+                                                </form>
+                                                <form method="GET" action="{{ route('schedule.update', [$date_original, $schedule->sc_ucode]) }}">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-warning ms-2 sd-download" title="UPDATE JADWAL">
+                                                        <i class="ri-refresh-line"></i>
                                                     </button>
-                                                @else
-                                                    <button type="submit" class="btn btn-sm btn-success" title="AKTIFKAN">
-                                                        <i class="ri-upload-fill"></i>
-                                                    </button>
-                                                @endif
-                                            </form>
+                                                </form>
+                                            </div>
                                         </td>
                                     @endcan
                                 </tr>

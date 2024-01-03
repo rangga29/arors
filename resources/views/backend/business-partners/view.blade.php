@@ -1,4 +1,4 @@
-@extends('backend.layouts.main', ['page_title' => 'Data Asuransi'])
+@extends('backend.layouts.main', ['page_title' => 'DATA ASURANSI'])
 
 @section('css')
     @vite([
@@ -19,7 +19,7 @@
                             </button>
                         @endcan
                     </div>
-                    <h4 class="page-title">Data Asuransi</h4>
+                    <h4 class="page-title">DATA ASURANSI</h4>
                 </div>
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

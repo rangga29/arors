@@ -32,7 +32,7 @@ export default defineConfig({
                 'resources/js/head.js',
                 'resources/js/layout.js',
 
-                'resources/js/customs/umum-form.js',
+                'resources/js/customs/patient-check-form.js',
 
                 'resources/js/customs/datatable.js',
 

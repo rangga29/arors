@@ -29,7 +29,7 @@
                             <a href="../examples/" class="btn btn-two btn-lg px-2 mb-2 fs-4 fw-bolder d-block custom-home-btn">PASIEN BPJS (JKN)</a>
                         </div>
                         <div class="col-12">
-                            <a href="../examples/" class="btn btn-one btn-lg px-2 mb-4 fs-4 fw-bolder d-block custom-home-btn">PASIEN FISIOTERAPI</a>
+                            <a href="{{ route('fisioterapi') }}" class="btn btn-one btn-lg px-2 mb-4 fs-4 fw-bolder d-block custom-home-btn">PASIEN FISIOTERAPI</a>
                         </div>
                         <div class="col-12">
                             <a href="../examples/" class="btn btn-two btn-lg px-2 mb-2 fs-4 fw-bolder d-block custom-home-btn">PASIEN BARU UMUM / KONTRAKTOR</a>

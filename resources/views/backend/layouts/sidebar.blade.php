@@ -1,18 +1,18 @@
 <div class="leftside-menu">
-    <a href="{{ route('any', 'index') }}" class="logo logo-light">
+    <a href="{{ route('dashboard') }}" class="logo logo-light">
         <span class="logo-lg">
-            <img src="{{ asset('/images/logo.png') }}" alt="logo">
+            <img src="{{ asset('images/rsck_arors.png') }}" alt="logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ asset('/images/logo-sm.png') }}" alt="small logo">
+            <img src="{{ asset('images/rsck_logo_back.png') }}" alt="small logo">
         </span>
     </a>
-    <a href="{{ route('any', 'index') }}" class="logo logo-dark">
+    <a href="{{ route('dashboard') }}" class="logo logo-dark">
         <span class="logo-lg">
-            <img src="{{ asset('/images/logo-dark.png') }}" alt="logo">
+            <img src="{{ asset('images/rsck_arors_dark.png') }}" alt="logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ asset('/images/logo-sm.png') }}" alt="small logo">
+            <img src="{{ asset('images/rsck_logo_back.png') }}" alt="small logo">
         </span>
     </a>
     <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
@@ -24,8 +24,8 @@
     <div class="h-100" id="leftside-menu-container" data-simplebar>
         <div class="leftbar-user">
             <a href="{{ route('second', ['pages', 'profile']) }}">
-                <img src="{{ asset('/images/users/avatar-1.jpg') }}" alt="user-image" height="42" class="rounded-circle shadow-sm">
-                <span class="leftbar-user-name mt-2">Tosha Minner</span>
+                <img src="{{ asset('images/rsck_logo.png') }}" alt="user-image" height="42" class="rounded-circle shadow-sm">
+                <span class="leftbar-user-name mt-2">{{ auth()->user()->name }}</span>
             </a>
         </div>
         <ul class="side-nav">
