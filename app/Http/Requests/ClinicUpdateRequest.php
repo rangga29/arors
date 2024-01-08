@@ -18,6 +18,8 @@ class ClinicUpdateRequest extends FormRequest
             'cl_code' => ['required', 'unique:clinics,cl_code,' . $this->clinic->id],
             'cl_name' => ['required', 'unique:clinics,cl_name,' . $this->clinic->id],
             'cl_order' => ['required'],
+            'cl_umum' => ['nullable'],
+            'cl_bpjs' => ['nullable'],
             'cl_active' => ['nullable'],
             'created_by' => ['nullable'],
             'updated_by' => ['nullable']

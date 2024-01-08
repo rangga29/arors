@@ -12,6 +12,16 @@ $(document).on('click', '.cl-edit', function () {
             $('#edit_cl_code').val(clinic.cl_code);
             $('#edit_cl_name').val(clinic.cl_name);
             $('#edit_cl_order').val(clinic.cl_order);
+            if (clinic.cl_umum === 1) {
+                $('#edit_cl_umum').prop('checked', true);
+            } else {
+                $('#edit_cl_umum').prop('checked', false);
+            }
+            if (clinic.cl_bpjs === 1) {
+                $('#edit_cl_bpjs').prop('checked', true);
+            } else {
+                $('#edit_cl_bpjs').prop('checked', false);
+            }
             if (clinic.cl_active === 1) {
                 $('#edit_cl_active_on').prop('checked', true);
             } else {

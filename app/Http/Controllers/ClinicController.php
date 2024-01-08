@@ -26,6 +26,9 @@ class ClinicController extends Controller
         $this->authorize('create', Clinic::class);
 
         $validateData = $request->validated();
+        $validateData['cl_umum'] = $request->has('cl_umum') ? $validateData['cl_umum'] : 0;
+        $validateData['cl_bpjs'] = $request->has('cl_bpjs') ? $validateData['cl_bpjs'] : 0;
+
         do {
             $validateData['cl_ucode'] = Str::random(20);
             $ucodeCheck = Clinic::where('cl_ucode', $validateData['cl_ucode'])->exists();
@@ -54,6 +57,9 @@ class ClinicController extends Controller
         $this->authorize('edit', Clinic::class);
 
         $validateData = $request->validated();
+        $validateData['cl_umum'] = $request->has('cl_umum') ? $validateData['cl_umum'] : 0;
+        $validateData['cl_bpjs'] = $request->has('cl_bpjs') ? $validateData['cl_bpjs'] : 0;
+
         $duplicateCheck = Clinic::where('cl_order', $validateData['cl_order'])->first();
         if($duplicateCheck) {
             if($duplicateCheck['cl_ucode'] != $clinic['cl_ucode']) {

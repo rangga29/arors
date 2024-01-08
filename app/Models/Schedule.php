@@ -32,4 +32,9 @@ class Schedule extends Model
     {
         return $this->hasMany(UmumAppointment::class);
     }
+
+    public function bpjsKesehatanAppointments(): HasMany
+    {
+        return $this->hasMany(BpjsKesehatanAppointment::class);
+    }
 }

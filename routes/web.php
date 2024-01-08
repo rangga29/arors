@@ -10,6 +10,8 @@ use App\Http\Controllers\ScheduleBackupController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScheduleDateController;
 use App\Http\Controllers\UserController;
+use App\Livewire\Bpjs\BpjsFinal;
+use App\Livewire\Bpjs\BpjsPatientCheck;
 use App\Livewire\Fisio\FisioAppointment;
 use App\Livewire\Fisio\FisioFinal;
 use App\Livewire\Umum\AsuransiFinal;
@@ -22,6 +24,9 @@ Route::view('/', 'frontend.home')->name('home');
 Route::get('/umum', PatientCheck::class)->name('umum');
 Route::get('/umum/{code}', UmumFinal::class)->name('umum.final');
 Route::get('/asuransi/{code}', AsuransiFinal::class)->name('asuransi.final');
+
+Route::get('/bpjs', BpjsPatientCheck::class)->name('bpjs');
+Route::get('/bpjs/{code}', BpjsFinal::class)->name('bpjs.final');
 
 Route::get('/fisioterapi', FisioAppointment::class)->name('fisioterapi');
 Route::get('/fisioterapi/{code}', FisioFinal::class)->name('fisioterapi.final');

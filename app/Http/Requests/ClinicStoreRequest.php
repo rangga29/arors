@@ -18,6 +18,8 @@ class ClinicStoreRequest extends FormRequest
             'cl_code' => ['required', 'unique:clinics,cl_code'],
             'cl_name' => ['required', 'unique:clinics,cl_name'],
             'cl_order' => ['required', 'unique:clinics,cl_order'],
+            'cl_umum' => ['nullable'],
+            'cl_bpjs' => ['nullable'],
             'cl_active' => ['nullable'],
             'created_by' => ['nullable'],
             'updated_by' => ['nullable']

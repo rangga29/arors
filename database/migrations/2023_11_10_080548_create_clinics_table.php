@@ -13,6 +13,8 @@ return new class extends Migration {
             $table->string('cl_code');
             $table->string('cl_name');
             $table->bigInteger('cl_order');
+            $table->boolean('cl_umum')->default(true);
+            $table->boolean('cl_bpjs')->default(true);
             $table->boolean('cl_active')->default(true);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

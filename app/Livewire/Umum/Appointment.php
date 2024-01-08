@@ -41,7 +41,7 @@ class Appointment extends Component
         $this->serviceType = $serviceType;
         $this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))
             ->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
-        $this->clinics = Clinic::where('cl_active', true)->orderBy('cl_order', 'ASC')->get();
+        $this->clinics = Clinic::where('cl_active', true)->where('cl_umum', true)->orderBy('cl_order', 'ASC')->get();
         $this->businessPartners = BusinessPartner::where('bp_active', true)->orderBy('bp_order', 'ASC')->get();
     }
 
@@ -57,7 +57,8 @@ class Appointment extends Component
         if ($this->selectedDate && $this->selectedClinic) {
             $this->doctors = Schedule::where('sd_id', ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->id)
                 ->where('sc_clinic_code', Clinic::where('cl_ucode', $this->selectedClinic)->first()->cl_code)
-                ->where('sc_available', true)->get();
+                ->where('sc_available', true)
+                ->where('sc_umum', true)->get();
         } else {
             $this->doctors = null;
         }

@@ -50,6 +50,8 @@
                                 <th>No</th>
                                 <th>Kode</th>
                                 <th>Nama</th>
+                                <th>Umum</th>
+                                <th>BPJS</th>
                                 <th>Aktif</th>
                                 @hasanyrole('administrator|sisfo')
                                     <th>Created By</th>
@@ -66,6 +68,24 @@
                                     <th scope="row">{{ $clinic->cl_order }}</th>
                                     <td>{{ $clinic->cl_code }}</td>
                                     <td>{{ $clinic->cl_name }}</td>
+                                    <td>
+                                        <span class="fs-20 px-1">
+                                            @if($clinic->cl_umum)
+                                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                            @else
+                                                <i class="ri-close-circle-fill text-danger"></i>
+                                            @endif
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="fs-20 px-1">
+                                            @if($clinic->cl_bpjs)
+                                                <i class="ri-checkbox-circle-fill text-success"></i>
+                                            @else
+                                                <i class="ri-close-circle-fill text-danger"></i>
+                                            @endif
+                                        </span>
+                                    </td>
                                     <td>
                                         <span class="fs-20 px-1">
                                             @if($clinic->cl_active)
@@ -135,6 +155,16 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="cl_umum" id="add_cl_umum" value="1">
+                                        <label for="add_cl_umum" class="form-check-label">Umum</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="cl_bpjs" id="add_cl_bpjs" value="1">
+                                        <label for="add_cl_bpjs" class="form-check-label">BPJS</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
                                         <input type="radio" class="form-check-input" name="cl_active" id="add_cl_active_on" value="1" checked>
                                         <label for="add_cl_active_on" class="form-check-label">Aktif</label>
                                     </div>
@@ -180,6 +210,16 @@
                                 <div class="mb-3">
                                     <label for="edit_cl_order" class="form-label">Nomor Urutan</label>
                                     <input type="number" class="form-control" name="cl_order" id="edit_cl_order" placeholder="Nomor Urutan" required>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="cl_umum" id="edit_cl_umum" value="1">
+                                        <label for="edit_cl_umum" class="form-check-label">Umum</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="cl_bpjs" id="edit_cl_bpjs" value="1">
+                                        <label for="edit_cl_bpjs" class="form-check-label">BPJS</label>
+                                    </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check form-check-inline">
