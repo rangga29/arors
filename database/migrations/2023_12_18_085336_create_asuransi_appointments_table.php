@@ -9,14 +9,8 @@ return new class extends Migration {
     {
         Schema::create('asuransi_appointments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sc_id')->constrained('schedules')->cascadeOnDelete();
+            $table->foreignId('ap_id')->constrained('appointments')->cascadeOnDelete();
             $table->foreignId('bp_id')->constrained('business_partners')->cascadeOnDelete();
-            $table->string('aap_ucode')->unique();
-            $table->string('aap_no');
-            $table->string('aap_token');
-            $table->string('aap_queue');
-            $table->time('aap_registration_time');
-            $table->time('aap_appointment_time');
             $table->string('aap_norm');
             $table->string('aap_name');
             $table->date('aap_birthday');

@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class BpjsFinal extends Component
 {
-    public $code, $patientData, $scheduleData, $scheduleDateData;
+    public $code, $patientData, $detailPatientData, $scheduleData, $scheduleDateData;
 
     public function render()
     {
@@ -21,7 +21,8 @@ class BpjsFinal extends Component
     public function mount($code): void
     {
         $this->code = $code;
-        $this->patientData = BpjsKesehatanAppointment::where('bap_ucode', $code)->first();
+        $this->patientData = \App\Models\Appointment::where('ap_ucode', $code)->first();
+        $this->detailPatientData = BpjsKesehatanAppointment::where('ap_id', $this->patientData['id'])->first();
         $this->scheduleData = Schedule::where('id', $this->patientData['sc_id'])->first();
         $this->scheduleDateData = ScheduleDate::where('id', $this->scheduleData['sd_id'])->first();
     }
@@ -32,6 +33,7 @@ class BpjsFinal extends Component
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,
+            'detailPatientData' => $this->detailPatientData,
             'scheduleData' => $this->scheduleData,
             'scheduleDateData' => $this->scheduleDateData
         ];

@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NORM</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $patientData['aap_norm'] }}</p>
+                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['aap_norm'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NAMA PASIEN</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $patientData['aap_name'] }}</p>
+                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['aap_name'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>TANGGAL REGISTRASI</strong></p>
@@ -31,11 +31,11 @@
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NO ANTRIAN</strong></p>
-                <p class="ms-2 "><i class="ri-arrow-right-double-line"></i> {{ $patientData['aap_queue'] }}</p>
+                <p class="ms-2 "><i class="ri-arrow-right-double-line"></i> {{ $patientData['ap_queue'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>KODE TOKEN</strong></p>
-                <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> {{ $patientData['aap_token'] }}</p>
+                <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> {{ $patientData['ap_token'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NAMA ASURANSI</strong></p>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>WAKTU REGISTRASI ULANG</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['aap_registration_time'])->format('H:i') }} WIB</p>
+                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
             </div>
         </div>
     </div>

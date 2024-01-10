@@ -136,17 +136,21 @@ class Appointment extends Component
                     $dataField = json_decode($data['Data'], true);
                     do {
                         $token = Str::random(6);
-                        $tokenCheck = UmumAppointment::where('uap_token', $token)->exists();
+                        $tokenCheck = \App\Models\Appointment::where('sc_id', $doctorData['id'])->where('ap_token', $token)->exists();
                     } while ($tokenCheck);
                     if($this->serviceType == 'umum') {
-                        UmumAppointment::create([
+                        $appointmentData = \App\Models\Appointment::create([
                             'sc_id' => $doctorData['id'],
-                            'uap_ucode' => $dataField['AppointmentID'],
-                            'uap_no' => $dataField['AppointmentNo'],
-                            'uap_token' => strtoupper($token),
-                            'uap_queue' => $dataField['QueueNo'],
-                            'uap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
-                            'uap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
+                            'ap_ucode' => $dataField['AppointmentID'],
+                            'ap_no' => $dataField['AppointmentNo'],
+                            'ap_token' => strtoupper($token),
+                            'ap_queue' => $dataField['QueueNo'],
+                            'ap_type' => 'UMUM',
+                            'ap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
+                            'ap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
+                        ]);
+                        UmumAppointment::create([
+                            'ap_id' => $appointmentData['id'],
                             'uap_norm' => $dataField['MedicalNo'],
                             'uap_name' => $dataField['PatientName'],
                             'uap_birthday' => $this->patientData['DateOfBirth'],
@@ -154,15 +158,19 @@ class Appointment extends Component
                         ]);
                         return redirect()->route('umum.final', $dataField['AppointmentID'])->with('success', 'Registrasi Berhasil Dilakukan');
                     } else {
-                        AsuransiAppointment::create([
+                        $appointmentData = \App\Models\Appointment::create([
                             'sc_id' => $doctorData['id'],
+                            'ap_ucode' => $dataField['AppointmentID'],
+                            'ap_no' => $dataField['AppointmentNo'],
+                            'ap_token' => strtoupper($token),
+                            'ap_queue' => $dataField['QueueNo'],
+                            'ap_type' => 'ASURANSI',
+                            'ap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
+                            'ap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
+                        ]);
+                        AsuransiAppointment::create([
+                            'ap_id' => $appointmentData['id'],
                             'bp_id' => $businessPartnerData['id'],
-                            'aap_ucode' => $dataField['AppointmentID'],
-                            'aap_no' => $dataField['AppointmentNo'],
-                            'aap_token' => strtoupper($token),
-                            'aap_queue' => $dataField['QueueNo'],
-                            'aap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
-                            'aap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
                             'aap_norm' => $dataField['MedicalNo'],
                             'aap_name' => $dataField['PatientName'],
                             'aap_birthday' => $this->patientData['DateOfBirth'],
@@ -174,10 +182,10 @@ class Appointment extends Component
                     return redirect()->route('umum')->with('error', $data['Status'] . ' - ' . $data['Remarks']);
                 }
             } else {
-                session()->flash('error', 'Request failed. Status code: ' . $response->getStatusCode());
+                return back()->with('error', 'Request failed. Status code: ' . $response->getStatusCode());
             }
         } catch (RequestException $e) {
-            session()->flash('error', 'An error occurred: ' . $e->getMessage());
+            return back()->with('error', 'An error occurred: ' . $e->getMessage());
         }
     }
 }

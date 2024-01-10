@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BusinessPartner extends Model
 {
@@ -14,8 +16,20 @@ class BusinessPartner extends Model
         return 'bp_ucode';
     }
 
+    protected static function boot(): void
+    {
+        parent::boot();
+        static::creating(function ($businessPartner) {
+            $businessPartner->bp_ucode = Str::random(10);
+            $businessPartner->created_by = Auth::user()->username;
+        });
+        static::updating(function ($businessPartner) {
+            $businessPartner->updated_by = Auth::user()->username;
+        });
+    }
+
     public function asuransiAppointments(): HasMany
     {
-        return $this->hasMany(AsuransiAppointment::class);
+        return $this->hasMany(AsuransiAppointment::class, 'bp_id');
     }
 }

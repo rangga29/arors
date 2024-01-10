@@ -85,25 +85,22 @@
     <div class="row">
         <hr>
         <div class="items">
-            <p><strong>NORM : </strong>{{ $patientData['bap_norm'] }}</p>
+            <p><strong>NORM : </strong>{{ $detailPatientData['bap_norm'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NAMA PASIEN : </strong>{{ $patientData['bap_name'] }}</p>
+            <p><strong>NAMA PASIEN : </strong>{{ $detailPatientData['bap_name'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NO BPJS : </strong>{{ $patientData['bap_bpjs'] }}</p>
+            <p><strong>NO BPJS : </strong>{{ $detailPatientData['bap_bpjs'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NO RUJUKAN : </strong>{{ $patientData['bap_ppk1'] }}</p>
+            <p><strong>NO RUJUKAN : </strong>{{ $detailPatientData['bap_ppk1'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NAMA PASIEN : </strong>{{ $patientData['bap_name'] }}</p>
+            <p><strong>TANGGAL LAHIR : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $detailPatientData['bap_birthday'])->isoFormat('DD MMMM YYYY') }}</p>
         </div>
         <div class="items">
-            <p><strong>TANGGAL LAHIR : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $patientData['bap_birthday'])->isoFormat('DD MMMM YYYY') }}</p>
-        </div>
-        <div class="items">
-            <p><strong>NO. HANDPHONE : </strong>{{ $patientData['bap_phone'] }}</p>
+            <p><strong>NO. HANDPHONE : </strong>{{ $detailPatientData['bap_phone'] }}</p>
         </div>
         <div class="items">
             <p><strong>TANGGAL REGISTRASI : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
@@ -115,13 +112,13 @@
             <p><strong>NAMA DOKTER : </strong>{{ $scheduleData['sc_doctor_name'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NO ANTRIAN : </strong>{{ $patientData['bap_queue'] }}</p>
+            <p><strong>NO ANTRIAN : </strong>{{ $patientData['ap_queue'] }}</p>
         </div>
         <div class="items">
-            <p><strong>KODE TOKEN : </strong>{{ $patientData['bap_token'] }}</p>
+            <p><strong>KODE TOKEN : </strong>{{ $patientData['ap_token'] }}</p>
         </div>
         <div class="items">
-            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['bap_registration_time'])->format('H:i') }} WIB</p>
+            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
         </div>
         <hr>
         <p style="font-size: 16px;">Maksimal kedatangan adalah 1 jam setelah waktu registrasi ulang atau nomor antrian akan dianggap hangus.</p>

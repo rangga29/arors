@@ -14,8 +14,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function dd;
-use function redirect;
+use function strtoupper;
 
 class BpjsAppointment extends Component
 {
@@ -113,16 +112,20 @@ class BpjsAppointment extends Component
                     $dataField = json_decode($data['Data'], true);
                     do {
                         $token = Str::random(6);
-                        $tokenCheck = BpjsKesehatanAppointment::where('bap_token', $token)->exists();
+                        $tokenCheck = \App\Models\Appointment::where('sc_id', $doctorData['id'])->where('ap_token', $token)->exists();
                     } while ($tokenCheck);
-                    BpjsKesehatanAppointment::create([
+                    $appointmentData = \App\Models\Appointment::create([
                         'sc_id' => $doctorData['id'],
-                        'bap_ucode' => $dataField['AppointmentID'],
-                        'bap_no' => $dataField['AppointmentNo'],
-                        'bap_token' => strtoupper($token),
-                        'bap_queue' => $dataField['QueueNo'],
-                        'bap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
-                        'bap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
+                        'ap_ucode' => $dataField['AppointmentID'],
+                        'ap_no' => $dataField['AppointmentNo'],
+                        'ap_token' => strtoupper($token),
+                        'ap_queue' => $dataField['QueueNo'],
+                        'ap_type' => 'BPJS',
+                        'ap_registration_time' => Carbon::createFromFormat('H:i', $dataField['StartTime'])->subMinutes(30),
+                        'ap_appointment_time' => Carbon::createFromFormat('H:i', $dataField['StartTime']),
+                    ]);
+                    BpjsKesehatanAppointment::create([
+                        'ap_id' => $appointmentData['id'],
                         'bap_norm' => $dataField['MedicalNo'],
                         'bap_name' => $dataField['PatientName'],
                         'bap_birthday' => $this->patientData['DateOfBirth'],
@@ -131,7 +134,6 @@ class BpjsAppointment extends Component
                         'bap_ppk1' => $this->bpjsData['noKunjungan'],
                         'bap_skdp' => $this->no_skdp
                     ]);
-
                     return redirect()->route('bpjs.final', $dataField['AppointmentID'])->with('success', 'Registrasi Berhasil Dilakukan');
                 } else {
                     return redirect()->route('bpjs')->with('error', $data['Status'] . ' - ' . $data['Remarks']);

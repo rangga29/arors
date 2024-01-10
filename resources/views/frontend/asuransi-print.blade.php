@@ -85,16 +85,16 @@
     <div class="row">
         <hr>
         <div class="items">
-            <p><strong>NORM : </strong>{{ $patientData['aap_norm'] }}</p>
+            <p><strong>NORM : </strong>{{ $detailPatientData['aap_norm'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NAMA PASIEN : </strong>{{ $patientData['aap_name'] }}</p>
+            <p><strong>NAMA PASIEN : </strong>{{ $detailPatientData['aap_name'] }}</p>
         </div>
         <div class="items">
-            <p><strong>TANGGAL LAHIR : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $patientData['aap_birthday'])->isoFormat('DD MMMM YYYY') }}</p>
+            <p><strong>TANGGAL LAHIR : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $detailPatientData['aap_birthday'])->isoFormat('DD MMMM YYYY') }}</p>
         </div>
         <div class="items">
-            <p><strong>NO. HANDPHONE : </strong>{{ $patientData['aap_phone'] }}</p>
+            <p><strong>NO. HANDPHONE : </strong>{{ $detailPatientData['aap_phone'] }}</p>
         </div>
         <div class="items">
             <p><strong>TANGGAL REGISTRASI : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
@@ -106,16 +106,16 @@
             <p><strong>NAMA DOKTER : </strong>{{ $scheduleData['sc_doctor_name'] }}</p>
         </div>
         <div class="items">
-            <p><strong>NO ANTRIAN : </strong>{{ $patientData['aap_queue'] }}</p>
+            <p><strong>NO ANTRIAN : </strong>{{ $patientData['ap_queue'] }}</p>
         </div>
         <div class="items">
-            <p><strong>KODE TOKEN : </strong>{{ $patientData['aap_token'] }}</p>
+            <p><strong>KODE TOKEN : </strong>{{ $patientData['ap_token'] }}</p>
         </div>
         <div class="items">
             <p><strong>NAMA ASURANSI : </strong>{{ $businessPartnerData['bp_name'] }}</p>
         </div>
         <div class="items">
-            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['aap_registration_time'])->format('H:i') }} WIB</p>
+            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
         </div>
         <hr>
         <p style="font-size: 16px;">Maksimal kedatangan adalah 1 jam setelah waktu registrasi ulang atau nomor antrian akan dianggap hangus.</p>

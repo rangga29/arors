@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Schedule extends Model
 {
     protected $fillable = [
-        'sc_ucode', 'sd_id', 'sc_doctor_code', 'sc_doctor_name', 'sc_clinic_code', 'sc_clinic_name', 'sc_operational_time_code', 'sc_operational_time_name',
+        'sd_id', 'sc_ucode', 'sc_doctor_code', 'sc_doctor_name', 'sc_clinic_code', 'sc_clinic_name', 'sc_operational_time_code', 'sc_operational_time_name',
         'sc_start_time', 'sc_end_time', 'sc_umum', 'sc_bpjs', 'sc_available', 'created_by', 'updated_by'
     ];
 
@@ -20,21 +20,11 @@ class Schedule extends Model
 
     public function scheduleDate(): BelongsTo
     {
-        return $this->belongsTo(ScheduleDate::class);
+        return $this->belongsTo(ScheduleDate::class, 'sd_id');
     }
 
-    public function asuransiAppointments(): HasMany
+    public function appointments(): HasMany
     {
-        return $this->hasMany(AsuransiAppointment::class);
-    }
-
-    public function umumAppointments(): HasMany
-    {
-        return $this->hasMany(UmumAppointment::class);
-    }
-
-    public function bpjsKesehatanAppointments(): HasMany
-    {
-        return $this->hasMany(BpjsKesehatanAppointment::class);
+        return $this->hasMany(Appointment::class, 'sc_id');
     }
 }

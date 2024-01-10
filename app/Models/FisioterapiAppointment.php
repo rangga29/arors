@@ -16,6 +16,6 @@ class FisioterapiAppointment extends Model
 
     public function scheduleDate(): BelongsTo
     {
-        return $this->belongsTo(ScheduleDate::class);
+        return $this->belongsTo(ScheduleDate::class, 'sd_id');
     }
 }

@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class UmumFinal extends Component
 {
-    public $code, $service, $patientData, $scheduleData, $scheduleDateData;
+    public $code, $service, $patientData, $detailPatientData, $scheduleData, $scheduleDateData;
 
     public function render()
     {
@@ -21,7 +21,8 @@ class UmumFinal extends Component
     public function mount($code): void
     {
         $this->code = $code;
-        $this->patientData = UmumAppointment::where('uap_ucode', $code)->first();
+        $this->patientData = \App\Models\Appointment::where('ap_ucode', $code)->first();
+        $this->detailPatientData = UmumAppointment::where('ap_id', $this->patientData['id'])->first();
         $this->scheduleData = Schedule::where('id', $this->patientData['sc_id'])->first();
         $this->scheduleDateData = ScheduleDate::where('id', $this->scheduleData['sd_id'])->first();
 
@@ -36,6 +37,7 @@ class UmumFinal extends Component
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,
+            'detailPatientData' => $this->detailPatientData,
             'scheduleData' => $this->scheduleData,
             'scheduleDateData' => $this->scheduleDateData,
             'service' => $this->service

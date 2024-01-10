@@ -31,7 +31,7 @@ class PatientCheck extends Component
         ])->layout('frontend.layout');
     }
 
-    public function checkPatient(): void
+    public function checkPatient()
     {
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
@@ -60,16 +60,16 @@ class PatientCheck extends Component
                         $this->serviceType = $this->service;
                         $this->patientData = $dataField;
                     } else {
-                        session()->flash('error', 'Data Pasien Tidak Cocok');
+                        return back()->with('error', 'Data Pasien Tidak Cocok');
                     }
                 } else {
-                    session()->flash('error', 'Data Pasien Tidak Ditemukan');
+                    return back()->with('error', 'Data Pasien Tidak Ditemukan');
                 }
             } else {
-                session()->flash('error', 'Request failed. Status code: ' . $response->getStatusCode());
+                return back()->with('error', 'Request failed. Status code: ' . $response->getStatusCode());
             }
         } catch (RequestException $e) {
-            session()->flash('error', 'An error occurred: ' . $e->getMessage());
+            return back()->with('error', 'An error occurred: ' . $e->getMessage());
         }
     }
 }

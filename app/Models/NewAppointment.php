@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class BpjsKesehatanAppointment extends Model
+class NewAppointment extends Model
 {
-    protected $fillable = ['ap_id', 'bap_norm', 'bap_name', 'bap_birthday', 'bap_phone', 'bap_bpjs', 'bap_ppk1', 'bap_skdp'];
+    protected $fillable = ['ap_id', 'nap_norm', 'nap_name', 'nap_birthday', 'nap_phone', 'nap_ssn', 'nap_gender', 'nap_address', 'nap_email'];
 
     public function getRouteKeyName(): string
     {

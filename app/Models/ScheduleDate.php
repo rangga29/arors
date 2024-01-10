@@ -16,11 +16,11 @@ class ScheduleDate extends Model
 
     public function schedules(): HasMany
     {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Schedule::class, 'sd_id');
     }
 
     public function fisioterapiAppointments(): HasMany
     {
-        return $this->hasMany(FisioterapiAppointment::class);
+        return $this->hasMany(FisioterapiAppointment::class, 'sd_id');
     }
 }

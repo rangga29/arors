@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('sc_ucode')->unique();
             $table->foreignId('sd_id')->constrained('schedule_dates')->cascadeOnDelete();
+            $table->string('sc_ucode')->unique();
             $table->string('sc_doctor_code');
             $table->string('sc_doctor_name');
             $table->string('sc_clinic_code');

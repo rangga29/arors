@@ -10,6 +10,7 @@ use App\Http\Controllers\ScheduleBackupController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScheduleDateController;
 use App\Http\Controllers\UserController;
+use App\Livewire\Baru\BaruPatientCheck;
 use App\Livewire\Bpjs\BpjsFinal;
 use App\Livewire\Bpjs\BpjsPatientCheck;
 use App\Livewire\Fisio\FisioAppointment;
@@ -30,6 +31,8 @@ Route::get('/bpjs/{code}', BpjsFinal::class)->name('bpjs.final');
 
 Route::get('/fisioterapi', FisioAppointment::class)->name('fisioterapi');
 Route::get('/fisioterapi/{code}', FisioFinal::class)->name('fisioterapi.final');
+
+Route::get('/baru', BaruPatientCheck::class)->name('baru');
 
 Route::prefix('administrator')->group(function () {
     Route::middleware('guest')->group(function () {

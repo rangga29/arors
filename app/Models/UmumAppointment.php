@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class UmumAppointment extends Model
 {
-    protected $fillable = ['sc_id', 'uap_ucode', 'uap_no', 'uap_token', 'uap_queue', 'uap_registration_time', 'uap_appointment_time', 'uap_norm', 'uap_name', 'uap_birthday', 'uap_phone'];
+    protected $fillable = ['ap_id', 'uap_norm', 'uap_name', 'uap_birthday', 'uap_phone'];
 
     public function getRouteKeyName(): string
     {
-        return 'uap_ucode';
+        return 'id';
     }
 
-    public function schedule(): BelongsTo
+    public function appointment(): BelongsTo
     {
-        return $this->belongsTo(Schedule::class);
+        return $this->belongsTo(Appointment::class, 'ap_id');
     }
 }
