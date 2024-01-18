@@ -13,14 +13,6 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
-use function auth;
-use function count;
-use function date_default_timezone_set;
-use function dd;
-use function json_decode;
-use function redirect;
-use function response;
-use function var_dump;
 
 class ScheduleController extends Controller
 {
@@ -56,6 +48,7 @@ class ScheduleController extends Controller
                 'sc_available' => false,
                 'updated_by' => auth()->user()->name
             ]);
+
             Log::create([
                 'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
                 'lo_user' => auth()->user()->username,
@@ -63,12 +56,14 @@ class ScheduleController extends Controller
                 'lo_module' => 'SCHEDULE',
                 'lo_message' => 'Non Activated Schedule | ' . $date . ' -- ' . $schedule->sc_clinic_code . ' -- ' . $schedule->sc_clinic_name
             ]);
+
             return redirect()->route('schedules', $date)->with('success', 'Jadwal ' . $schedule->sc_clinic_name . ' Untuk ' . $schedule->sc_clinic_name . ' Berhasil Di Non Aktifkan.');
         } else {
             $schedule->update([
                 'sc_available' => true,
                 'updated_by' => auth()->user()->name
             ]);
+
             Log::create([
                 'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
                 'lo_user' => auth()->user()->username,
@@ -76,6 +71,7 @@ class ScheduleController extends Controller
                 'lo_module' => 'SCHEDULE',
                 'lo_message' => 'Activated Schedule | ' . $date . ' -- ' . $schedule->sc_clinic_code . ' -- ' . $schedule->sc_clinic_name
             ]);
+
             return redirect()->route('schedules', $date)->with('success', 'Jadwal ' . $schedule->sc_clinic_name . ' Untuk ' . $schedule->sc_doctor_name . ' Berhasil Di Aktifkan.');
         }
     }
@@ -83,11 +79,12 @@ class ScheduleController extends Controller
     public function update($date, Schedule $schedule)
     {
         $responses = [];
+        $link = env('API_KEY', 'rsck');
         $clinic = Clinic::where('cl_code', $schedule['sc_clinic_code'])->pluck('cl_code')->first();
         $schedule_date = Carbon::create($date)->format('Ymd');
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
-        $type = 'success'; // Default type
+        $type = 'success';
         $message = 'Update Jadwal ' .  $schedule['sc_doctor_name'] . ' Tanggal ' . Carbon::create($date)->isoFormat('DD MMMM YYYY') . ' Berhasil Dilakukan.';
 
         $handlerStack = HandlerStack::create();
@@ -98,8 +95,8 @@ class ScheduleController extends Controller
         }));
 
         try {
-            $client = new Client(['handler' => $handlerStack, 'verify' => false]); // Disable SSL verification
-            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}", [
+            $client = new Client(['handler' => $handlerStack, 'verify' => false]);
+            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/physician/available/{$schedule_date}/{$clinic}", [
                 'headers' => $headers,
             ]);
 
@@ -117,6 +114,10 @@ class ScheduleController extends Controller
                                 'sc_end_time' => $data['PhysicianOperationalTime']['EndTime1'],
                                 'sc_umum' => $data['PhysicianOperationalTime']['IsNonBPJS1'],
                                 'sc_bpjs' => $data['PhysicianOperationalTime']['IsBPJS1'],
+                                'sc_max_umum' => $data['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
+                                'sc_max_bpjs' => $data['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
+                                'sc_online_umum' => $data['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
+                                'sc_online_bpjs' => $data['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
                                 'updated_by' => auth()->user()->username,
                             ]);
                         }

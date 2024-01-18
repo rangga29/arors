@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BusinessPartnerController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\DashboardController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\ScheduleBackupController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ScheduleDateController;
 use App\Http\Controllers\UserController;
+use App\Livewire\Baru\BaruFinal;
 use App\Livewire\Baru\BaruPatientCheck;
 use App\Livewire\Bpjs\BpjsFinal;
 use App\Livewire\Bpjs\BpjsPatientCheck;
@@ -33,7 +35,9 @@ Route::get('/fisioterapi', FisioAppointment::class)->name('fisioterapi');
 Route::get('/fisioterapi/{code}', FisioFinal::class)->name('fisioterapi.final');
 
 Route::get('/baru', BaruPatientCheck::class)->name('baru');
+Route::get('/baru/{code}', BaruFinal::class)->name('baru.final');
 
+Route::redirect('/dashboard', '/administrator/dashboard');
 Route::prefix('administrator')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::get('/login', [UserController::class, 'login'])->name('login');
@@ -44,6 +48,17 @@ Route::prefix('administrator')->group(function () {
         Route::get('/', [RouteController::class, 'index'])->name('root');
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::prefix('appointments')->group(function () {
+            Route::prefix('fisioterapi')->group(function () {
+                Route::post('/show', [AppointmentController::class, 'redirectFisio'])->name('appointments.fisioterapi.show.redirect');
+                Route::get('/{date}', [AppointmentController::class, 'indexFisio'])->name('appointments.fisioterapi');
+            });
+            Route::post('/show', [AppointmentController::class, 'redirectDate'])->name('appointments.show.redirect');
+            Route::get('/{date}', [AppointmentController::class, 'index'])->name('appointments');
+            Route::post('/show/doctor', [AppointmentController::class, 'redirectDateDoctor'])->name('appointments.doctor.show.redirect');
+            Route::get('/{date}/{doctor}', [AppointmentController::class, 'indexDoctor'])->name('appointments.doctor');
+        });
 
         Route::prefix('schedules')->group(function () {
             Route::prefix('history')->group(function () {

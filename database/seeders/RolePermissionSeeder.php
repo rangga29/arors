@@ -42,6 +42,9 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'update schedules']);
         Permission::create(['name' => 'delete schedules']);
 
+        Permission::create(['name' => 'view appointments']);
+        Permission::create(['name' => 'update appointments']);
+
         Permission::create(['name' => 'view schedules history']);
 
         //create roles and assign existing permissions
@@ -72,6 +75,9 @@ class RolePermissionSeeder extends Seeder
         $sisfoRole->givePermissionTo('update schedules');
         $sisfoRole->givePermissionTo('delete schedules');
 
+        $sisfoRole->givePermissionTo('view appointments');
+        $sisfoRole->givePermissionTo('update appointments');
+
         $sisfoRole->givePermissionTo('view schedules history');
 
 
@@ -95,7 +101,17 @@ class RolePermissionSeeder extends Seeder
         $rmRole->givePermissionTo('update schedules');
         $rmRole->givePermissionTo('delete schedules');
 
+        $rmRole->givePermissionTo('view appointments');
+        $rmRole->givePermissionTo('update appointments');
+
         $rmRole->givePermissionTo('view schedules history');
+
+
+        $humasRole = Role::create(['name' => 'humas']);
+        $humasRole->givePermissionTo('view business partners');
+        $humasRole->givePermissionTo('create business partners');
+        $humasRole->givePermissionTo('edit business partners');
+        $humasRole->givePermissionTo('delete business partners');
 
 
         $csRole = Role::create(['name' => 'cs']);
@@ -106,6 +122,8 @@ class RolePermissionSeeder extends Seeder
         $csRole->givePermissionTo('view schedule dates');
 
         $csRole->givePermissionTo('view schedules');
+
+        $csRole->givePermissionTo('view appointments');
 
         $csRole->givePermissionTo('view schedules history');
 
@@ -119,40 +137,51 @@ class RolePermissionSeeder extends Seeder
             'username' => 'administrator',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         $adminUser->assignRole($adminRole);
 
         $sisfoUser = User::create([
-            'name' => 'Silvester Rangga',
-            'username' => '199423075',
+            'name' => 'Sisfo',
+            'username' => 'sisfo',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         $sisfoUser->assignRole($sisfoRole);
 
         $rmUser = User::create([
-            'name' => 'Monica Rambeau',
-            'username' => '199423085',
+            'name' => 'Rekam Medis',
+            'username' => 'rekam_medis',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         $rmUser->assignRole($rmRole);
 
-        $csUser = User::create([
-            'name' => 'Kamala Khan',
-            'username' => '199423095',
+        $humasUser = User::create([
+            'name' => 'Humas',
+            'username' => 'humas',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        $humasUser->assignRole($humasRole);
+
+        $csUser = User::create([
+            'name' => 'Customer Service',
+            'username' => 'customer_service',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);

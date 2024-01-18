@@ -210,7 +210,7 @@
                                 <div class="mb-3">
                                     <label for="password" class="form-label">PASSWORD</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" class="form-control" name="password" id="password" value="password" required>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>

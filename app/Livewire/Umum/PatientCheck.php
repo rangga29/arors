@@ -5,6 +5,7 @@ namespace App\Livewire\Umum;
 use App\Services\APIHeaderGenerator;
 use App\Services\NormConverter;
 use Carbon\Carbon;
+use Carbon\Exceptions\InvalidFormatException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
@@ -33,10 +34,16 @@ class PatientCheck extends Component
 
     public function checkPatient()
     {
+        $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
-        //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
-        $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+
+        try {
+            //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
+            $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+        } catch (InvalidFormatException) {
+            return back()->with('error', 'Format Tanggal Lahir Salah');
+        }
 
         $handlerStack = HandlerStack::create();
         $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
@@ -47,7 +54,7 @@ class PatientCheck extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/patient/{$medicalNo}", [
+            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/patient/{$medicalNo}", [
                 'headers' => $headers,
             ]);
 

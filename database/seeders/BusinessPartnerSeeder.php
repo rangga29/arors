@@ -18,7 +18,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '066/HP-PKS-RSCK/II/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -31,7 +31,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '010/HP-PKS-RSCK/II/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -44,7 +44,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS/139/ABDA-RSCK/V/2008',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -57,7 +57,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika abhitech',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -70,7 +70,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '023/HP-PKS-RSCK/IX/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -83,7 +83,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '023/HP-PKS-RSCK/IX/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -96,7 +96,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -109,7 +109,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -122,7 +122,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -135,7 +135,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '035/PKS-RSCK/X/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -148,7 +148,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -161,7 +161,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks alami group admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -174,7 +174,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks ateja',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -187,7 +187,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks alkindo alfa',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -200,7 +200,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks alifa daycare',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -213,7 +213,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks alkindo alkindo',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -226,7 +226,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '015/HP-PKS-RSCK/III/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -239,7 +239,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -252,7 +252,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '024/HP-PKS-RSCK/VIII/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -265,7 +265,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'AR00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -278,7 +278,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Pks Admedika Asabri',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -291,7 +291,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'AS00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -304,7 +304,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -317,7 +317,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'Belum ada',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -330,7 +330,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '015/PKS-RSCK/2013',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -343,7 +343,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '027/HP-PKS-RSCK/IX/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -356,7 +356,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'AS00008-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -369,7 +369,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '014/PKS-RSCK/IV/2013',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -382,7 +382,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '020/PKS-RSCK/IX/2011',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -395,7 +395,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -408,7 +408,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS Admedika Bosowa',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -421,7 +421,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'cakrawala admedika payor',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -434,7 +434,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks aca admedika bank permata',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -447,7 +447,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '018/HP-PKS-RSCK/VI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -460,7 +460,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '018/HP-PKS-RSCK/VI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -473,7 +473,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks aca admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -486,7 +486,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -499,7 +499,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'pks admedika - bca individu',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -512,7 +512,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika taspen',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -525,7 +525,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'AS00012-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -538,7 +538,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika asuransi pln',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -551,7 +551,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '050/PKS-RSCK/IX/2013',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -564,7 +564,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'asuransi umum mega admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -577,7 +577,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika asuransi umum mega payor',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -590,7 +590,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '020/ HP-ADD-RSCK/VIII/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -603,7 +603,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -616,7 +616,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -629,7 +629,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -642,7 +642,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks ateja spinning',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -655,7 +655,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -668,7 +668,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -681,7 +681,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-ADD-RSCK/III/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -694,7 +694,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks avrist',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -707,7 +707,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '035/PKS-RSCK/X/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -720,7 +720,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '016/HP-ADD-RSCK/VII/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -733,7 +733,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks axa admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -746,7 +746,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -759,7 +759,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'AX00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -772,7 +772,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS Admedika BPKH',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -785,7 +785,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks bandung parahyangan golf',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -798,7 +798,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'BA00001-01 Belum Ada',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -811,7 +811,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -824,7 +824,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -837,7 +837,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika bank bri pensiunan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -850,7 +850,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '014/HP-PKS-RSCK/III/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -863,7 +863,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -876,7 +876,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -889,7 +889,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'R.06.Ar.BBG/PKS.ECO.020/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -902,7 +902,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -915,7 +915,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -928,7 +928,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'BA00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -941,7 +941,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'BA00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -954,7 +954,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'BA00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -967,7 +967,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -980,7 +980,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '022/HP-PKS-RSCK/X/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -993,7 +993,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'Tdk Ada PKS',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1006,7 +1006,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks bina nusantara admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1019,7 +1019,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '09.a/PKS-RSCK/IV/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1032,7 +1032,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'Belum ada PKS non covid',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1045,7 +1045,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'BI00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1058,7 +1058,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '17/PKS-RSCK/VIII/2014',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1071,7 +1071,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks biofarma',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1084,7 +1084,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '06/PKS-RSCK/II/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1097,7 +1097,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1110,7 +1110,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '03/HP-ADD-RSCK/II/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1123,7 +1123,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '03/HP-ADD-RSCK/II/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1136,7 +1136,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'BPJS',
             'bp_scheme' => 'JKN',
             'bp_contract' => '065/HP-PKS-RSCK/XII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1149,7 +1149,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'BPJS',
             'bp_scheme' => 'JKN',
             'bp_contract' => '114/HP-PKS-RSCK/XII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1162,7 +1162,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'BPJS',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'bpjs kesehatan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1175,7 +1175,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '063/HP-PKIS-RSCK/XI/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1188,7 +1188,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1201,7 +1201,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'BU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1214,7 +1214,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1227,7 +1227,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1240,7 +1240,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '018/ADD-RSCK/VII/2015',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1253,7 +1253,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika bumida sya',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1266,7 +1266,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '061/HP-PKS-RSCK/IV/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1279,7 +1279,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '053/HP-PKS-RSCK/VIII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1292,7 +1292,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '043/HP-PKS-RSCK/XI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1305,7 +1305,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '053/HP/PKS-RSCK/VIII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1318,7 +1318,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CA00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1331,7 +1331,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1344,7 +1344,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '02/PKS-RSCK/I/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1357,7 +1357,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1370,7 +1370,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CH00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1383,7 +1383,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CH00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1396,7 +1396,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '019/HP-PKS-RSCK/III/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1409,7 +1409,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1422,7 +1422,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1435,7 +1435,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CI00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1448,7 +1448,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CI00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1461,7 +1461,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'CI00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1474,7 +1474,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks cipta niaga admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1487,7 +1487,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1500,7 +1500,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '010/HP-PKS-RSCK/III/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1513,7 +1513,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1526,7 +1526,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admesika citrahirza',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1539,7 +1539,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CI00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1552,7 +1552,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '040/HP-PKS-RSCK/XI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1565,7 +1565,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CO00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1578,7 +1578,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'CO00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1591,7 +1591,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '05/PKS-RSCK/II/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1604,7 +1604,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1617,7 +1617,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '16/PKS-RSCK/X/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1630,7 +1630,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1643,7 +1643,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'DA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1656,7 +1656,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '104/HP-PKS-RSCK/IX/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1669,7 +1669,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'DA00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1682,7 +1682,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks daya adicipta',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1695,7 +1695,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'DA00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1708,7 +1708,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'DE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1721,7 +1721,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks digital ads admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1734,7 +1734,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1747,7 +1747,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks dinkes tb',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1760,7 +1760,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'tdk ada no pks',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1773,7 +1773,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1786,7 +1786,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Dokter',
             'bp_scheme' => 'Standard',
             'bp_contract' => '1223545',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1799,7 +1799,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'DU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1812,7 +1812,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks DYMATIC CHEMICALS alkindo',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1825,7 +1825,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '168146/005/EGS/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1838,7 +1838,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika equity sengkang',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1851,7 +1851,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '017/HP-PKS/RSCK/V/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1864,7 +1864,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks esmalglass admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1877,7 +1877,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'admedika exxon',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1890,7 +1890,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks fajar anugrah admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1903,7 +1903,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1916,7 +1916,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'FE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1929,7 +1929,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'proses perpanjangan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1942,7 +1942,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'FE00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1955,7 +1955,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '050/PKS-RSCK/IX/2013',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1968,7 +1968,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks fwd admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1981,7 +1981,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -1994,7 +1994,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'LGL.004/PKS-AAB/2009',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2007,7 +2007,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'LGL.004/PKS-AAB/2009',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2020,7 +2020,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '035/HP-PKS-RSCK/X/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2033,7 +2033,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2046,7 +2046,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Geo Dipa Pks Admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2059,7 +2059,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'GE00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2072,7 +2072,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'GE00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2085,7 +2085,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'GL00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2098,7 +2098,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika global cars',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2111,7 +2111,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'GR00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2124,7 +2124,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'GR00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2137,7 +2137,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '009/HP-PKS-RSCK/III/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2150,7 +2150,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'HA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2163,7 +2163,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2176,7 +2176,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '026/PKS-RSCK/VI/2015',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2189,7 +2189,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2202,7 +2202,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks hasnur admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2215,7 +2215,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'HD00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2228,7 +2228,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2241,7 +2241,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS KERETA CEPAT CINA',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2254,7 +2254,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'HU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2267,7 +2267,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'IC00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2280,7 +2280,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2293,7 +2293,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'IN00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2306,7 +2306,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '045/HP-PKS-RSCK/XII/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2319,7 +2319,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '045/HP-PKS-RSCK/XII/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2332,7 +2332,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '032/HP-PKS-RSCK/IX/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2345,7 +2345,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '032/HP-PKS-RSCK/IX/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2358,7 +2358,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '048/HP-PKS-RSCK/VI/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2371,7 +2371,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks indofood noodle',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2384,7 +2384,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'IN00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2397,7 +2397,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'IN00007-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2410,7 +2410,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'IN00008-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2423,7 +2423,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'IN00009-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2436,7 +2436,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'INHEALTH',
             'bp_contract' => '011/HP-PKS-RSCK/III/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2449,7 +2449,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2462,7 +2462,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks ilg aspan admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2475,7 +2475,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS Integrasi Admedika Payor',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2488,7 +2488,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks integrasi logistik admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2501,7 +2501,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'IN00012-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2514,7 +2514,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2527,7 +2527,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2540,7 +2540,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '019/HP-PKS-RSCK/VII/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2553,7 +2553,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2566,7 +2566,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks petikemas admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2579,7 +2579,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika peti kemas pekerja',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2592,7 +2592,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'IS00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2605,7 +2605,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks jadestone admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2618,7 +2618,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2631,7 +2631,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'JA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2644,7 +2644,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'JA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2657,7 +2657,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'JA00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2670,7 +2670,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika jasa marga',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2683,7 +2683,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika jppi',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2696,7 +2696,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '099/HP-PKS-RSCK/X/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2709,7 +2709,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '09/HP-PKS-RSCK/II/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2722,7 +2722,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2735,7 +2735,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2748,7 +2748,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'JO00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2761,7 +2761,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'JO00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2774,7 +2774,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '048/HP-PKS-RSCK/XII/2018/ 01/1/ADD-SP/KPKM-SS/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2787,7 +2787,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'belum ada mou',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2800,7 +2800,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '017/HP-ADD-RSCK/VIII/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2813,7 +2813,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'KA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2826,7 +2826,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Karyawan - RS',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'bpjs karyawan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2839,7 +2839,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Karyawan - RS',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'seragam karyawan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2852,7 +2852,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2865,7 +2865,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '123',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2878,7 +2878,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks kemenkes cob',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2891,7 +2891,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks kereta api indonesia cob',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2904,7 +2904,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '053/HP-PKS-RSCK/VII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2917,7 +2917,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'KE00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2930,7 +2930,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks kereta commuter admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2943,7 +2943,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'KE00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2956,7 +2956,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '048/HP-PKS-RSCK/X/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2969,7 +2969,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '048/HP-PKS-RSCK/X/2022 COB',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2982,7 +2982,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'KE00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -2995,7 +2995,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '081/HP-PKS-RSCK/VII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3008,7 +3008,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'KO00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3021,7 +3021,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'BELUM ADA PKS KURNIA ARTHA',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3034,7 +3034,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3047,7 +3047,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'LA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3060,7 +3060,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks lps admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3073,7 +3073,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika lemonilo',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3086,7 +3086,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'belum ada pks LMB',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3099,7 +3099,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3112,7 +3112,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '001/HP-PKS-RSCK/I/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3125,7 +3125,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks lippo life assurance',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3138,7 +3138,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3151,7 +3151,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3164,7 +3164,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '15/PKS-RSCK/VI/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3177,7 +3177,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3190,7 +3190,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3203,7 +3203,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'INHEALTH',
             'bp_contract' => '011/HP-PKS-RSCK/III/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3216,7 +3216,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'INHEALTH',
             'bp_scheme' => 'INHEALTH',
             'bp_contract' => '005/ADD-HP-RSCK/XII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3229,7 +3229,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'manulife halodoc pks',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3242,7 +3242,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'MA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3255,7 +3255,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '02/HP-ADD-RSCK/II/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3268,7 +3268,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'admedika mattel indonesia',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3281,7 +3281,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks aklindo maxchem',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3294,7 +3294,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Pks Admedika Mc Living',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3307,7 +3307,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks mc connell dowell',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3320,7 +3320,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3333,7 +3333,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3346,7 +3346,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'ME00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3359,7 +3359,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'ME00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3372,7 +3372,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks medika komunika admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3385,7 +3385,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '044/HP-PKS-RSCK/XI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3398,7 +3398,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '337/PKS-RS/IV/07',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3411,7 +3411,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'ME00008-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3424,7 +3424,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3437,7 +3437,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'ME00009-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3450,7 +3450,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika maritim',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3463,7 +3463,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'MI00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3476,7 +3476,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks mitra admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3489,7 +3489,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '849/PKS/MNCLA-RSCK/VII/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3502,7 +3502,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3515,7 +3515,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika motion',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3528,7 +3528,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'MR00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3541,7 +3541,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3554,7 +3554,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '024/PKS-RSCK/XII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3567,7 +3567,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'TGRS',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3580,7 +3580,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'NA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3593,7 +3593,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '005/HP-PKS-RSCK/II/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3606,7 +3606,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '005/HP-PKS-RSCK/II/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3619,7 +3619,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'NE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3632,7 +3632,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'NT00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3645,7 +3645,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'NU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3658,7 +3658,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3671,7 +3671,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'NU00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3684,7 +3684,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '17/PKS-RSCK/X/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3697,7 +3697,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3710,7 +3710,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'belum ada mou oad',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3723,7 +3723,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'OW00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3736,7 +3736,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3749,7 +3749,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3762,7 +3762,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pangansari admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3775,7 +3775,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PA00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3788,7 +3788,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3801,7 +3801,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PA00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3814,7 +3814,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PB00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3827,7 +3827,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pdam tirta rsck',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3840,7 +3840,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '096/HP=PKS-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3853,7 +3853,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Admedika Payor pelabuhan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3866,7 +3866,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika pelabuhan priok',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3879,7 +3879,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3892,7 +3892,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Pks Admedika Pelindo Solusi Logistik',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3905,7 +3905,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3918,7 +3918,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pema admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3931,7 +3931,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika pengerukan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3944,7 +3944,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Pribadi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3957,7 +3957,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TU00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3970,7 +3970,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pertagas admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3983,7 +3983,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PE00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -3996,7 +3996,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika pertamina drilling',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4009,7 +4009,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4022,7 +4022,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4035,7 +4035,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4048,7 +4048,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PE00007-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4061,7 +4061,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00008-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4074,7 +4074,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00009-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4087,7 +4087,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4100,7 +4100,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4113,7 +4113,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PE00011-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4126,7 +4126,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00012-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4139,7 +4139,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4152,7 +4152,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00014-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4165,7 +4165,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4178,7 +4178,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4191,7 +4191,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika pertamina lubricantd',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4204,7 +4204,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pertamina power indonesia',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4217,7 +4217,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika transkontinental ptk',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4230,7 +4230,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks pertamina trankontinental  (PTK_PSN)',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4243,7 +4243,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika perum jasa tirta II',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4256,7 +4256,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4269,7 +4269,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PE00018-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4282,7 +4282,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika telekomunikasi',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4295,7 +4295,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PG00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4308,7 +4308,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PG00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4321,7 +4321,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PG00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4334,7 +4334,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PG00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4347,7 +4347,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PG00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4360,7 +4360,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks phe ogan komering admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4373,7 +4373,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PL00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4386,7 +4386,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '107/HP-PKS-RSCK/XI/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4399,7 +4399,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PO00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4412,7 +4412,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '105/HP-PKS-RSCK/X/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4425,7 +4425,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks prima sarana jasa sinar mas',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4438,7 +4438,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '09/HP-PKS-RSCK/III/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4451,7 +4451,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PR00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4464,7 +4464,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PR00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4477,7 +4477,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4490,7 +4490,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PR00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4503,7 +4503,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'mou belum ada',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4516,7 +4516,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4529,7 +4529,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PT00002-01 belum ada pks',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4542,7 +4542,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PT00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4555,7 +4555,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'PU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4568,7 +4568,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'putri daya usahatama perpanjangan',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4581,7 +4581,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '023/PKS-RSCK/XII/2020',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4594,7 +4594,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4607,7 +4607,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pkd radiant admedika payor',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4620,7 +4620,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks railink admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4633,7 +4633,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '033/HP-PKS-RSCK/IX/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4646,7 +4646,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4659,7 +4659,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '317/00/RS/IX/08',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4672,7 +4672,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '317/00/RS/IX/08',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4685,7 +4685,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '046/HP-PKS-RSCK/XI/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4698,7 +4698,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RS00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4711,7 +4711,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'TGRS',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'RS00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4724,7 +4724,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RS00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4737,7 +4737,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '002/HP-PKS-RSCK/I/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4750,7 +4750,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RS00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4763,7 +4763,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '095/HP-ADD-PKS-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4776,7 +4776,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '043/HP-PKS-RSCK/X/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4789,7 +4789,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'utk event pruride',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4802,7 +4802,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '010/PKS-RSCK/IV/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4815,7 +4815,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '021/HP-PKS-RSCK/V/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4828,7 +4828,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '8/7/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4841,7 +4841,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '083/HP-PKS-RSCK/VII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4854,7 +4854,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RS00008-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4867,7 +4867,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'RS00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4880,7 +4880,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '085/HP-PKS-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4893,7 +4893,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '003/HP-PKS-RSCK/I/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4906,7 +4906,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'belum ada pks',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4919,7 +4919,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika saka sei',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4932,7 +4932,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika saka',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4945,7 +4945,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4958,7 +4958,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '093/HP-ADD- PKS-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4971,7 +4971,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4984,7 +4984,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '067/SPI.RO.BDG-CAK-KTR/I/21',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -4997,7 +4997,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5010,7 +5010,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5023,7 +5023,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5036,7 +5036,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '045/HP-PKS-RSCK/III/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5049,7 +5049,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika shopee',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5062,7 +5062,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SI00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5075,7 +5075,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '018/HP-ADD-RSCK/X/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5088,7 +5088,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '018/HP-ADD-RSCK/X/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5101,7 +5101,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'SI00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5114,7 +5114,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SI00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5127,7 +5127,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5140,7 +5140,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'belum ada pks sma trinitas',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5153,7 +5153,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'belum ada pks SM00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5166,7 +5166,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SN00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5179,7 +5179,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'Pks Admedika Solusi',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5192,7 +5192,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5205,7 +5205,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika sorikmas',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5218,7 +5218,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '07/HP-RSCK/III/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5231,7 +5231,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'ST00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5244,7 +5244,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5257,7 +5257,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SU00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5270,7 +5270,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'SU00003-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5283,7 +5283,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5296,7 +5296,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika ksk insurance',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5309,7 +5309,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '022/ADD-RSCK/XII/2016',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5322,7 +5322,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5335,7 +5335,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'belum ada pks suster biara borromeus',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5348,7 +5348,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5361,7 +5361,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika swakarya',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5374,7 +5374,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks Swisstex Alkindo',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5387,7 +5387,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'SY00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5400,7 +5400,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '023/HP-PKS-RSCK/VI/2022',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5413,7 +5413,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '026/HP-PKS-RSCK/X/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5426,7 +5426,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '026/HP-PKS-RSCK/X/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5439,7 +5439,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5452,7 +5452,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TE00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5465,7 +5465,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '021/HP-PKS-RSCK/IX/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5478,7 +5478,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks hotel jayakarta',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5491,7 +5491,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '042/HP-PKS-RSCK/XI/2018',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5504,7 +5504,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks tianyou',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5517,7 +5517,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TI00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5530,7 +5530,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '019/HP-PKS-RSCK/VII/2017',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5543,7 +5543,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5556,7 +5556,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TO00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5569,7 +5569,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks tokyu 2023',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5582,7 +5582,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '026/HP-PKS-RSCK/XI/2019',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5595,7 +5595,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'PKS TRAKINDO 2023',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5608,7 +5608,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks admedika transcosmos',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5621,7 +5621,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'TR00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5634,7 +5634,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5647,7 +5647,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5660,7 +5660,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks univ kristen krida admedika',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5673,7 +5673,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'belum ada pks stikes',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5686,7 +5686,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '-',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5699,7 +5699,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'UN00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5712,7 +5712,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '113/HP-PKS-RSCK/XII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5725,7 +5725,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'VA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5738,7 +5738,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Tenant',
             'bp_scheme' => 'Standard',
             'bp_contract' => '095/HP-PKS-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5751,7 +5751,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5764,7 +5764,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'VM00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5777,7 +5777,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'YA00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5790,7 +5790,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'YA00002-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5803,7 +5803,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5816,7 +5816,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'YA00004-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5829,7 +5829,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '012/HP-PKS-RSCK/III/2023',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5842,7 +5842,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'pks maranatha cob 012/HP-PKS-RSCK/III/2023',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5855,7 +5855,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'YA00005-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5868,7 +5868,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'YA00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5881,7 +5881,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '008/AD-HP-RSCK/II/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5894,7 +5894,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Perusahaan',
             'bp_scheme' => 'Standard',
             'bp_contract' => '006/HP-PKS-RSCK/II/2023',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5907,7 +5907,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => 'JA00006-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5920,7 +5920,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => '09/HP-ADD-PK-RSCK/VIII/2021',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5933,7 +5933,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Standard',
             'bp_contract' => '520/PKS/AdMedika/IV/2007',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -5946,7 +5946,7 @@ class BusinessPartnerSeeder extends Seeder
             'bp_type' => 'Asuransi',
             'bp_scheme' => 'Corporate',
             'bp_contract' => 'ZU00001-01',
-            'created_by' => 'Administrator',
+            'created_by' => 'administrator',
             'created_at' => now(),
             'updated_at' => now()
         ]);

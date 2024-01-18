@@ -21,6 +21,10 @@ return new class extends Migration {
             $table->time('sc_end_time');
             $table->boolean('sc_umum');
             $table->boolean('sc_bpjs');
+            $table->string('sc_max_umum');
+            $table->string('sc_max_bpjs');
+            $table->string('sc_online_umum');
+            $table->string('sc_online_bpjs');
             $table->boolean('sc_available');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

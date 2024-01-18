@@ -6,12 +6,17 @@ use App\Services\APIBpjsHeaderGenerator;
 use App\Services\APIHeaderGenerator;
 use App\Services\NormConverter;
 use Carbon\Carbon;
+use Carbon\Exceptions\InvalidFormatException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function back;
+use function base64_decode;
+use function openssl_decrypt;
+use const OPENSSL_RAW_DATA;
 
 class BpjsPatientCheck extends Component
 {
@@ -37,11 +42,17 @@ class BpjsPatientCheck extends Component
 
     public function checkPatient()
     {
+        $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();
-        //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
-        $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+
+        try {
+            //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
+            $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+        } catch (InvalidFormatException) {
+            return back()->with('error', 'Format Tanggal Lahir Salah');
+        }
 
         $handlerStack = HandlerStack::create();
         $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
@@ -52,7 +63,7 @@ class BpjsPatientCheck extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/patient/{$medicalNo}", [
+            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/patient/{$medicalNo}", [
                 'headers' => $headers,
             ]);
 
@@ -90,10 +101,17 @@ class BpjsPatientCheck extends Component
                                     $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
                                     $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
 
-                                    $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
-                                    if(!$bpjs_decryptResult) {
-                                        return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+                                    for ($i = 1; $i <= 50; $i++) {
+                                        $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
+                                        if(!$bpjs_decryptResult) {
+                                            if ($i === 50) {
+                                                return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+                                            }
+                                        } else {
+                                            break;
+                                        }
                                     }
+
                                     $bpjs_unCompressedResult = LZString::decompressFromEncodedURIComponent($bpjs_decryptResult);
                                     $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);
 

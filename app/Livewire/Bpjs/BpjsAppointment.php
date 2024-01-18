@@ -2,8 +2,10 @@
 
 namespace App\Livewire\Bpjs;
 
+use App\Models\Appointment;
 use App\Models\BpjsKesehatanAppointment;
 use App\Models\Clinic;
+use App\Models\NewAppointment;
 use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use App\Services\APIHeaderGenerator;
@@ -14,7 +16,9 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function strtoupper;
+use function date_default_timezone_set;
+use function dd;
+use function redirect;
 
 class BpjsAppointment extends Component
 {
@@ -26,6 +30,7 @@ class BpjsAppointment extends Component
 
     public function boot(APIHeaderGenerator $apiHeaderGenerator): void
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
     }
 
@@ -37,8 +42,8 @@ class BpjsAppointment extends Component
     public function mount($patientData): void
     {
         $this->patientData = $patientData;
-        $this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))
-            ->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
         $this->clinics = Clinic::where('cl_active', true)->where('cl_bpjs', true)->orderBy('cl_order', 'ASC')->get();
     }
 
@@ -64,13 +69,22 @@ class BpjsAppointment extends Component
     public function createAppointment()
     {
         $responses = [];
+        $link = env('API_KEY', 'rsck');
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
+        $sdDate = ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->sd_date;
         $dateData = Carbon::createFromFormat('Y-m-d', ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->sd_date)->format('Ymd');
         $doctorData = Schedule::where('sc_ucode', $this->selectedDoctor)->first();
 
         if($doctorData['sc_available'] == 0) {
-            return redirect()->route('umum')->with('error', 'Jadwal Dokter Tidak Tersedia.');
+            return redirect()->route('bpjs')->with('error', 'Jadwal Dokter Tidak Tersedia.');
+        }
+
+        if(BpjsKesehatanAppointment::whereHas('appointment.schedule.scheduleDate', function ($query) use ($sdDate) {
+                $query->where('sd_date', $sdDate);
+            })->where('bap_norm', $this->patientData['MedicalNo'])->exists()
+        ) {
+            return redirect()->route('bpjs')->with('error', 'Anda Sudah Terdaftar Sebagai Pasien BPJS Untuk Tanggal ' . Carbon::createFromFormat('Ymd', $dateData)->isoFormat('DD MMMM YYYY'));
         }
 
         $requestData = [
@@ -101,7 +115,7 @@ class BpjsAppointment extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/v2/centerback/ADT_A05_01", [
+            $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/v2/centerback/ADT_A05_01", [
                 'headers' => $headers,
                 'form_params' => $requestData
             ]);

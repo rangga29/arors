@@ -30,6 +30,7 @@ class BusinessPartnerController extends Controller
             $ucodeCheck = BusinessPartner::where('bp_ucode', $validateData['bp_ucode'])->exists();
         } while ($ucodeCheck);
         BusinessPartner::create($validateData);
+
         Log::create([
             'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
             'lo_user' => auth()->user()->username,
@@ -37,6 +38,7 @@ class BusinessPartnerController extends Controller
             'lo_module' => 'BUSINESS PARTNER',
             'lo_message' => 'CREATE : ' . $validateData['bp_code'] . ' - ' . $validateData['bp_name']
         ]);
+
         return redirect()->route('businessPartners')->with('success', 'Data Asuransi Berhasil Ditambahkan');
     }
 
@@ -45,6 +47,7 @@ class BusinessPartnerController extends Controller
         $this->authorize('edit', BusinessPartner::class);
 
         $data = BusinessPartner::where('bp_ucode', $businessPartner->bp_ucode)->first();
+
         return response()->json($data);
     }
 
@@ -62,6 +65,7 @@ class BusinessPartnerController extends Controller
             }
         }
         $businessPartner->update($validateData);
+
         Log::create([
             'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
             'lo_user' => auth()->user()->username,
@@ -69,6 +73,7 @@ class BusinessPartnerController extends Controller
             'lo_module' => 'BUSINESS PARTNER',
             'lo_message' => 'UPDATE : ' . $validateData['bp_code'] . ' - ' . $validateData['bp_name']
         ]);
+
         return redirect()->route('businessPartners')->with('success', 'Data Asuransi Berhasil Diubah');
     }
 
@@ -83,7 +88,9 @@ class BusinessPartnerController extends Controller
             'lo_module' => 'BUSINESS PARTNER',
             'lo_message' => 'DELETE : ' . $businessPartner->bp_code . ' - ' . $businessPartner->bp_name
         ]);
+
         $businessPartner->delete();
+
         return redirect()->route('businessPartners')->with('success', 'Data Asuransi Berhasil Dihapus');
     }
 
@@ -92,6 +99,7 @@ class BusinessPartnerController extends Controller
         $this->authorize('create', BusinessPartner::class);
 
         $data = BusinessPartner::orderBy('bp_order', 'DESC')->first();
+
         return response()->json($data);
     }
 }

@@ -7,7 +7,6 @@ use App\Models\Log;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
-use function auth;
 
 class ProfileController extends Controller
 {
@@ -34,6 +33,7 @@ class ProfileController extends Controller
                 'updated_by' => $validateData['updated_by']
             ]);
         }
+
         Log::create([
             'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
             'lo_user' => auth()->user()->username,
@@ -41,6 +41,7 @@ class ProfileController extends Controller
             'lo_module' => 'PROFILE',
             'lo_message' => 'UPDATE : ' . $user->username
         ]);
+
         return redirect()->route('users.profile', auth()->user()->username)->with('success', 'Data Profile Berhasil Diubah');
     }
 }

@@ -5,12 +5,17 @@ namespace App\Livewire\Baru;
 use App\Services\APIBpjsHeaderGenerator;
 use App\Services\APIHeaderGenerator;
 use Carbon\Carbon;
+use Carbon\Exceptions\InvalidFormatException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function back;
+use function base64_decode;
+use function openssl_decrypt;
+use const OPENSSL_RAW_DATA;
 
 class BaruPatientCheck extends Component
 {
@@ -36,8 +41,14 @@ class BaruPatientCheck extends Component
     {
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();
-        $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
-        $birthdateBpjs = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Y-m-d');
+
+        try {
+            $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+            $birthdateBpjs = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Y-m-d');
+        } catch (InvalidFormatException) {
+            return back()->with('error', 'Format Tanggal Lahir Salah');
+        }
+
         $regBpjsDate = Carbon::today()->format('Y-m-d');
 
         $handlerStackBpjs = HandlerStack::create();
@@ -68,10 +79,17 @@ class BaruPatientCheck extends Component
                     $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
                     $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
 
-                    $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
-                    if(!$bpjs_decryptResult) {
-                        return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+                    for ($i = 1; $i <= 50; $i++) {
+                        $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
+                        if(!$bpjs_decryptResult) {
+                            if ($i === 50) {
+                                return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+                            }
+                        } else {
+                            break;
+                        }
                     }
+
                     $bpjs_unCompressedResult = LZString::decompressFromEncodedURIComponent($bpjs_decryptResult);
                     $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);
 
@@ -89,7 +107,6 @@ class BaruPatientCheck extends Component
             } else {
                 return back()->with('error', 'Request failed. Status code: ' . $responseBpjs->getStatusCode());
             }
-
         } catch (RequestException $e) {
             return back()->with('error', 'An error occurred: ' . $e->getMessage());
         }

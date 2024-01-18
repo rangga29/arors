@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                     'sd_is_downloaded' => false,
                     'sd_is_holiday' => true,
                     'sd_holiday_desc' => 'Hari Minggu',
-                    'created_by' => 'Administrator',
+                    'created_by' => 'administrator',
                     'updated_by' => null,
                 ]);
             } else {
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
                     'sd_is_downloaded' => false,
                     'sd_is_holiday' => false,
                     'sd_holiday_desc' => null,
-                    'created_by' => 'Administrator',
+                    'created_by' => 'administrator',
                     'updated_by' => null,
                 ]);
             }

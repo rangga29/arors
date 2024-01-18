@@ -58,12 +58,13 @@
                                 <th rowspan="2" class="align-middle text-center">No</th>
                                 <th colspan="2" class="text-center">Klinik</th>
                                 <th colspan="2" class="text-center">Dokter</th>
-                                <th colspan="3" class="text-center">Operational Time</th>
-                                <th colspan="2" class="text-center">Jenis Pasien</th>
-                                <th rowspan="2" class="align-middle text-center">Ketersediaan</th>
+                                <th colspan="2" class="text-center">Operational Time</th>
+                                <th colspan="2" class="text-center">Pasien Umum</th>
+                                <th colspan="2" class="text-center">Pasien BPJS</th>
+                                <th rowspan="2" class="align-middle text-center"></th>
                                 @hasanyrole('administrator|sisfo')
-                                    <th rowspan="2" class="align-middle text-center">Created By</th>
-                                    <th rowspan="2" class="align-middle text-center">Updated By</th>
+                                    <th rowspan="2" class="align-middle text-center">CR</th>
+                                    <th rowspan="2" class="align-middle text-center">UP</th>
                                 @endhasanyrole
                                 @can('update schedules')
                                     <th rowspan="2" class="align-middle text-center">Aksi</th>
@@ -74,11 +75,12 @@
                                 <th>Nama</th>
                                 <th>Kode</th>
                                 <th>Nama</th>
-                                <th>Kode</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
-                                <th>Umum</th>
-                                <th>BPJS</th>
+                                <th>Max</th>
+                                <th>Online</th>
+                                <th>Max</th>
+                                <th>Online</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,33 +91,18 @@
                                     <td>{{ $schedule->sc_clinic_name }}</td>
                                     <td>{{ $schedule->sc_doctor_code }}</td>
                                     <td>{{ $schedule->sc_doctor_name }}</td>
-                                    <td>{{ $schedule->sc_operational_time_code }}</td>
                                     <td>{{ $schedule->sc_start_time }}</td>
                                     <td>{{ $schedule->sc_end_time }}</td>
-                                    <td>
-                                        <span class="fs-20 px-1">
-                                            @if($schedule->sc_umum)
-                                                <i class="ri-checkbox-circle-fill text-success"></i>
-                                            @else
-                                                <i class="ri-close-circle-fill text-danger"></i>
-                                            @endif
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="fs-20 px-1">
-                                            @if($schedule->sc_bpjs)
-                                                <i class="ri-checkbox-circle-fill text-success"></i>
-                                            @else
-                                                <i class="ri-close-circle-fill text-danger"></i>
-                                            @endif
-                                        </span>
-                                    </td>
+                                    <td>{{ $schedule->sc_max_umum }}</td>
+                                    <td>{{ $schedule->sc_online_umum }}</td>
+                                    <td>{{ $schedule->sc_max_bpjs }}</td>
+                                    <td>{{ $schedule->sc_online_bpjs }}</td>
                                     <td>
                                         <span class="fs-20">
                                             @if($schedule->sc_available)
-                                                <h5><span class="badge bg-success mt-1">AKTIF</span></h5>
+                                                <i class="ri-checkbox-circle-fill text-success"></i>
                                             @else
-                                                <h5><span class="badge bg-danger mt-1">TIDAK AKTIF</span></h5>
+                                                <i class="ri-close-circle-fill text-danger"></i>
                                             @endif
                                         </span>
                                     </td>
@@ -126,7 +113,10 @@
                                     @can('update schedules')
                                         <td style="max-width: 120px">
                                             <div class="d-flex justify-content-center">
-                                                <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}">
+                                                <a href="{{ route('appointments.doctor', [$date_original, $schedule->sc_doctor_code]) }}" class="btn btn-sm btn-primary" title="APPOINTMENT">
+                                                    <i class="ri-eye-fill"></i>
+                                                </a>
+                                                <form method="POST" action="{{ route('schedule.available', [$date_original, $schedule->sc_ucode]) }}" class="ms-1">
                                                     @csrf
                                                     @if($schedule->sc_available)
                                                         <button type="submit" class="btn btn-sm btn-danger" title="NON AKTIFKAN">
@@ -140,7 +130,7 @@
                                                 </form>
                                                 <form method="GET" action="{{ route('schedule.update', [$date_original, $schedule->sc_ucode]) }}">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-sm btn-warning ms-2 sd-download" title="UPDATE JADWAL">
+                                                    <button type="submit" class="btn btn-sm btn-warning ms-1 sd-download" title="UPDATE JADWAL">
                                                         <i class="ri-refresh-line"></i>
                                                     </button>
                                                 </form>

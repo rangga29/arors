@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+ use App\Models\Appointment;
  use App\Models\BusinessPartner;
  use App\Models\Clinic;
  use App\Models\Log;
@@ -10,6 +11,7 @@ namespace App\Providers;
  use App\Models\ScheduleDate;
  use App\Models\ScheduleDateBackup;
  use App\Models\User;
+ use App\Policies\AppointmentPolicy;
  use App\Policies\BusinessPartnerPolicy;
  use App\Policies\ClinicPolicy;
  use App\Policies\LogsPolicy;
@@ -29,13 +31,13 @@ class AuthServiceProvider extends ServiceProvider
         ScheduleDate::class => SchedulePolicy::class,
         ScheduleBackup::class => SchedulePolicy::class,
         ScheduleDateBackup::class => SchedulePolicy::class,
+        Appointment::class => AppointmentPolicy::class,
     ];
 
     public function boot(): void
     {
         $this->registerPolicies();
 
-        // Implicitly grant "Super Admin" role all permission checks using can()
         Gate::before(function ($user, $ability) {
             if ($user->hasRole('administrator')) {
                 return true;

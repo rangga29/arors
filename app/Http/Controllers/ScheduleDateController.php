@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use App\Models\AppointmentBackup;
+use App\Models\AsuransiAppointment;
+use App\Models\BpjsKesehatanAppointment;
+use App\Models\BusinessPartner;
 use App\Models\Clinic;
 use App\Models\Log;
+use App\Models\NewAppointment;
 use App\Models\Schedule;
 use App\Models\ScheduleBackup;
 use App\Models\ScheduleDate;
 use App\Models\ScheduleDateBackup;
+use App\Models\UmumAppointment;
 use App\Services\APIHeaderGenerator;
 use Carbon\Carbon;
 use Carbon\CarbonInterface;
@@ -95,7 +102,7 @@ class ScheduleDateController extends Controller
                 ]);
                 $sc_all = Schedule::where('sd_id', $sc_date->id)->get();
                 foreach ($sc_all as $sc) {
-                    ScheduleBackup::create([
+                    $sc_data = ScheduleBackup::create([
                         'scb_ucode' => $sc->sc_ucode,
                         'scb_date' => $sc_date->sd_date,
                         'scb_doctor_code' => $sc->sc_doctor_code,
@@ -108,10 +115,125 @@ class ScheduleDateController extends Controller
                         'scb_end_time' => $sc->sc_end_time,
                         'scb_umum' => $sc->sc_umum,
                         'scb_bpjs' => $sc->sc_bpjs,
+                        'scb_max_umum' => $sc->sc_max_umum,
+                        'scb_max_bpjs' => $sc->sc_max_bpjs,
+                        'scb_online_umum' => $sc->sc_online_umum,
+                        'scb_online_bpjs' => $sc->sc_online_bpjs,
                         'scb_available' => $sc->sc_available,
                         'created_by' => $sc->created_by,
                         'updated_by' => $sc->updated_by,
                     ]);
+                    $ap_all = Appointment::where('sc_id', $sc->id)->get();
+                    foreach ($ap_all as $ap) {
+                        $uap_all = UmumAppointment::where('ap_id', $ap->id)->get();
+                        foreach ($uap_all as $uap) {
+                            AppointmentBackup::create([
+                                'scb_id' => $sc_data['id'],
+                                'apb_ucode' => $ap->ap_ucode,
+                                'apb_no' => $ap->ap_no,
+                                'apb_token' => $ap->ap_token,
+                                'apb_queue' => $ap->ap_queue,
+                                'apb_type' => $ap->ap_type,
+                                'apb_registration_time' => $ap->ap_registration_time,
+                                'apb_appointment_time' => $ap->ap_appointment_time,
+                                'apb_norm' => $uap->uap_norm,
+                                'apb_name' => $uap->uap_name,
+                                'apb_birthday' => $uap->uap_birthday,
+                                'apb_phone' => $uap->uap_phone,
+                                'apb_business_partner' => '',
+                                'apb_bpjs' => '',
+                                'apb_ppk1' => '',
+                                'apb_skdp' => '',
+                                'apb_ssn' => '',
+                                'apb_gender' => '',
+                                'apb_address' => '',
+                                'apb_email' => ''
+                            ]);
+                            UmumAppointment::where('ap_id', $uap->ap_id)->where('uap_norm', $uap->uap_norm)->delete();
+                        }
+
+                        $aap_all = AsuransiAppointment::where('ap_id', $ap->id)->get();
+                        foreach ($aap_all as $aap) {
+                            $bp_name = BusinessPartner::where('id', $aap->bp_id)->first()->bp_name;
+                            AppointmentBackup::create([
+                                'scb_id' => $sc_data['id'],
+                                'apb_ucode' => $ap->ap_ucode,
+                                'apb_no' => $ap->ap_no,
+                                'apb_token' => $ap->ap_token,
+                                'apb_queue' => $ap->ap_queue,
+                                'apb_type' => $ap->ap_type,
+                                'apb_registration_time' => $ap->ap_registration_time,
+                                'apb_appointment_time' => $ap->ap_appointment_time,
+                                'apb_norm' => $aap->aap_norm,
+                                'apb_name' => $aap->aap_name,
+                                'apb_birthday' => $aap->aap_birthday,
+                                'apb_phone' => $aap->aap_phone,
+                                'apb_business_partner' => $bp_name,
+                                'apb_bpjs' => '',
+                                'apb_ppk1' => '',
+                                'apb_skdp' => '',
+                                'apb_ssn' => '',
+                                'apb_gender' => '',
+                                'apb_address' => '',
+                                'apb_email' => ''
+                            ]);
+                            AsuransiAppointment::where('ap_id', $aap->ap_id)->where('aap_norm', $aap->aap_norm)->delete();
+                        }
+
+                        $bap_all = BpjsKesehatanAppointment::where('ap_id', $ap->id)->get();
+                        foreach ($bap_all as $bap) {
+                            AppointmentBackup::create([
+                                'scb_id' => $sc_data['id'],
+                                'apb_ucode' => $ap->ap_ucode,
+                                'apb_no' => $ap->ap_no,
+                                'apb_token' => $ap->ap_token,
+                                'apb_queue' => $ap->ap_queue,
+                                'apb_type' => $ap->ap_type,
+                                'apb_registration_time' => $ap->ap_registration_time,
+                                'apb_appointment_time' => $ap->ap_appointment_time,
+                                'apb_norm' => $bap->bap_norm,
+                                'apb_name' => $bap->bap_name,
+                                'apb_birthday' => $bap->bap_birthday,
+                                'apb_phone' => $bap->bap_phone,
+                                'apb_business_partner' => '',
+                                'apb_bpjs' => $bap->bap_bpjs,
+                                'apb_ppk1' => $bap->bap_ppk1,
+                                'apb_skdp' => $bap->bap_skdp,
+                                'apb_ssn' => '',
+                                'apb_gender' => '',
+                                'apb_address' => '',
+                                'apb_email' => ''
+                            ]);
+                            BpjsKesehatanAppointment::where('ap_id', $bap->ap_id)->where('bap_norm', $bap->bap_norm)->delete();
+                        }
+
+                        $nap_all = NewAppointment::where('ap_id', $ap->id)->get();
+                        foreach ($nap_all as $nap) {
+                            AppointmentBackup::create([
+                                'scb_id' => $sc_data['id'],
+                                'apb_ucode' => $ap->ap_ucode,
+                                'apb_no' => $ap->ap_no,
+                                'apb_token' => $ap->ap_token,
+                                'apb_queue' => $ap->ap_queue,
+                                'apb_type' => $ap->ap_type,
+                                'apb_registration_time' => $ap->ap_registration_time,
+                                'apb_appointment_time' => $ap->ap_appointment_time,
+                                'apb_norm' => $nap->nap_norm,
+                                'apb_name' => $nap->nap_name,
+                                'apb_birthday' => $nap->nap_birthday,
+                                'apb_phone' => $nap->nap_phone,
+                                'apb_business_partner' => '',
+                                'apb_bpjs' => '',
+                                'apb_ppk1' => '',
+                                'apb_skdp' =>'',
+                                'apb_ssn' => $nap->nap_ssn,
+                                'apb_gender' => $nap->nap_gender,
+                                'apb_address' => $nap->nap_address,
+                                'apb_email' => $nap->nap_email
+                            ]);
+                            NewAppointment::where('ap_id', $nap->ap_id)->where('nap_ssn', $nap->nap_ssn)->delete();
+                        }
+                    }
                     Schedule::where('sc_ucode', $sc->sc_ucode)->delete();
                 }
                 ScheduleDate::where('sd_ucode', $sc_date->sd_ucode)->delete();
@@ -133,27 +255,25 @@ class ScheduleDateController extends Controller
         $this->authorize('download', Schedule::class);
 
         $responses = [];
+        $link = env('API_KEY', 'rsck');
         $clinics = Clinic::where('cl_active', true)->orderBy('cl_name')->pluck('cl_code')->all();
         $schedule_date = Carbon::create($scheduleDate['sd_date'])->format('Ymd');
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
-        $type = 'success'; // Default type
+        $type = 'success';
         $message = 'Download Jadwal Tanggal ' . Carbon::create($scheduleDate['sd_date'])->isoFormat('DD MMMM YYYY') . ' Berhasil Dilakukan.';
 
-        // Create a handler stack with retry middleware
         $handlerStack = HandlerStack::create();
         $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
-            // Retry up to 3 times on timeout errors
             return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
         }, function ($retry) {
-            // Calculate delay between retries (e.g., exponential backoff)
             return 1000 * pow(2, $retry);
         }));
 
         foreach ($clinics as $clinic) {
             try {
-                $client = new Client(['handler' => $handlerStack, 'verify' => false]); // Disable SSL verification
-                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}", [
+                $client = new Client(['handler' => $handlerStack, 'verify' => false]);
+                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/physician/available/{$schedule_date}/{$clinic}", [
                     'headers' => $headers,
                 ]);
 
@@ -179,6 +299,10 @@ class ScheduleDateController extends Controller
                                 'sc_end_time' => $dataField[$x]['PhysicianOperationalTime']['EndTime1'],
                                 'sc_umum' => $dataField[$x]['PhysicianOperationalTime']['IsNonBPJS1'],
                                 'sc_bpjs' => $dataField[$x]['PhysicianOperationalTime']['IsBPJS1'],
+                                'sc_max_umum' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
+                                'sc_max_bpjs' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
+                                'sc_online_umum' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
+                                'sc_online_bpjs' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
                                 'sc_available' => true,
                                 'created_by' => auth()->user()->username,
                             ]);
@@ -213,27 +337,25 @@ class ScheduleDateController extends Controller
         $this->authorize('update', Schedule::class);
 
         $responses = [];
+        $link = env('API_KEY', 'rsck');
         $clinics = Clinic::where('cl_active', true)->orderBy('cl_name')->pluck('cl_code')->all();
         $schedule_date = Carbon::create($scheduleDate['sd_date'])->format('Ymd');
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
-        $type = 'success'; // Default type
+        $type = 'success';
         $message = 'Update Download Jadwal Tanggal ' . Carbon::create($scheduleDate['sd_date'])->isoFormat('DD MMMM YYYY') . ' Berhasil Dilakukan.';
 
-        // Create a handler stack with retry middleware
         $handlerStack = HandlerStack::create();
         $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
-            // Retry up to 3 times on timeout errors
             return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
         }, function ($retry) {
-            // Calculate delay between retries (e.g., exponential backoff)
             return 1000 * pow(2, $retry);
         }));
 
         foreach ($clinics as $clinic) {
             try {
-                $client = new Client(['handler' => $handlerStack, 'verify' => false]); // Disable SSL verification
-                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/physician/available/{$schedule_date}/{$clinic}", [
+                $client = new Client(['handler' => $handlerStack, 'verify' => false]);
+                $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/physician/available/{$schedule_date}/{$clinic}", [
                     'headers' => $headers,
                 ]);
 
@@ -259,6 +381,10 @@ class ScheduleDateController extends Controller
                                     'sc_end_time' => $dataField[$x]['PhysicianOperationalTime']['EndTime1'],
                                     'sc_umum' => $dataField[$x]['PhysicianOperationalTime']['IsNonBPJS1'],
                                     'sc_bpjs' => $dataField[$x]['PhysicianOperationalTime']['IsBPJS1'],
+                                    'sc_max_umum' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
+                                    'sc_max_bpjs' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
+                                    'sc_online_umum' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
+                                    'sc_online_bpjs' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
                                     'updated_by' => auth()->user()->username,
                                 ]);
                             } else {
@@ -275,6 +401,10 @@ class ScheduleDateController extends Controller
                                     'sc_end_time' => $dataField[$x]['PhysicianOperationalTime']['EndTime1'],
                                     'sc_umum' => $dataField[$x]['PhysicianOperationalTime']['IsNonBPJS1'],
                                     'sc_bpjs' => $dataField[$x]['PhysicianOperationalTime']['IsBPJS1'],
+                                    'sc_max_umum' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
+                                    'sc_max_bpjs' => $dataField[$x]['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
+                                    'sc_online_umum' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
+                                    'sc_online_bpjs' => $dataField[$x]['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
                                     'sc_available' => true,
                                     'created_by' => auth()->user()->username,
                                 ]);

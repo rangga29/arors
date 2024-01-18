@@ -9,12 +9,14 @@ use App\Services\APIHeaderGenerator;
 use App\Services\FisioMaxAppointment;
 use App\Services\NormConverter;
 use Carbon\Carbon;
+use Carbon\Exceptions\InvalidFormatException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use function date_default_timezone_set;
 
 class FisioAppointment extends Component
 {
@@ -26,6 +28,7 @@ class FisioAppointment extends Component
 
     public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, FisioMaxAppointment $fisioMaxAppointment): void
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->normConverter = $normConverter;
         $this->fisioMaxAppointment = $fisioMaxAppointment;
@@ -40,16 +43,23 @@ class FisioAppointment extends Component
 
     public function mount(): void
     {
-        $this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))
-            ->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
     }
 
     public function checkPatient()
     {
+        $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
-        //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
-        $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+
+        try {
+            //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
+            $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
+        } catch (InvalidFormatException) {
+            return back()->with('error', 'Format Tanggal Lahir Salah');
+        }
+
         $selectedDateFormat = ScheduleDate::where('sd_ucode', $this->selectedDate)->first();
         $selectedDateNumber = Carbon::createFromFormat('Y-m-d', $selectedDateFormat['sd_date'])->format('N');
         $maxPatients = $this->fisioMaxAppointment->getMaxPatients($selectedDateNumber, $this->service);
@@ -64,7 +74,7 @@ class FisioAppointment extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/patient/{$medicalNo}", [
+            $response = $client->get("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/patient/{$medicalNo}", [
                 'headers' => $headers,
             ]);
 
@@ -99,22 +109,22 @@ class FisioAppointment extends Component
                                 ]);
                                 return redirect()->route('fisioterapi.final', $ucode)->with('success', 'Registrasi Berhasil Dilakukan');
                             } else {
-                                session()->flash('error', 'Pasien Sudah Terdaftar Pada Tanggal Tersebut.');
+                                return back()->with('error', 'Pasien Sudah Terdaftar Pada Tanggal Tersebut.');
                             }
                         } else {
-                            session()->flash('error', 'Kuota Untuk Tanggal ' . Carbon::createFromFormat('Y-m-d', $selectedDateFormat['sd_date'])->isoFormat('dddd, DD MMMM YYYY') . ' Sudah Terpenuhi.');
+                            return back()->with('error', 'Kuota Untuk Tanggal ' . Carbon::createFromFormat('Y-m-d', $selectedDateFormat['sd_date'])->isoFormat('dddd, DD MMMM YYYY') . ' Sudah Terpenuhi.');
                         }
                     } else {
-                        session()->flash('error', 'Data Pasien Tidak Cocok');
+                        return back()->with('error', 'Data Pasien Tidak Cocok');
                     }
                 } else {
-                    session()->flash('error', 'Data Pasien Tidak Ditemukan');
+                    return back()->with('error', 'Data Pasien Tidak Ditemukan');
                 }
             } else {
-                session()->flash('error', 'Request failed. Status code: ' . $response->getStatusCode());
+                return back()->with('error', 'Request failed. Status code: ' . $response->getStatusCode());
             }
         } catch (RequestException $e) {
-            session()->flash('error', 'An error occurred: ' . $e->getMessage());
+            return back()->with('error', 'An error occurred: ' . $e->getMessage());
         }
     }
 }

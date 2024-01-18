@@ -48,7 +48,7 @@
                     <div class="col-md-6 d-flex flex-column">
                         <h2 class="mb-2">CEK JADWAL DOKTER</h2>
                         <p class="flex-grow-1 fs-4">Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
-                        <a href="../examples/" class="btn btn-three btn-lg fw-bolder px-4 mb-3">CEK JADWAL DOKTER</a>
+                        <a href="https://www.rscahyakawaluyan.com/doctors" class="btn btn-three btn-lg fw-bolder px-4 mb-3" target="_blank">CEK JADWAL DOKTER</a>
                     </div>
                 </div>
             </div>

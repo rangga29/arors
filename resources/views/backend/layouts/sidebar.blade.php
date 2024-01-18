@@ -36,25 +36,41 @@
                     <span> Dashboard </span>
                 </a>
             </li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarSchedule" aria-expanded="false" aria-controls="sidebarSchedule" class="side-nav-link">
-                    <i class="ri-calendar-todo-fill"></i>
-                    <span> Data Jadwal Dokter </span>
-                </a>
-                <div class="collapse" id="sidebarSchedule">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{ route('second', ['schedules', 'dates']) }}">Data Tanggal</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['schedules',  \Carbon\Carbon::today()->format('Y-m-d')]) }}">Data Jadwal</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('third', ['schedules', 'history', 'dates']) }}">Data Histori Jadwal</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+            @can('view appointments')
+                <li class="side-nav-item">
+                    <a href="{{ route('second', ['appointments',  \Carbon\Carbon::today()->format('Y-m-d')]) }}" class="side-nav-link">
+                        <i class="ri-book-2-fill"></i>
+                        <span> Data Appointment </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{ route('third', ['appointments', 'fisioterapi', \Carbon\Carbon::today()->format('Y-m-d')]) }}" class="side-nav-link">
+                        <i class="ri-book-3-fill"></i>
+                        <span> Data Fisioterapi </span>
+                    </a>
+                </li>
+            @endcan
+            @can('view schedule dates')
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarSchedule" aria-expanded="false" aria-controls="sidebarSchedule" class="side-nav-link">
+                        <i class="ri-calendar-todo-fill"></i>
+                        <span> Data Jadwal Dokter </span>
+                    </a>
+                    <div class="collapse" id="sidebarSchedule">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{ route('second', ['schedules', 'dates']) }}">Data Tanggal</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('second', ['schedules',  \Carbon\Carbon::today()->format('Y-m-d')]) }}">Data Jadwal</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('third', ['schedules', 'history', 'dates']) }}">Data Histori Jadwal</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            @endcan
             @can('view clinics')
                 <li class="side-nav-item">
                     <a href="{{ route('any', ['clinics']) }}" class="side-nav-link">

@@ -16,6 +16,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use function date_default_timezone_set;
 
 class Appointment extends Component
 {
@@ -27,6 +28,7 @@ class Appointment extends Component
 
     public function boot(APIHeaderGenerator $apiHeaderGenerator): void
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
     }
 
@@ -39,8 +41,8 @@ class Appointment extends Component
     {
         $this->patientData = $patientData;
         $this->serviceType = $serviceType;
-        $this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))
-            ->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
         $this->clinics = Clinic::where('cl_active', true)->where('cl_umum', true)->orderBy('cl_order', 'ASC')->get();
         $this->businessPartners = BusinessPartner::where('bp_active', true)->orderBy('bp_order', 'ASC')->get();
     }
@@ -67,6 +69,7 @@ class Appointment extends Component
     public function createAppointment()
     {
         $responses = [];
+        $link = env('API_KEY', 'rsck');
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
         $dateData = Carbon::createFromFormat('Y-m-d', ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->sd_date)->format('Ymd');
@@ -125,7 +128,7 @@ class Appointment extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/workshop/api/v2/centerback/ADT_A05_01", [
+            $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/v2/centerback/ADT_A05_01", [
                 'headers' => $headers,
                 'form_params' => $requestData
             ]);
