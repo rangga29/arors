@@ -14,16 +14,17 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right">
-                        <form class="d-flex" method="POST" action="{{ route('schedules.dates.show.redirect') }}">
-                            @csrf
-                            <div class="input-group">
+                        <div class="d-flex">
+                            <form class="input-group input-group-custom" method="POST" action="{{ route('schedules.dates.show.redirect') }}">
+                                @csrf
                                 <input type="text" class="form-control shadow border-0" name="schedule-date" id="schedule-date" data-today="{{ $date_original }}" data-schedule-date-first="{{ $schedule_date_first }}" data-schedule-date-last="{{ $schedule_date_last }}">
                                 <span class="input-group-text bg-primary border-primary text-white">
                                     <i class="ri-calendar-todo-fill fs-13"></i>
                                 </span>
-                            </div>
-                            <button type="submit" class="btn btn-primary ms-2"><i class="ri-refresh-line"></i></button>
-                        </form>
+                                <button type="submit" class="btn btn-primary ms-2"><i class="ri-refresh-line"></i></button>
+                            </form>
+                            <a href="{{ route('schedule.print', $date_original) }}" class="btn btn-info ms-2" title="PRINT JADWAL"><i class="ri-printer-line"></i></a>
+                        </div>
                     </div>
                     <h4 class="page-title">Data Jadwal Dokter - {{ $date }}</h4>
                 </div>

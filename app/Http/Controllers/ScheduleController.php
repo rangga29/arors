@@ -7,6 +7,7 @@ use App\Models\Log;
 use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use App\Services\APIHeaderGenerator;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -22,6 +23,7 @@ class ScheduleController extends Controller
     {
         $this->apiHeaderGenerator = $apiHeaderGenerator;
     }
+
     public function index($date)
     {
         $this->authorize('view', Schedule::class);
@@ -141,5 +143,22 @@ class ScheduleController extends Controller
             'lo_message' => 'UPDATE ' .  $schedule['sc_doctor_name'] . ' TANGGAL ' . Carbon::create($date)->isoFormat('DD MMMM YYYY')
         ]);
         return redirect()->route('schedules', $date)->with($type, $message);
+    }
+
+    public function printSchedule($date)
+    {
+        $fileName = Carbon::createFromFormat('Y-m-d', $date)->format('Ymd') . '_JadwalDokter';
+        $data = [
+            'title' => $fileName,
+            'date' => $date,
+            'scheduleData' => Schedule::where('sd_id', ScheduleDate::where('sd_date', $date)->first()->id)
+                ->where('sc_available', true)
+                ->get()
+        ];
+
+        $pdf = PDF::loadView('backend.schedules.print', $data)->setPaper('a4', 'portrait');
+        return response()->streamDownload(function () use ($pdf) {
+            echo $pdf->output();
+        }, $fileName . '.pdf');
     }
 }

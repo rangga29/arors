@@ -81,6 +81,7 @@ Route::prefix('administrator')->group(function () {
             Route::get('/{date}', [ScheduleController::class, 'index'])->name('schedules');
             Route::post('/{date}/available/{schedule}', [ScheduleController::class, 'available'])->name('schedule.available');
             Route::get('/{date}/update/{schedule}', [ScheduleController::class, 'update'])->name('schedule.update');
+            Route::get('/{date}/print', [ScheduleController::class, 'printSchedule'])->name('schedule.print');
         });
 
         Route::prefix('clinics')->group(function () {
