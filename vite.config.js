@@ -36,6 +36,7 @@ export default defineConfig({
 
                 'resources/js/customs/datatable.js',
 
+                'resources/js/customs/dashboard.js',
                 'resources/js/customs/appointments.js',
                 'resources/js/customs/clinics.js',
                 'resources/js/customs/schedule-dates.js',

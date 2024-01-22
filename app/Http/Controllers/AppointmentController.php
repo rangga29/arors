@@ -7,11 +7,6 @@ use App\Models\FisioterapiAppointment;
 use App\Models\ScheduleDate;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use function array_merge;
-use function redirect;
-use function strcmp;
-use function usort;
-use function view;
 
 class AppointmentController extends Controller
 {
