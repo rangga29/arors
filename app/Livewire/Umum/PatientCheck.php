@@ -39,7 +39,6 @@ class PatientCheck extends Component
         $headers = $this->apiHeaderGenerator->generateApiHeader();
 
         try {
-            //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
             $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
         } catch (InvalidFormatException) {
             return back()->with('error', 'Format Tanggal Lahir Salah');

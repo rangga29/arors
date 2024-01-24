@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class Clinic extends Model
 {
-    protected $fillable = ['cl_ucode', 'cl_code', 'cl_name', 'cl_order', 'cl_umum', 'cl_bpjs', 'cl_active', 'created_by', 'updated_by'];
+    protected $fillable = ['cl_ucode', 'cl_code', 'cl_code_bpjs', 'cl_name', 'cl_order', 'cl_umum', 'cl_bpjs', 'cl_active', 'created_by', 'updated_by'];
 
     public function getRouteKeyName(): string
     {

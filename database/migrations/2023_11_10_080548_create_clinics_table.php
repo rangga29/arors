@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('cl_ucode')->unique();
             $table->string('cl_code');
+            $table->string('cl_code_bpjs');
             $table->string('cl_name');
             $table->bigInteger('cl_order');
             $table->boolean('cl_umum')->default(true);

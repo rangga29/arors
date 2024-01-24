@@ -9,6 +9,7 @@ use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use App\Models\UmumAppointment;
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -16,7 +17,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function date_default_timezone_set;
 
 class Appointment extends Component
 {
@@ -25,11 +25,13 @@ class Appointment extends Component
     public $phone_number, $selectedDate, $selectedClinic, $selectedDoctor, $selectedBusinessPartner;
 
     protected APIHeaderGenerator $apiHeaderGenerator;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, AppointmentDate $appointmentDate): void
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
@@ -41,7 +43,8 @@ class Appointment extends Component
     {
         $this->patientData = $patientData;
         $this->serviceType = $serviceType;
-        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
         //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
         $this->clinics = Clinic::where('cl_active', true)->where('cl_umum', true)->orderBy('cl_order', 'ASC')->get();
         $this->businessPartners = BusinessPartner::where('bp_active', true)->orderBy('bp_order', 'ASC')->get();

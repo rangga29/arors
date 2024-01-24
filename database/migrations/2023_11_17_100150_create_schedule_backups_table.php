@@ -21,10 +21,14 @@ return new class extends Migration {
             $table->time('scb_end_time');
             $table->boolean('scb_umum');
             $table->boolean('scb_bpjs');
-            $table->string('scb_max_umum');
-            $table->string('scb_max_bpjs');
-            $table->string('scb_online_umum');
-            $table->string('scb_online_bpjs');
+            $table->integer('scb_counter_max_umum');
+            $table->integer('scb_max_umum');
+            $table->integer('scb_counter_max_bpjs');
+            $table->integer('scb_max_bpjs');
+            $table->integer('scb_counter_online_umum');
+            $table->integer('scb_online_umum');
+            $table->integer('scb_counter_online_bpjs');
+            $table->integer('scb_online_bpjs');
             $table->boolean('scb_available');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

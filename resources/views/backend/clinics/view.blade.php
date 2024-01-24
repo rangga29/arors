@@ -49,6 +49,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Kode</th>
+                                <th>Kode BPJS</th>
                                 <th>Nama</th>
                                 <th>Umum</th>
                                 <th>BPJS</th>
@@ -67,6 +68,7 @@
                                 <tr>
                                     <th scope="row">{{ $clinic->cl_order }}</th>
                                     <td>{{ $clinic->cl_code }}</td>
+                                    <td>{{ $clinic->cl_code_bpjs }}</td>
                                     <td>{{ $clinic->cl_name }}</td>
                                     <td>
                                         <span class="fs-20 px-1">
@@ -100,10 +102,10 @@
                                         <td>{{ $clinic->updated_by }}
                                     @endhasanyrole
                                     @if(auth()->user()->can('edit clinics') || auth()->user()->can('delete clinics'))
-                                        <td style="max-width: 50px;">
+                                        <td style="max-width: 6px;">
                                             <div class="d-flex align-content-center">
                                                 @can('edit clinics')
-                                                    <button type="button" class="btn btn-sm btn-warning ms-2 cl-edit" title="EDIT DATA" data-bs-toggle="modal" data-bs-target="#edit-modal" data-clinic-ucode="{{ $clinic->cl_ucode }}">
+                                                    <button type="button" class="btn btn-sm btn-warning cl-edit" title="EDIT DATA" data-bs-toggle="modal" data-bs-target="#edit-modal" data-clinic-ucode="{{ $clinic->cl_ucode }}">
                                                         <i class="ri-file-edit-fill"></i>
                                                     </button>
                                                 @endcan
@@ -111,7 +113,7 @@
                                                     <form method="POST" action="{{ route('clinics.destroy', $clinic->cl_ucode) }}">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" class="btn btn-sm btn-danger ms-2" title="DELETE DATA" onclick="return confirm('Yakin Ingin Menghapus Data?')">
+                                                        <button type="submit" class="btn btn-sm btn-danger ms-1" title="DELETE DATA" onclick="return confirm('Yakin Ingin Menghapus Data?')">
                                                             <i class="ri-delete-bin-fill"></i>
                                                         </button>
                                                     </form>
@@ -141,6 +143,10 @@
                                 <div class="mb-3">
                                     <label for="add_cl_code" class="form-label">Kode Klinik</label>
                                     <input type="text" class="form-control" name="cl_code" id="add_cl_code" placeholder="Kode Klinik" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="add_cl_code_bpjs" class="form-label">Kode BPJS Klinik</label>
+                                    <input type="text" class="form-control" name="cl_code_bpjs" id="add_cl_code_bpjs" placeholder="Kode BPJS Klinik" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="add_cl_name" class="form-label">Nama Klinik</label>
@@ -202,6 +208,10 @@
                                 <div class="mb-3">
                                     <label for="edit_cl_code" class="form-label">Kode Klinik</label>
                                     <input type="text" class="form-control" name="cl_code" id="edit_cl_code" placeholder="Kode Klinik" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit_cl_code_bpjs" class="form-label">Kode BPJS Klinik</label>
+                                    <input type="text" class="form-control" name="cl_code_bpjs" id="edit_cl_code_bpjs" placeholder="Kode BPJS Klinik" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="edit_cl_name" class="form-label">Nama Klinik</label>

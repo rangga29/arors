@@ -10,6 +10,7 @@ $(document).on('click', '.cl-edit', function () {
         },
         success: function (clinic) {
             $('#edit_cl_code').val(clinic.cl_code);
+            $('#edit_cl_code_bpjs').val(clinic.cl_code_bpjs);
             $('#edit_cl_name').val(clinic.cl_name);
             $('#edit_cl_order').val(clinic.cl_order);
             if (clinic.cl_umum === 1) {
