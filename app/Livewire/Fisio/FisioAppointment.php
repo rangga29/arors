@@ -6,6 +6,7 @@ use App\Models\FisioterapiAppointment;
 use App\Models\ScheduleDate;
 use App\Models\UmumAppointment;
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
 use App\Services\FisioMaxAppointment;
 use App\Services\NormConverter;
 use Carbon\Carbon;
@@ -16,7 +17,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function date_default_timezone_set;
 
 class FisioAppointment extends Component
 {
@@ -25,13 +25,15 @@ class FisioAppointment extends Component
     protected APIHeaderGenerator $apiHeaderGenerator;
     protected NormConverter $normConverter;
     protected FisioMaxAppointment $fisioMaxAppointment;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, FisioMaxAppointment $fisioMaxAppointment): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, FisioMaxAppointment $fisioMaxAppointment, AppointmentDate $appointmentDate): void
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->normConverter = $normConverter;
         $this->fisioMaxAppointment = $fisioMaxAppointment;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
@@ -44,7 +46,8 @@ class FisioAppointment extends Component
     public function mount(): void
     {
         //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
-        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
     }
 
     public function checkPatient()

@@ -32,7 +32,7 @@
                             <a href="{{ route('fisioterapi') }}" class="btn btn-one btn-lg px-2 mb-4 fs-4 fw-bolder d-block custom-home-btn">PASIEN FISIOTERAPI</a>
                         </div>
                         <div class="col-12">
-                            <a href="{{ route('baru') }}" class="btn btn-two btn-lg px-2 mb-2 fs-4 fw-bolder d-block custom-home-btn">PASIEN BARU UMUM / KONTRAKTOR</a>
+                            <a href="{{ route('baru') }}" class="btn btn-two btn-lg px-2 mb-2 fs-4 fw-bolder d-block custom-home-btn">PASIEN BARU UMUM</a>
                         </div>
                     </div>
                 </div>
@@ -40,14 +40,14 @@
             <div class="container my-4">
                 <div class="row g-5">
                     <div class="col-md-6 d-flex flex-column">
-                        <h2 class="mb-2">CEK NOMOR ANTRIAN</h2>
-                        <p class="flex-grow-1 fs-4">Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>
+                        <h2 class="mb-3">CEK NOMOR ANTRIAN</h2>
+                        {{--<p class="flex-grow-1 fs-4">Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>--}}
                         <a href="../examples/" class="btn btn-three btn-lg fw-bolder px-4 mb-3">CEK NOMOR ANTRIAN</a>
                     </div>
 
                     <div class="col-md-6 d-flex flex-column">
-                        <h2 class="mb-2">CEK JADWAL DOKTER</h2>
-                        <p class="flex-grow-1 fs-4">Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+                        <h2 class="mb-3">CEK JADWAL DOKTER</h2>
+                        {{--<p class="flex-grow-1 fs-4">Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>--}}
                         <a href="https://www.rscahyakawaluyan.com/doctors" class="btn btn-three btn-lg fw-bolder px-4 mb-3" target="_blank">CEK JADWAL DOKTER</a>
                     </div>
                 </div>

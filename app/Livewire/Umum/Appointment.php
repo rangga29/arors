@@ -63,7 +63,9 @@ class Appointment extends Component
             $this->doctors = Schedule::where('sd_id', ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->id)
                 ->where('sc_clinic_code', Clinic::where('cl_ucode', $this->selectedClinic)->first()->cl_code)
                 ->where('sc_available', true)
-                ->where('sc_umum', true)->get();
+                ->where('sc_umum', true)
+                ->where('sc_counter_online_umum', '>=','sc_online_umum')
+                ->get();
         } else {
             $this->doctors = null;
         }
@@ -79,7 +81,11 @@ class Appointment extends Component
         $doctorData = Schedule::where('sc_ucode', $this->selectedDoctor)->first();
 
         if($doctorData['sc_available'] == 0) {
-            return redirect()->route('umum')->with('error', 'Jadwal Dokter Tidak Tersedia.');
+            return redirect()->route('umum')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
+        }
+
+        if($doctorData['sc_counter_online_umum'] >= $doctorData['sc_online_umum']) {
+            return redirect()->route('umum')->with('error', 'Kuota Pasien Umum / Asuransi [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Sudah Terpenuhi');
         }
 
         if($this->serviceType == 'umum') {
@@ -162,6 +168,8 @@ class Appointment extends Component
                             'uap_birthday' => $this->patientData['DateOfBirth'],
                             'uap_phone' => $this->phone_number,
                         ]);
+                        Schedule::where('id', $doctorData['id'])->increment('sc_counter_max_umum');
+                        Schedule::where('id', $doctorData['id'])->increment('sc_counter_online_umum');
                         return redirect()->route('umum.final', $dataField['AppointmentID'])->with('success', 'Registrasi Berhasil Dilakukan');
                     } else {
                         $appointmentData = \App\Models\Appointment::create([
@@ -182,6 +190,8 @@ class Appointment extends Component
                             'aap_birthday' => $this->patientData['DateOfBirth'],
                             'aap_phone' => $this->phone_number,
                         ]);
+                        Schedule::where('id', $doctorData['id'])->increment('sc_counter_max_umum');
+                        Schedule::where('id', $doctorData['id'])->increment('sc_counter_online_umum');
                         return redirect()->route('asuransi.final', $dataField['AppointmentID'])->with('success', 'Registrasi Berhasil Dilakukan');
                     }
                 } else {

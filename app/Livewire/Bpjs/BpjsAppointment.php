@@ -9,6 +9,7 @@ use App\Models\NewAppointment;
 use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -16,9 +17,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function date_default_timezone_set;
-use function dd;
-use function redirect;
 
 class BpjsAppointment extends Component
 {
@@ -27,11 +25,13 @@ class BpjsAppointment extends Component
     public $phone_number, $selectedDate, $selectedClinic, $selectedDoctor, $no_skdp;
 
     protected APIHeaderGenerator $apiHeaderGenerator;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, AppointmentDate $appointmentDate): void
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
@@ -39,12 +39,18 @@ class BpjsAppointment extends Component
         return view('livewire.bpjs.bpjs-appointment')->layout('frontend.layout');
     }
 
-    public function mount($patientData): void
+    public function mount($patientData, $bpjsData): void
     {
+        $this->bpjsData = $bpjsData;
         $this->patientData = $patientData;
+        $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
         //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
-        $this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
-        $this->clinics = Clinic::where('cl_active', true)->where('cl_bpjs', true)->orderBy('cl_order', 'ASC')->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        $this->clinics = Clinic::where('cl_active', true)
+            ->where('cl_bpjs', true)
+            ->where('cl_code_bpjs', $this->bpjsData['poliRujukan']['kode'])
+            ->orderBy('cl_order', 'ASC')
+            ->get();
     }
 
     public function updated($propertyName): void
@@ -60,7 +66,9 @@ class BpjsAppointment extends Component
             $this->doctors = Schedule::where('sd_id', ScheduleDate::where('sd_ucode', $this->selectedDate)->first()->id)
                 ->where('sc_clinic_code', Clinic::where('cl_ucode', $this->selectedClinic)->first()->cl_code)
                 ->where('sc_available', true)
-                ->where('sc_bpjs', true)->get();
+                ->where('sc_bpjs', true)
+                ->where('sc_counter_online_bpjs', '>=','sc_online_bpjs')
+                ->get();
         } else {
             $this->doctors = null;
         }
@@ -77,7 +85,11 @@ class BpjsAppointment extends Component
         $doctorData = Schedule::where('sc_ucode', $this->selectedDoctor)->first();
 
         if($doctorData['sc_available'] == 0) {
-            return redirect()->route('bpjs')->with('error', 'Jadwal Dokter Tidak Tersedia.');
+            return redirect()->route('umum')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
+        }
+
+        if($doctorData['sc_counter_online_bpjs'] >= $doctorData['sc_online_bpjs']) {
+            return redirect()->route('bpjs')->with('error', 'Kuota Pasien BPJS [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Sudah Terpenuhi');
         }
 
         if(BpjsKesehatanAppointment::whereHas('appointment.schedule.scheduleDate', function ($query) use ($sdDate) {
@@ -148,6 +160,8 @@ class BpjsAppointment extends Component
                         'bap_ppk1' => $this->bpjsData['noKunjungan'],
                         'bap_skdp' => $this->no_skdp
                     ]);
+                    Schedule::where('id', $doctorData['id'])->increment('sc_counter_max_bpjs');
+                    Schedule::where('id', $doctorData['id'])->increment('sc_counter_online_bpjs');
                     return redirect()->route('bpjs.final', $dataField['AppointmentID'])->with('success', 'Registrasi Berhasil Dilakukan');
                 } else {
                     return redirect()->route('bpjs')->with('error', $data['Status'] . ' - ' . $data['Remarks']);

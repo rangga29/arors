@@ -116,10 +116,10 @@ class ScheduleController extends Controller
                                 'sc_end_time' => $data['PhysicianOperationalTime']['EndTime1'],
                                 'sc_umum' => $data['PhysicianOperationalTime']['IsNonBPJS1'],
                                 'sc_bpjs' => $data['PhysicianOperationalTime']['IsBPJS1'],
-                                'sc_max_umum' => $data['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
-                                'sc_max_bpjs' => $data['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
-                                'sc_online_umum' => $data['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
-                                'sc_online_bpjs' => $data['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
+                                'sc_max_umum' => $data['PhysicianOperationalTime']['MaximumAppointmentNonBPJS1'],
+                                'sc_max_bpjs' => $data['PhysicianOperationalTime']['MaximumAppointmentBPJS1'],
+                                'sc_online_umum' => $data['PhysicianOperationalTime']['OnlineAppointmentNonBPJS1'],
+                                'sc_online_bpjs' => $data['PhysicianOperationalTime']['OnlineAppointmentBPJS1'],
                                 'updated_by' => auth()->user()->username,
                             ]);
                         }

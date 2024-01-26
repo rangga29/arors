@@ -13,10 +13,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
-use function back;
-use function base64_decode;
-use function openssl_decrypt;
-use const OPENSSL_RAW_DATA;
 
 class BpjsPatientCheck extends Component
 {
@@ -48,7 +44,6 @@ class BpjsPatientCheck extends Component
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();
 
         try {
-            //$birthdate = Carbon::createFromFormat('Y-m-d', $this->birthday)->format('Ymd');
             $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
         } catch (InvalidFormatException) {
             return back()->with('error', 'Format Tanggal Lahir Salah');
@@ -101,10 +96,10 @@ class BpjsPatientCheck extends Component
                                     $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
                                     $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
 
-                                    for ($i = 1; $i <= 50; $i++) {
+                                    for ($i = 1; $i <= 100; $i++) {
                                         $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
                                         if(!$bpjs_decryptResult) {
-                                            if ($i === 50) {
+                                            if ($i === 100) {
                                                 return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
                                             }
                                         } else {
