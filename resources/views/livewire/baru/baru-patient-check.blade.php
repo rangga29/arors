@@ -13,6 +13,11 @@
         <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
         <h2>REGISTRASI PASIEN BARU</h2>
         <p class="lead fs-5">Form Registrasi Digunakan Untuk Pasien Umum Yang Belum Pernah Berobat di RSCK.</p>
+        @if(!$isOpen)
+            <div class="alert alert-danger">
+                <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
+            </div>
+        @endif
     </div>
 
     @if (session()->has('error'))
@@ -34,7 +39,7 @@
                 </div>
                 {{--<input type="date" class="form-control form-control-lg shadow border-0 form-date" name="birthday" id="birthday" wire:model="birthday" data-date="" data-date-format="DD/MM/YYYY" value="{{ $todayDate }}" autocomplete required>--}}
             </div>
-            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled">Cek Data</button>
+            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ !$isOpen ? 'disabled' : '' }}>Cek Data</button>
         </form>
     @else
         @livewire('baru.baru-appointment', ['patientData' => $patientData])

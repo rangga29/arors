@@ -4,6 +4,8 @@ namespace App\Livewire\Baru;
 
 use App\Services\APIBpjsHeaderGenerator;
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
+use App\Services\AppointmentOpen;
 use Carbon\Carbon;
 use Carbon\Exceptions\InvalidFormatException;
 use GuzzleHttp\Client;
@@ -13,9 +15,6 @@ use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
 use function back;
-use function base64_decode;
-use function openssl_decrypt;
-use const OPENSSL_RAW_DATA;
 
 class BaruPatientCheck extends Component
 {
@@ -23,22 +22,32 @@ class BaruPatientCheck extends Component
     public $isInBpjs, $patientData;
     protected APIHeaderGenerator $apiHeaderGenerator;
     protected APIBpjsHeaderGenerator $apiBpjsHeaderGenerator;
+    protected AppointmentOpen $appointmentOpen;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator, APIBpjsHeaderGenerator $apiBpjsHeaderGenerator): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, APIBpjsHeaderGenerator $apiBpjsHeaderGenerator, AppointmentOpen $appointmentOpen, AppointmentDate $appointmentDate): void
     {
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->apiBpjsHeaderGenerator = $apiBpjsHeaderGenerator;
+        $this->appointmentOpen = $appointmentOpen;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
     {
         return view('livewire.baru.baru-patient-check', [
-            'todayDate' => Carbon::today()->format('Y-m-d')
+            'todayDate' => Carbon::today()->format('Y-m-d'),
+            'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
         ])->layout('frontend.layout');
     }
 
     public function checkPatient()
     {
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
+
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();
 

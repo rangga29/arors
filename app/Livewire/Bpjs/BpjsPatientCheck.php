@@ -4,6 +4,8 @@ namespace App\Livewire\Bpjs;
 
 use App\Services\APIBpjsHeaderGenerator;
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
+use App\Services\AppointmentOpen;
 use App\Services\NormConverter;
 use Carbon\Carbon;
 use Carbon\Exceptions\InvalidFormatException;
@@ -13,6 +15,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function back;
 
 class BpjsPatientCheck extends Component
 {
@@ -21,23 +24,33 @@ class BpjsPatientCheck extends Component
     protected APIHeaderGenerator $apiHeaderGenerator;
     protected NormConverter $normConverter;
     protected APIBpjsHeaderGenerator $apiBpjsHeaderGenerator;
+    protected AppointmentOpen $appointmentOpen;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, APIBpjsHeaderGenerator $apiBpjsHeaderGenerator): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, APIBpjsHeaderGenerator $apiBpjsHeaderGenerator, AppointmentOpen $appointmentOpen, AppointmentDate $appointmentDate): void
     {
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->normConverter = $normConverter;
         $this->apiBpjsHeaderGenerator = $apiBpjsHeaderGenerator;
+        $this->appointmentOpen = $appointmentOpen;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
     {
         return view('livewire.bpjs.bpjs-patient-check', [
-            'todayDate' => Carbon::today()->format('Y-m-d')
+            'todayDate' => Carbon::today()->format('Y-m-d'),
+            'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
         ])->layout('frontend.layout');
     }
 
     public function checkPatient()
     {
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
+
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();

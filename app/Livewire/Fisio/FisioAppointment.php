@@ -7,6 +7,7 @@ use App\Models\ScheduleDate;
 use App\Models\UmumAppointment;
 use App\Services\APIHeaderGenerator;
 use App\Services\AppointmentDate;
+use App\Services\AppointmentOpen;
 use App\Services\FisioMaxAppointment;
 use App\Services\NormConverter;
 use Carbon\Carbon;
@@ -17,6 +18,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use function back;
 
 class FisioAppointment extends Component
 {
@@ -25,21 +27,25 @@ class FisioAppointment extends Component
     protected APIHeaderGenerator $apiHeaderGenerator;
     protected NormConverter $normConverter;
     protected FisioMaxAppointment $fisioMaxAppointment;
+    protected AppointmentOpen $appointmentOpen;
     protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, FisioMaxAppointment $fisioMaxAppointment, AppointmentDate $appointmentDate): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, FisioMaxAppointment $fisioMaxAppointment, AppointmentOpen $appointmentOpen, AppointmentDate $appointmentDate): void
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->normConverter = $normConverter;
         $this->fisioMaxAppointment = $fisioMaxAppointment;
+        $this->appointmentOpen = $appointmentOpen;
         $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
     {
         return view('livewire.fisio.fisio-appointment', [
-            'todayDate' => Carbon::today()->format('Y-m-d')
+            'todayDate' => Carbon::today()->format('Y-m-d'),
+            'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
         ])->layout('frontend.layout');
     }
 
@@ -52,6 +58,10 @@ class FisioAppointment extends Component
 
     public function checkPatient()
     {
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
+
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
@@ -85,6 +95,10 @@ class FisioAppointment extends Component
                 $data = json_decode($response->getBody(), true);
                 if (isset($data['Data'])) {
                     $dataField = json_decode($data['Data'], true);
+                    $existingAppointment = FisioterapiAppointment::where('sd_id', $selectedDateFormat['id'])->where('fap_norm', $dataField['MedicalNo'])->first();
+                    if($existingAppointment){
+                        return back()->with('error', 'Pasien Sudah Terdaftar Pada Tanggal Tersebut.');
+                    }
                     if ($birthdate == $dataField['DateOfBirth']) {
                         if($currentPatients < $maxPatients) {
                             $checkNorm = FisioterapiAppointment::where('sd_id', $selectedDateFormat['id'])->where('fap_type', $this->service)->where('fap_norm', $dataField['MedicalNo'])->count();
@@ -103,8 +117,8 @@ class FisioAppointment extends Component
                                     'fap_token' => strtoupper($token),
                                     'fap_type' => $this->service,
                                     'fap_queue' => $currentPatients + 1,
-                                    'fap_registration_time' => Carbon::createFromFormat('H:i', '07:00')->addMinutes((30 * ($currentPatients + 1)))->format('H:i'),
-                                    'fap_appointment_time' => Carbon::createFromFormat('H:i', '07:00')->addMinutes((30 * ($currentPatients + 1)))->addMinutes(30)->format('H:i'),
+                                    'fap_registration_time' => Carbon::createFromFormat('H:i', '07:30')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i'),
+                                    'fap_appointment_time' => Carbon::createFromFormat('H:i', '07:30')->addMinutes((7 * ($currentPatients)))->format('H:i'),
                                     'fap_norm' => $dataField['MedicalNo'],
                                     'fap_name' => $dataField['FullName'],
                                     'fap_birthday' => Carbon::createFromFormat('Ymd', $dataField['DateOfBirth'])->format('Y-m-d'),

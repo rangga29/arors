@@ -3,6 +3,8 @@
 namespace App\Livewire\Umum;
 
 use App\Services\APIHeaderGenerator;
+use App\Services\AppointmentDate;
+use App\Services\AppointmentOpen;
 use App\Services\NormConverter;
 use Carbon\Carbon;
 use Carbon\Exceptions\InvalidFormatException;
@@ -11,6 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
+use function back;
 
 class PatientCheck extends Component
 {
@@ -18,22 +21,32 @@ class PatientCheck extends Component
     public $isInMedin, $serviceType, $patientData;
     protected APIHeaderGenerator $apiHeaderGenerator;
     protected NormConverter $normConverter;
+    protected AppointmentOpen $appointmentOpen;
+    protected AppointmentDate $appointmentDate;
 
-    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter): void
+    public function boot(APIHeaderGenerator $apiHeaderGenerator, NormConverter $normConverter, AppointmentOpen $appointmentOpen, AppointmentDate $appointmentDate): void
     {
         $this->apiHeaderGenerator = $apiHeaderGenerator;
         $this->normConverter = $normConverter;
+        $this->appointmentOpen = $appointmentOpen;
+        $this->appointmentDate = $appointmentDate;
     }
 
     public function render()
     {
         return view('livewire.umum.patient-check', [
-            'todayDate' => Carbon::today()->format('Y-m-d')
+            'todayDate' => Carbon::today()->format('Y-m-d'),
+            'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
         ])->layout('frontend.layout');
     }
 
     public function checkPatient()
     {
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
+
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();

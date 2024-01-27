@@ -13,6 +13,11 @@
         <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
         <h2>REGISTRASI PASIEN FISIOTERAPI</h2>
         <p class="lead fs-5">Form Registrasi Dikhususkan Untuk Pasien Fisioterapi</p>
+        @if(!$isOpen)
+            <div class="alert alert-danger">
+                <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
+            </div>
+        @endif
     </div>
 
     @if (session()->has('error'))
@@ -20,10 +25,10 @@
             <span class="fs-4">{{ session('error') }}</span>
         </div>
     @endif
-    
+
     <form wire:submit.prevent="checkPatient">
         <div class="mb-3">
-            <label for="norm" class="form-label fs-4">No Medical Record (NORM)</label>
+            <label for="norm" class="form-label fs-4">No Rekam Medis (NORM)</label>
             <input type="text" class="form-control form-control-lg shadow border-0" name="norm" id="norm" wire:model="norm" placeholder="No Medical Record (NORM)" maxlength="8" oninput="this.value = this.value.replace(/\D/g, '');" autofocus autocomplete required>
         </div>
         <div class="mb-3">
@@ -54,7 +59,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled">Submit</button>
+        <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ !$isOpen ? 'disabled' : '' }}>Submit</button>
     </form>
 </main>
 
