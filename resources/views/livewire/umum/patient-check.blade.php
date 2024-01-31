@@ -13,7 +13,7 @@
         <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
         <h2>REGISTRASI PASIEN UMUM / KONTRAKTOR</h2>
         <p class="lead fs-5">Form Registrasi Digunakan Untuk Pasien Umum / Asuransi Yang Sudah Memiliki Nomor Rekam Medis (NORM)</p>
-        @if(!$isOpen)
+        @if($isOpen)
             <div class="alert alert-danger">
                 <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
             </div>
@@ -47,7 +47,7 @@
                     <option value="asuransi">Pasien Asuransi / Kontraktor</option>
                 </select>
             </div>
-            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ !$isOpen ? 'disabled' : '' }}>Cek Data</button>
+            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ $isOpen ? 'disabled' : '' }}>Cek Data</button>
         </form>
     @else
         @livewire('umum.appointment', ['patientData' => $patientData, 'serviceType' => $serviceType])

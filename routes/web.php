@@ -15,6 +15,8 @@ use App\Livewire\Baru\BaruFinal;
 use App\Livewire\Baru\BaruPatientCheck;
 use App\Livewire\Bpjs\BpjsFinal;
 use App\Livewire\Bpjs\BpjsPatientCheck;
+use App\Livewire\Cek\CekNik;
+use App\Livewire\Cek\CekNorm;
 use App\Livewire\Fisio\FisioAppointment;
 use App\Livewire\Fisio\FisioFinal;
 use App\Livewire\Umum\AsuransiFinal;
@@ -36,6 +38,9 @@ Route::get('/fisioterapi/{code}', FisioFinal::class)->name('fisioterapi.final');
 
 Route::get('/baru', BaruPatientCheck::class)->name('baru');
 Route::get('/baru/{code}', BaruFinal::class)->name('baru.final');
+
+Route::get('/cek-antrian/norm', CekNorm::class)->name('cek-antrian.norm');
+Route::get('/cek-antrian/nik', CekNik::class)->name('cek-antrian.nik');
 
 Route::redirect('/dashboard', '/administrator/dashboard');
 Route::prefix('administrator')->group(function () {

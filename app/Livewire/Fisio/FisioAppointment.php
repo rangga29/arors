@@ -18,7 +18,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function back;
 
 class FisioAppointment extends Component
 {
@@ -58,9 +57,9 @@ class FisioAppointment extends Component
 
     public function checkPatient()
     {
-        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-            return back();
-        }
+//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+//            return back();
+//        }
 
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);

@@ -43,9 +43,9 @@ class BaruPatientCheck extends Component
 
     public function checkPatient()
     {
-        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-            return back();
-        }
+//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+//            return back();
+//        }
 
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();

@@ -42,9 +42,9 @@ class PatientCheck extends Component
 
     public function checkPatient()
     {
-        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-            return back();
-        }
+//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+//            return back();
+//        }
 
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);

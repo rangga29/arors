@@ -40,7 +40,7 @@
             <div class="container my-4">
                 <div class="row g-5">
                     <div class="col-md-6 d-flex flex-column">
-                        <a href="../examples/" class="btn btn-three btn-lg fw-bolder px-4">CEK NOMOR ANTRIAN</a>
+                        <a href="{{ route('cek-antrian.norm') }}" class="btn btn-three btn-lg fw-bolder px-4">CEK NOMOR ANTRIAN</a>
                     </div>
 
                     <div class="col-md-6 d-flex flex-column">
