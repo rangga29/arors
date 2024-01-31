@@ -19,14 +19,14 @@
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NO BPJS</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['bap_bpjs'] }}</p>
+                <p class="ms-2"><i class="ri-arrow-re-double-line"></i> {{ $detailPatientData['bap_bpjs'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NO RUJUKAN</strong></p>
                 <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['bap_ppk1'] }}</p>
             </div>
             <div class="col-12 mb-1">
-                <p class="mb-0"><strong>TANGGAL REGISTRASI</strong></p>
+                <p class="mb-0"><strong>TANGGAL PENDAFTARAN</strong></p>
                 <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> {{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
             </div>
             <div class="col-12 mb-1">
@@ -46,14 +46,14 @@
                 <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> {{ $patientData['ap_token'] }}</p>
             </div>
             <div class="col-12 mb-1">
-                <p class="mb-0"><strong>WAKTU REGISTRASI ULANG</strong></p>
+                <p class="mb-0"><strong>WAKTU PENDAFTARAN ULANG</strong></p>
                 <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
             </div>
         </div>
     </div>
 
     <div class="text-start pt-2 border-top border-bottom">
-        <p class="text-break fs-4">Maksimal kedatangan adalah 1 jam setelah waktu registrasi ulang atau nomor antrian akan dianggap hangus.</p>
+        <p class="text-break fs-4">Maksimal kedatangan adalah 1 jam setelah waktu pendaftaran ulang atau nomor antrian akan dianggap hangus.</p>
         <button class="w-100 btn btn-primary text-uppercase mb-2" wire:click="downloadPdf" wire:loading.attr="disabled">Download Bukti Pendaftaran</button>
         <a href="{{ route('home') }}" class="w-100 btn btn-danger text-uppercase">Kembali Ke Halaman Utama</a>
     </div>

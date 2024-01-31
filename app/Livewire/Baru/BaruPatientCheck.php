@@ -14,7 +14,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
 use LZCompressor\LZString;
-use function back;
 
 class BaruPatientCheck extends Component
 {
@@ -103,7 +102,7 @@ class BaruPatientCheck extends Component
                     $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);
 
                     if($bpjs_result['peserta']['mr']['noMR']) {
-                        return back()->with('error', 'NIK Sudah Terdaftar di Sistem Kami dengan NORM ' . $bpjs_result['peserta']['mr']['noMR'] . '. Silahkan Daftar Sebagai Pasien Umum / BPJS.');
+                        return back()->with('error', 'NIK Sudah Terdaftar di Sistem Kami dengan NORM ' . $bpjs_result['peserta']['mr']['noMR'] . '. Silahkan Registrasi Sebagai Pasien Umum / Kontraktor.');
                     } else if($bpjs_result['peserta']['tglLahir'] != $birthdateBpjs) {
                         return back()->with('error', 'Tanggal Lahir Tidak Cocok.');
                     } else {

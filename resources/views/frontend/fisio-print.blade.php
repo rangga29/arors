@@ -97,7 +97,7 @@
             <p><strong>NO. HANDPHONE : </strong>{{ $patientData['fap_phone'] }}</p>
         </div>
         <div class="items">
-            <p><strong>TANGGAL REGISTRASI : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
+            <p><strong>TANGGAL PENDAFTARAN : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
         </div>
         <div class="items">
             <p><strong>NAMA KLINIK : </strong>{{ $patientData['fap_type'] == 'fisio_umum' ? 'FISIOTERAPI UMUM' : 'FISIOTERAPI BPJS' }}</p>
@@ -109,10 +109,13 @@
             <p><strong>KODE TOKEN : </strong>{{ $patientData['fap_token'] }}</p>
         </div>
         <div class="items">
-            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['fap_registration_time'])->format('H:i') }} WIB</p>
+            <p><strong>WAKTU PENDAFTARAN ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['fap_registration_time'])->format('H:i') }} WIB</p>
         </div>
         <hr>
-        <p style="font-size: 16px;">Maksimal kedatangan adalah 1 jam setelah waktu registrasi ulang atau nomor antrian akan dianggap hangus.</p>
+        <p style="font-size: 16px;">Mohon datang tepat waktu sesuai waktu pendaftaran ulang.</p>
+        <p style="font-size: 16px;">Nomor antrian ini adalah nomor antrian tindakan di Fisioterapi.</p>
+        <p style="font-size: 16px;">Apabila pasien datang tidak sesuai jam daftar ulang, maka syarat dan ketentuan berlaku.</p>
+        <p style="font-size: 16px;">Untuk konfirmasi kepastian jadwal praktek dokter atau terdapat pertanyaan dapat menghubungi kontak Customer Service di nomor Whatsapp <b>0812 1111 8009</b></p>
         <footer>
             <p style="font-size: 8px;">CREATED DATE : {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $patientData['created_at'])->isoFormat('DD MMMM YYYY -- hh:mm:ss') }}</p>
         </footer>

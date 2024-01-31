@@ -30,7 +30,7 @@ class BaruFinal extends Component
 
     public function downloadPdf()
     {
-        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_BuktiRegolPasienBaruRSCK';
+        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->detailPatientData['nap_ssn'] . '_BuktiRegolPasienBaruRSCK';
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,

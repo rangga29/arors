@@ -85,7 +85,7 @@ class BpjsAppointment extends Component
         $doctorData = Schedule::where('sc_ucode', $this->selectedDoctor)->first();
 
         if($doctorData['sc_available'] == 0) {
-            return redirect()->route('umum')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
+            return redirect()->route('bpjs')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
         }
 
         if($doctorData['sc_counter_online_bpjs'] >= $doctorData['sc_online_bpjs']) {

@@ -15,7 +15,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use function redirect;
 
 class BaruAppointment extends Component
 {
@@ -77,11 +76,11 @@ class BaruAppointment extends Component
         $doctorData = Schedule::where('sc_ucode', $this->selectedDoctor)->first();
 
         if($doctorData['sc_available'] == 0) {
-            return redirect()->route('umum')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
+            return redirect()->route('baru')->with('error', 'Jadwal [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Tidak Tersedia');
         }
 
         if($doctorData['sc_counter_online_umum'] >= $doctorData['sc_online_umum']) {
-            return redirect()->route('umum')->with('error', 'Kuota Pasien Umum [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Sudah Terpenuhi');
+            return redirect()->route('baru')->with('error', 'Kuota Pasien Umum [' . $doctorData['sc_clinic_name'] . ' -- ' . $doctorData['sc_doctor_name'] . '] Sudah Terpenuhi');
         }
 
         $requestData = [
@@ -130,7 +129,7 @@ class BaruAppointment extends Component
                     foreach ($checkNewAppointmentDuplicate as $checkData) {
                         $checkAppointmentDuplicate = \App\Models\Appointment::where('id', $checkData['ap_id'])->where('sc_id', $doctorData['id'])->exists();
                         if($checkAppointmentDuplicate) {
-                            return redirect()->route('baru')->with('error', 'NIK Sudah Pernah Digunakan Untuk Pendaftaran Pasien Baru');
+                            return redirect()->route('baru')->with('error', 'NIK Sudah Digunakan Untuk Pendaftaran Pasien Baru Di Dokter Yang Sama');
                         }
                     }
 

@@ -103,7 +103,7 @@
             <p><strong>NO. HANDPHONE : </strong>{{ $detailPatientData['bap_phone'] }}</p>
         </div>
         <div class="items">
-            <p><strong>TANGGAL REGISTRASI : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
+            <p><strong>TANGGAL PENDAFTARAN : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
         </div>
         <div class="items">
             <p><strong>NAMA KLINIK : </strong>{{ $scheduleData['sc_clinic_name'] }}</p>
@@ -118,10 +118,12 @@
             <p><strong>KODE TOKEN : </strong>{{ $patientData['ap_token'] }}</p>
         </div>
         <div class="items">
-            <p><strong>WAKTU REGISTRASI ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
+            <p><strong>WAKTU PENDAFTARAN ULANG : </strong>{{ \Carbon\Carbon::createFromFormat('H:i:s', $patientData['ap_registration_time'])->format('H:i') }} WIB</p>
         </div>
         <hr>
-        <p style="font-size: 16px;">Maksimal kedatangan adalah 1 jam setelah waktu registrasi ulang atau nomor antrian akan dianggap hangus.</p>
+        <p style="font-size: 16px;">Maksimal kedatangan adalah 1 jam setelah waktu pendaftaran ulang atau nomor antrian akan dianggap hangus.</p>
+        <p style="font-size: 16px;">Diwajibkan membawa KTP Asli / Kartu BPJS Asli / Kartu Indonesia Sehat serta Surat Rujukan dari PPK 1</p>
+        <p style="font-size: 16px;">Untuk konfirmasi kepastian jadwal praktek dokter atau terdapat pertanyaan dapat menghubungi kontak Customer Service di nomor Whatsapp <b>0812 1111 8009</b></p>
         <footer>
             <p style="font-size: 8px;">CREATED DATE : {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $patientData['created_at'])->isoFormat('DD MMMM YYYY -- hh:mm:ss') }}</p>
         </footer>

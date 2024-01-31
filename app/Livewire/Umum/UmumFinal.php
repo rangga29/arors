@@ -33,7 +33,7 @@ class UmumFinal extends Component
 
     public function downloadPdf()
     {
-        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->patientData['uap_norm'] . '_BuktiRegolUmumRSCK';
+        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->detailPatientData['uap_norm'] . '_BuktiRegolUmumRSCK';
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,

@@ -29,7 +29,7 @@ class BpjsFinal extends Component
 
     public function downloadPdf()
     {
-        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->patientData['bap_norm'] . '_BuktiRegolBPJSRSCK';
+        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->detailPatientData['bap_norm'] . '_BuktiRegolBPJSRSCK';
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,

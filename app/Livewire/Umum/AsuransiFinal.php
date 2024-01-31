@@ -35,7 +35,7 @@ class AsuransiFinal extends Component
 
     public function downloadPdf()
     {
-        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->patientData['aap_norm'] . '_BuktiRegolAsuransiRSCK';
+        $fileName = Carbon::createFromFormat('Y-m-d', $this->scheduleDateData['sd_date'])->format('Ymd') . '_' . $this->detailPatientData['aap_norm'] . '_BuktiRegolAsuransiRSCK';
         $data = [
             'title' => $fileName,
             'patientData' => $this->patientData,

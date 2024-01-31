@@ -40,15 +40,11 @@
             <div class="container my-4">
                 <div class="row g-5">
                     <div class="col-md-6 d-flex flex-column">
-                        <h2 class="mb-3">CEK NOMOR ANTRIAN</h2>
-                        {{--<p class="flex-grow-1 fs-4">Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>--}}
-                        <a href="../examples/" class="btn btn-three btn-lg fw-bolder px-4 mb-3">CEK NOMOR ANTRIAN</a>
+                        <a href="../examples/" class="btn btn-three btn-lg fw-bolder px-4">CEK NOMOR ANTRIAN</a>
                     </div>
 
                     <div class="col-md-6 d-flex flex-column">
-                        <h2 class="mb-3">CEK JADWAL DOKTER</h2>
-                        {{--<p class="flex-grow-1 fs-4">Ready to go beyond the starter template? Check out these open source projects that you can quickly duplicate to a new GitHub repository.</p>--}}
-                        <a href="https://www.rscahyakawaluyan.com/doctors" class="btn btn-three btn-lg fw-bolder px-4 mb-3" target="_blank">CEK JADWAL DOKTER</a>
+                        <a href="https://www.rscahyakawaluyan.com/doctors" class="btn btn-three btn-lg fw-bolder px-4" target="_blank">CEK JADWAL DOKTER</a>
                     </div>
                 </div>
             </div>

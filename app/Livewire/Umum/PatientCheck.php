@@ -13,7 +13,6 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Livewire\Component;
-use function back;
 
 class PatientCheck extends Component
 {

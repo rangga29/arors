@@ -2,7 +2,7 @@
     <div class="text-center">
         <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
         @if($service = 'umum')
-            <h2>REGISTRASI PASIEN UMUM</h2>
+            <h2>REGISTRASI PASIEN BARU UMUM</h2>
             <p class="lead fs-4 pb-2 fw-bolder border-bottom">BUKTI PENDAFTARAN</p>
         @endif
     </div>
@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-1">
-                <p class="mb-0"><strong>NORM</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['uap_norm'] }}</p>
+                <p class="mb-0"><strong>NIK</strong></p>
+                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['nap_ssn'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NAMA PASIEN</strong></p>
-                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['uap_name'] }}</p>
+                <p class="ms-2"><i class="ri-arrow-right-double-line"></i> {{ $detailPatientData['nap_name'] }}</p>
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>TANGGAL PENDAFTARAN</strong></p>
@@ -46,9 +46,6 @@
 
     <div class="text-start pt-2 border-top border-bottom">
         <p class="text-break fs-4">Maksimal kedatangan adalah 1 jam setelah waktu pendaftaran ulang atau nomor antrian akan dianggap hangus.</p>
-        @if($service = 'umum')
-            <p class="mt-2 text-break fs-4">Silahkan pendaftaran ulang secara mandiri di kios samping meja customer service.</p>
-        @endif
         <button class="w-100 btn btn-primary text-uppercase mb-2" wire:click="downloadPdf" wire:loading.attr="disabled">Download Bukti Pendaftaran</button>
         <a href="{{ route('home') }}" class="w-100 btn btn-danger text-uppercase">Kembali Ke Halaman Utama</a>
     </div>
