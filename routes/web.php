@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BusinessPartnerController;
+use App\Http\Controllers\CekBpjsController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogController;
@@ -87,6 +88,11 @@ Route::prefix('administrator')->group(function () {
             Route::post('/{date}/available/{schedule}', [ScheduleController::class, 'available'])->name('schedule.available');
             Route::get('/{date}/update/{schedule}', [ScheduleController::class, 'update'])->name('schedule.update');
             Route::get('/{date}/print', [ScheduleController::class, 'printSchedule'])->name('schedule.print');
+        });
+
+        Route::prefix('cekBpjs')->group(function () {
+           Route::get('/peserta', [CekBpjsController::class, 'showPeserta'])->name('cek-bpjs.peserta');
+           Route::get('/rujukan', [CekBpjsController::class, 'showRujukan'])->name('cek-bpjs.rujukan');
         });
 
         Route::prefix('clinics')->group(function () {

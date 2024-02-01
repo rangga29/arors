@@ -103,6 +103,22 @@
                     </a>
                 </li>
             @endcan
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarBpjs" aria-expanded="false" aria-controls="sidebarBpjs" class="side-nav-link">
+                    <i class="ri-search-eye-fill"></i>
+                    <span> Cek Data BPJS </span>
+                </a>
+                <div class="collapse" id="sidebarBpjs">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('second', ['cekBpjs', 'peserta']) }}">Data Peserta</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['cekBpjs', 'rujukan']) }}">Data Rujukan</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </ul>
         <div class="clearfix"></div>
     </div>
