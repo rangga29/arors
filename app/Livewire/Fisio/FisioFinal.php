@@ -6,6 +6,7 @@ use App\Models\FisioterapiAppointment;
 use App\Models\ScheduleDate;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class FisioFinal extends Component
@@ -14,6 +15,7 @@ class FisioFinal extends Component
 
     public function render()
     {
+        View::share('type', 'fisioterapi');
         return view('livewire.fisio.fisio-final')->layout('frontend.layout');
     }
 

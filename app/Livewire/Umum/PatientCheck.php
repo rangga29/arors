@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class PatientCheck extends Component
@@ -33,6 +34,7 @@ class PatientCheck extends Component
 
     public function render()
     {
+        View::share('type', 'umum');
         return view('livewire.umum.patient-check', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
@@ -42,9 +44,9 @@ class PatientCheck extends Component
 
     public function checkPatient()
     {
-//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-//            return back();
-//        }
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
 
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);

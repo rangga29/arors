@@ -10,10 +10,12 @@
     </div>
 
     <div class="pb-3 text-center">
-        <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
+        <a href="{{ route('home') }}">
+            <img class="d-block mx-auto mb-4" src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="" height="57">
+        </a>
         <h2>REGISTRASI PASIEN FISIOTERAPI</h2>
         <p class="lead fs-5">Form Registrasi Dikhususkan Untuk Pasien Fisioterapi</p>
-        @if($isOpen)
+        @if(!$isOpen)
             <div class="alert alert-danger">
                 <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
             </div>
@@ -59,7 +61,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ $isOpen ? 'disabled' : '' }}>Submit</button>
+        <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ !$isOpen ? 'disabled' : '' }}>Submit</button>
     </form>
 </main>
 

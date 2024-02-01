@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
 
@@ -34,6 +35,7 @@ class BaruPatientCheck extends Component
 
     public function render()
     {
+        View::share('type', 'baru');
         return view('livewire.baru.baru-patient-check', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
@@ -43,9 +45,9 @@ class BaruPatientCheck extends Component
 
     public function checkPatient()
     {
-//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-//            return back();
-//        }
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
 
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();

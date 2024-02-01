@@ -8,6 +8,7 @@ use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class BaruFinal extends Component
@@ -16,6 +17,7 @@ class BaruFinal extends Component
 
     public function render()
     {
+        View::share('type', 'baru');
         return view('livewire.baru.baru-final')->layout('frontend.layout');
     }
 

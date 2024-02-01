@@ -14,7 +14,7 @@
     <div class="container my-5">
         <header class="d-flex align-items-center pb-3 mb-3">
             <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
-                <img src="{{ asset('images/rsck.png') }}" alt="Logo" class="logo-image">
+                <img src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="Logo" class="logo-image">
             </a>
         </header>
         <main>

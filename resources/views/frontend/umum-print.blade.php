@@ -76,7 +76,7 @@
     </div>
     <div class="content-container">
         <div class="centered-image">
-            <img src="{{ public_path('images/rsck_dark.png') }}" alt="" height="30">
+            <img src="{{ public_path('images/logo_rsck_new_resize.png') }}" alt="" height="30">
         </div>
         @if($service == 'umum')
             <h2 class="title">REGISTRASI PASIEN UMUM</h2>

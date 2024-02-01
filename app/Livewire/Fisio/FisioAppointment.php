@@ -16,6 +16,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -41,6 +42,7 @@ class FisioAppointment extends Component
 
     public function render()
     {
+        View::share('type', 'fisioterapi');
         return view('livewire.fisio.fisio-appointment', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
@@ -57,9 +59,9 @@ class FisioAppointment extends Component
 
     public function checkPatient()
     {
-//        if(!$this->appointmentOpen->selectAppointmentOpen()) {
-//            return back();
-//        }
+        if(!$this->appointmentOpen->selectAppointmentOpen()) {
+            return back();
+        }
 
         $link = env('API_KEY', 'rsck');
         $medicalNo = $this->normConverter->normConverter($this->norm);

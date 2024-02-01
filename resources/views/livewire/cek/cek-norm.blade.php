@@ -10,7 +10,9 @@
     </div>
 
     <div class="pb-3 text-center">
-        <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
+        <a href="{{ route('home') }}">
+            <img class="d-block mx-auto mb-4" src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="" height="57">
+        </a>
         <h2>CEK NOMOR ANTRIAN</h2>
     </div>
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <title>Document</title>
+    <title>ARORS ADMINISTRATOR</title>
 
     @yield('css')
     @vite(['resources/scss/app.scss', 'resources/scss/icons.scss', 'resources/js/head.js'])
@@ -184,9 +184,9 @@
             <div class="row justify-content-center">
                 <div class="col-xxl-4 col-lg-5">
                     <div class="card">
-                        <div class="card-header py-3 text-center bg-primary">
+                        <div class="card-header py-3 text-center bg-secondary bg-opacity-75">
                             <a href="{{ route('any', 'index') }}">
-                                <span><img src="{{ asset('images/rsck.png') }}" alt="logo" height="60"></span>
+                                <span><img src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="logo" height="60"></span>
                             </a>
                         </div>
                         <div class="card-body p-4">

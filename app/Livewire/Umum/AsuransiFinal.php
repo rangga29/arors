@@ -8,6 +8,7 @@ use App\Models\Schedule;
 use App\Models\ScheduleDate;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class AsuransiFinal extends Component
@@ -16,6 +17,7 @@ class AsuransiFinal extends Component
 
     public function render()
     {
+        View::share('type', 'umum');
         return view('livewire.umum.asuransi-final')->layout('frontend.layout');
     }
 

@@ -12,6 +12,7 @@ use App\Services\AppointmentDate;
 use App\Services\NormConverter;
 use Carbon\Carbon;
 use Carbon\Exceptions\InvalidFormatException;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class CekNorm extends Component
@@ -30,6 +31,7 @@ class CekNorm extends Component
 
     public function render()
     {
+        View::share('type', 'cek');
         return view('livewire.cek.cek-norm', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),

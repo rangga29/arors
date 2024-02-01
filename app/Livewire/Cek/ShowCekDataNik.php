@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Cek;
 
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class ShowCekDataNik extends Component
@@ -10,6 +11,7 @@ class ShowCekDataNik extends Component
 
     public function render()
     {
+        View::share('type', 'cek');
         return view('livewire.cek.show-cek-data-nik')->layout('frontend.layout');
     }
 

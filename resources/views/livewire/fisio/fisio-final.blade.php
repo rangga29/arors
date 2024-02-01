@@ -1,6 +1,8 @@
 <main class="background">
     <div class="text-center">
-        <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
+        <a href="{{ route('home') }}">
+            <img class="d-block mx-auto mb-4" src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="" height="57">
+        </a>
         @if($service = 'umum')
             <h2>REGISTRASI PASIEN FISIOTERAPI</h2>
             <p class="lead fs-4 pb-2 fw-bolder border-bottom">BUKTI PENDAFTARAN</p>

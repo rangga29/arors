@@ -7,6 +7,7 @@ use App\Models\ScheduleDate;
 use App\Models\UmumAppointment;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class UmumFinal extends Component
@@ -15,6 +16,7 @@ class UmumFinal extends Component
 
     public function render()
     {
+        View::share('type', 'umum');
         return view('livewire.umum.umum-final')->layout('frontend.layout');
     }
 

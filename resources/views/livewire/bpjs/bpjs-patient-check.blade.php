@@ -10,10 +10,12 @@
     </div>
 
     <div class="pb-3 text-center">
-        <img class="d-block mx-auto mb-4" src="{{ asset('images/rsck.png') }}" alt="" height="57">
+        <a href="{{ route('home') }}">
+            <img class="d-block mx-auto mb-4" src="{{ asset('images/logo_rsck_new_resize.png') }}" alt="" height="57">
+        </a>
         <h2>REGISTRASI PASIEN BPJS</h2>
         <p class="lead fs-5">Form Registrasi Digunakan Untuk Pasien BPJS Yang Sudah Memiliki Nomor Rekam Medis (NORM)</p>
-        @if($isOpen)
+        @if(!$isOpen)
             <div class="alert alert-danger">
                 <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
             </div>
@@ -43,7 +45,7 @@
                 <label for="ppk1" class="form-label fs-4">No Rujukan PPK 1</label>
                 <input type="text" class="form-control form-control-lg shadow border-0" name="ppk1" id="ppk1" wire:model="ppk1" placeholder="No Rujukan PPK 1" maxlength="19" autocomplete required>
             </div>
-            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ $isOpen ? 'disabled' : '' }}>Cek Data</button>
+            <button type="submit" class="w-100 btn btn-primary btn-lg" wire:loading.attr="disabled" {{ !$isOpen ? 'disabled' : '' }}>Cek Data</button>
         </form>
     @else
         @livewire('bpjs.bpjs-appointment', ['patientData' => $patientData, 'bpjsData' => $bpjsData])

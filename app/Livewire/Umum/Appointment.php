@@ -15,6 +15,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -36,6 +37,7 @@ class Appointment extends Component
 
     public function render()
     {
+        View::share('type', 'umum');
         return view('livewire.umum.appointment')->layout('frontend.layout');
     }
 

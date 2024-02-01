@@ -17,6 +17,18 @@
         z-index: -1;
     }
 
+    &.bg-umum {
+        background-image: url('../../../../public/images/bg_umum_2024.jpg');
+    }
+
+    &.bg-bpjs {
+        background-image: url('../../../../public/images/bg_bpjs_2024.jpg');
+    }
+
+    &.bg-fisioterapi {
+        background-image: url('../../../../public/images/bg_fisio_2024.jpg');
+    }
+
     h1, h2, .text-body-emphasis {
         color: #ffffff !important;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);;

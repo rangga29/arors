@@ -13,6 +13,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -33,6 +34,7 @@ class BaruAppointment extends Component
 
     public function render()
     {
+        View::share('type', 'baru');
         return view('livewire.baru.baru-appointment')->layout('frontend.layout');
     }
 

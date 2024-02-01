@@ -12,7 +12,7 @@
     @yield('css')
     @livewireStyles
 </head>
-<body class="bg-home">
+<body class="bg-home @if($type === 'umum') bg-umum @elseif($type === 'bpjs') bg-bpjs @elseif($type === 'fisioterapi') bg-fisioterapi @endif">
     <div class="container">
         {{ $slot }}
     </div>
