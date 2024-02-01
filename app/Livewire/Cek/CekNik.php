@@ -58,7 +58,7 @@ class CekNik extends Component
             })->get();
 
         if ($newAppointmentExists->count() === 0) {
-            return back()->with('error', 'Tidak Ada Data');
+            return back()->with('error', 'Data Pendaftaran Tidak Ditemukan');
         } else {
             $this->isHaveAppointment = true;
             $this->newData = $newAppointmentExists;

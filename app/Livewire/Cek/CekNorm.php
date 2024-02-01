@@ -83,7 +83,7 @@ class CekNorm extends Component
             })->get();
 
         if ($umumAppointmentExists->count() === 0 && $asuransiAppointmentExists->count() === 0 && $fisioterapiAppointmentExists->count() === 0 && $bpjsAppointmentExists->count() === 0) {
-            return back()->with('error', 'Tidak Ada Data');
+            return back()->with('error', 'Data Pendaftaran Tidak Ditemukan');
         } else {
             $this->isHaveAppointment = true;
             $this->umumData = $umumAppointmentExists;

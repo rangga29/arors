@@ -10,4 +10,5 @@
         @endforeach
         <hr>
     @endif
+        <a href="{{ route('home') }}" class="w-100 btn btn-danger text-uppercase">Kembali Ke Halaman Utama</a>
 </div>
