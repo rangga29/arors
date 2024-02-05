@@ -46,7 +46,7 @@
                             <th>No. Handphone</th>
                             <th>Tipe</th>
                             <th>Daftar Ulang</th>
-                            <th>Appointment</th>
+                            <th>Registrasi</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -56,7 +56,7 @@
                                 <td>{{ $appData['fap_token'] }}</td>
                                 <td>{{ $appData['fap_norm'] }}</td>
                                 <td>{{ $appData['fap_name'] }}</td>
-                                <td>{{ \Carbon\Carbon::parse($appData['birthday'])->isoFormat('DD MMMM YYYY') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($appData['fap_birthday'])->isoFormat('DD MMMM YYYY') }}</td>
                                 <td>{{ $appData['fap_phone'] }}</td>
                                 <td>{{ $appData['fap_type'] == 'fisio_umum' ? 'UMUM' : 'BPJS' }}</td>
                                 <td>{{ $appData['fap_registration_time'] }}</td>

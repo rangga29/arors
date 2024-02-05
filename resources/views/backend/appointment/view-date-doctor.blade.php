@@ -47,6 +47,8 @@
                             <th>Tanggal Lahir</th>
                             <th>No. Handphone</th>
                             <th>Tipe</th>
+                            <th>Daftar Ulang</th>
+                            <th>Registrasi</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,6 +62,8 @@
                                 <td>{{ \Carbon\Carbon::parse($appData['birthday'])->isoFormat('DD MMMM YYYY') }}</td>
                                 <td>{{ $appData['phone'] }}</td>
                                 <td>{{ $appData['type'] }}</td>
+                                <td>{{ $appData['registration_time'] }}</td>
+                                <td>{{ $appData['appointment_time'] }}</td>
                             </tr>
                         @endforeach
                         </tbody>

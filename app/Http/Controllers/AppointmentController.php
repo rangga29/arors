@@ -38,6 +38,8 @@ class AppointmentController extends Controller
                         'birthday' => null,
                         'phone' => null,
                         'type' => $appointmentDetail->ap_type,
+                        'registration_time' => $appointmentDetail->ap_registration_time,
+                        'appointment_time' => $appointmentDetail->ap_appointment_time
                     ];
 
                     if ($appointmentDetail->umumAppointment) {
@@ -148,6 +150,8 @@ class AppointmentController extends Controller
                         'birthday' => null,
                         'phone' => null,
                         'type' => $appointmentDetail->ap_type,
+                        'registration_time' => $appointmentDetail->ap_registration_time,
+                        'appointment_time' => $appointmentDetail->ap_appointment_time
                     ];
 
                     if ($appointmentDetail->umumAppointment) {

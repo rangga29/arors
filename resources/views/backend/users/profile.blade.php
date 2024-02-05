@@ -13,7 +13,7 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right"></div>
-                    <h4 class="page-title">MY PROFILE</h4>
+                    <h4 class="page-title">MY ACCOUNT</h4>
                 </div>
             </div>
         </div>

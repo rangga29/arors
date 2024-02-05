@@ -58,12 +58,13 @@
                             <th rowspan="2" class="align-middle text-center">No</th>
                             <th colspan="2" class="text-center">Klinik</th>
                             <th colspan="2" class="text-center">Dokter</th>
-                            <th colspan="3" class="text-center">Operational Time</th>
-                            <th colspan="2" class="text-center">Jenis Pasien</th>
-                            <th rowspan="2" class="align-middle text-center">Ketersediaan</th>
+                            <th colspan="2" class="text-center">Operational Time</th>
+                            <th colspan="2" class="text-center">Pasien Umum</th>
+                            <th colspan="2" class="text-center">Pasien BPJS</th>
+                            <th rowspan="2" class="align-middle text-center"></th>
                             @hasanyrole('administrator|sisfo')
-                                <th rowspan="2" class="align-middle text-center">Created By</th>
-                                <th rowspan="2" class="align-middle text-center">Updated By</th>
+                            <th rowspan="2" class="align-middle text-center">CR</th>
+                            <th rowspan="2" class="align-middle text-center">UP</th>
                             @endhasanyrole
                         </tr>
                         <tr>
@@ -71,11 +72,12 @@
                             <th>Nama</th>
                             <th>Kode</th>
                             <th>Nama</th>
-                            <th>Kode</th>
                             <th>Mulai</th>
                             <th>Selesai</th>
-                            <th>Umum</th>
-                            <th>BPJS</th>
+                            <th>Max</th>
+                            <th>Online</th>
+                            <th>Max</th>
+                            <th>Online</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -86,39 +88,24 @@
                                 <td>{{ $schedule->scb_clinic_name }}</td>
                                 <td>{{ $schedule->scb_doctor_code }}</td>
                                 <td>{{ $schedule->scb_doctor_name }}</td>
-                                <td>{{ $schedule->scb_operational_time_code }}</td>
                                 <td>{{ $schedule->scb_start_time }}</td>
                                 <td>{{ $schedule->scb_end_time }}</td>
-                                <td>
-                                    <span class="fs-20 px-1">
-                                        @if($schedule->scb_umum)
-                                            <i class="ri-checkbox-circle-fill text-success"></i>
-                                        @else
-                                            <i class="ri-close-circle-fill text-danger"></i>
-                                        @endif
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="fs-20 px-1">
-                                        @if($schedule->scb_bpjs)
-                                            <i class="ri-checkbox-circle-fill text-success"></i>
-                                        @else
-                                            <i class="ri-close-circle-fill text-danger"></i>
-                                        @endif
-                                    </span>
-                                </td>
+                                <td>{{ $schedule->scb_max_umum }}</td>
+                                <td>{{ $schedule->scb_online_umum }}</td>
+                                <td>{{ $schedule->scb_max_bpjs }}</td>
+                                <td>{{ $schedule->scb_online_bpjs }}</td>
                                 <td>
                                     <span class="fs-20">
                                         @if($schedule->scb_available)
-                                            <h5><span class="badge bg-success mt-1">AKTIF</span></h5>
+                                            <i class="ri-checkbox-circle-fill text-success"></i>
                                         @else
-                                            <h5><span class="badge bg-danger mt-1">TIDAK AKTIF</span></h5>
+                                            <i class="ri-close-circle-fill text-danger"></i>
                                         @endif
                                     </span>
                                 </td>
                                 @hasanyrole('administrator|sisfo')
-                                    <td>{{ $schedule->created_by }}</td>
-                                    <td>{{ $schedule->updated_by }}</td>
+                                <td>{{ $schedule->created_by }}</td>
+                                <td>{{ $schedule->updated_by }}</td>
                                 @endhasanyrole
                             </tr>
                         @endforeach

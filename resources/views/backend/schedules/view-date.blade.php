@@ -169,7 +169,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header modal-colored-header bg-warning">
-                            <h4 class="modal-title" id="dark-header-modalLabel">Edit Data Klinik</h4>
+                            <h4 class="modal-title" id="dark-header-modalLabel">Edit Data Tanggal</h4>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -187,7 +187,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="edit_sd_holiday_desc" class="form-label">Nama Klinik</label>
+                                    <label for="edit_sd_holiday_desc" class="form-label">Deskripsi Hari Libur</label>
                                     <input type="text" class="form-control" name="sd_holiday_desc" id="edit_sd_holiday_desc" placeholder="Deskripsi Hari Libur">
                                 </div>
                                 <div class="mb-3 text-center">
