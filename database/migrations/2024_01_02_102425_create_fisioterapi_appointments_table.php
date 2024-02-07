@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('fap_norm');
             $table->string('fap_name');
             $table->date('fap_birthday');
+            $table->string('fap_gender');
             $table->string('fap_phone');
             $table->timestamps();
         });

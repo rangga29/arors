@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->string('aap_norm');
             $table->string('aap_name');
             $table->date('aap_birthday');
+            $table->string('aap_gender');
             $table->string('aap_phone');
             $table->timestamps();
         });

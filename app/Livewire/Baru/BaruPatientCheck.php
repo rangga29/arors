@@ -15,6 +15,9 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function strtotime;
+use function strval;
+use function time;
 
 class BaruPatientCheck extends Component
 {
@@ -80,7 +83,8 @@ class BaruPatientCheck extends Component
                 if($dataBpjs['metaData']['code'] == 200)
                 {
                     date_default_timezone_set('UTC');
-                    $bpjs_time_stamp = strtotime('now');
+                    //$bpjs_time_stamp = strtotime('now');
+                    $bpjs_time_stamp = strval(time() - strtotime('1970-01-01 00:00:00'));
 
                     $bpjs_consumer_id = "25796";
                     $bpjs_consumer_secret = "4qP1E30D6D";
@@ -89,10 +93,10 @@ class BaruPatientCheck extends Component
                     $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
                     $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
 
-                    for ($i = 1; $i <= 50; $i++) {
+                    for ($i = 1; $i <= 10000; $i++) {
                         $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
                         if(!$bpjs_decryptResult) {
-                            if ($i === 50) {
+                            if ($i === 10000) {
                                 return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
                             }
                         } else {

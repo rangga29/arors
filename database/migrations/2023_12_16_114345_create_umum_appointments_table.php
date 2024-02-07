@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('uap_norm');
             $table->string('uap_name');
             $table->date('uap_birthday');
+            $table->string('uap_gender');
             $table->string('uap_phone');
             $table->timestamps();
         });

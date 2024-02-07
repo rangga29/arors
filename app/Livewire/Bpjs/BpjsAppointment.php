@@ -157,6 +157,7 @@ class BpjsAppointment extends Component
                         'bap_norm' => $dataField['MedicalNo'],
                         'bap_name' => $dataField['PatientName'],
                         'bap_birthday' => $this->patientData['DateOfBirth'],
+                        'bap_gender' => $this->patientData['Gender'],
                         'bap_phone' => $this->phone_number,
                         'bap_bpjs' => $this->bpjsData['peserta']['noKartu'],
                         'bap_ppk1' => $this->bpjsData['noKunjungan'],

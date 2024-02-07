@@ -16,7 +16,6 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
-use function back;
 
 class BpjsPatientCheck extends Component
 {
@@ -90,58 +89,79 @@ class BpjsPatientCheck extends Component
                             return 1000 * pow(2, $retry);
                         }));
 
-                        try {
-                            $clientBpjs = new Client(['handler' => $handlerStackBpjs, 'verify' => false]);
-                            $responseBpjs = $clientBpjs->get("https://apijkn.bpjs-kesehatan.go.id/vclaim-rest/rujukan/{$this->ppk1}", [
-                                'headers' => $headerBpjs,
-                            ]);
+                        do {
+                            try {
+                                $clientBpjs = new Client(['handler' => $handlerStackBpjs, 'verify' => false]);
+                                $responseBpjs = $clientBpjs->get("https://apijkn.bpjs-kesehatan.go.id/vclaim-rest/rujukan/{$this->ppk1}", [
+                                    'headers' => $headerBpjs,
+                                ]);
 
-                            if ($responseBpjs->getStatusCode() == 200)
-                            {
-                                $dataBpjs = json_decode($responseBpjs->getBody(), true);
-                                if($dataBpjs['metaData']['code'] == 200)
+                                if ($responseBpjs->getStatusCode() == 200)
                                 {
-                                    date_default_timezone_set('UTC');
-                                    $bpjs_time_stamp = strtotime('now');
-
-                                    $bpjs_consumer_id = "25796";
-                                    $bpjs_consumer_secret = "4qP1E30D6D";
-
-                                    $bpjs_key_dec = $bpjs_consumer_id . $bpjs_consumer_secret . $bpjs_time_stamp;
-                                    $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
-                                    $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
-
-                                    for ($i = 1; $i <= 100; $i++) {
-                                        $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
-                                        if(!$bpjs_decryptResult) {
-                                            if ($i === 100) {
-                                                return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
-                                            }
-                                        } else {
-                                            break;
-                                        }
-                                    }
-
-                                    $bpjs_unCompressedResult = LZString::decompressFromEncodedURIComponent($bpjs_decryptResult);
-                                    $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);
-
-                                    if($bpjs_result['rujukan']['peserta']['mr']['noMR'] == $dataField['MedicalNo'] || $bpjs_result['rujukan']['peserta']['nik'] == $dataField['SSN'])
+                                    $dataBpjs = json_decode($responseBpjs->getBody(), true);
+                                    if($dataBpjs['metaData']['code'] == 200)
                                     {
-                                        $this->isInMedin = true;
-                                        $this->patientData = $dataField;
-                                        $this->bpjsData = $bpjs_result['rujukan'];
+                                        date_default_timezone_set('UTC');
+                                        //$bpjs_time_stamp = strtotime('now');
+                                        $bpjs_time_stamp = strval(time() - strtotime('1970-01-01 00:00:00'));
+
+                                        $bpjs_consumer_id = "25796";
+                                        $bpjs_consumer_secret = "4qP1E30D6D";
+
+                                        $bpjs_key_dec = $bpjs_consumer_id . $bpjs_consumer_secret . $bpjs_time_stamp;
+                                        $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
+                                        $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
+
+                                        for ($i = 1; $i <= 10000; $i++) {
+                                            $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
+                                            if(!$bpjs_decryptResult) {
+                                                if ($i === 10000) {
+                                                    return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+                                                }
+                                            } else {
+                                                break;
+                                            }
+                                        }
+
+//                                        do {
+//                                            date_default_timezone_set('UTC');
+//                                            $bpjs_time_stamp = strtotime('now');
+//
+//                                            $bpjs_consumer_id = "25796";
+//                                            $bpjs_consumer_secret = "4qP1E30D6D";
+//
+//                                            $bpjs_key_dec = $bpjs_consumer_id . $bpjs_consumer_secret . $bpjs_time_stamp;
+//                                            $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
+//                                            $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
+//
+//                                            $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
+//                                        } while (!$bpjs_decryptResult);
+//
+//                                        if(!$bpjs_decryptResult) {
+//                                            return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
+//                                        }
+
+                                        $bpjs_unCompressedResult = LZString::decompressFromEncodedURIComponent($bpjs_decryptResult);
+                                        $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);
+
+                                        if($bpjs_result['rujukan']['peserta']['mr']['noMR'] == $dataField['MedicalNo'] || $bpjs_result['rujukan']['peserta']['nik'] == $dataField['SSN'])
+                                        {
+                                            $this->isInMedin = true;
+                                            $this->patientData = $dataField;
+                                            $this->bpjsData = $bpjs_result['rujukan'];
+                                        } else {
+                                            return back()->with('error', 'No Rujukan Tidak Cocok Dengan Data Pasien.');
+                                        }
                                     } else {
-                                        return back()->with('error', 'No Rujukan Tidak Cocok Dengan Data Pasien.');
+                                        return back()->with('error', 'No Rujukan Tidak Ditemukan atau Salah.');
                                     }
                                 } else {
-                                    return back()->with('error', 'No Rujukan Tidak Ditemukan atau Salah.');
+                                    return back()->with('error', 'Request failed. Status code: ' . $response->getStatusCode());
                                 }
-                            } else {
-                                return back()->with('error', 'Request failed. Status code: ' . $response->getStatusCode());
+                            } catch (RequestException $e) {
+                                return back()->with('error', 'An error occurred: ' . $e->getMessage());
                             }
-                        } catch (RequestException $e) {
-                            return back()->with('error', 'An error occurred: ' . $e->getMessage());
-                        }
+                        } while (!$bpjs_decryptResult);
                     } else {
                         return back()->with('error', 'Data Pasien Tidak Cocok');
                     }

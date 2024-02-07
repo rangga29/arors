@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BpjsKesehatanAppointment extends Model
 {
-    protected $fillable = ['ap_id', 'bap_norm', 'bap_name', 'bap_birthday', 'bap_phone', 'bap_bpjs', 'bap_ppk1', 'bap_skdp'];
+    protected $fillable = ['ap_id', 'bap_norm', 'bap_name', 'bap_birthday', 'bap_gender', 'bap_phone', 'bap_bpjs', 'bap_ppk1', 'bap_skdp'];
 
     public function getRouteKeyName(): string
     {

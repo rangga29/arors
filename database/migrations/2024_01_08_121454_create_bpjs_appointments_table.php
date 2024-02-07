@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('bap_norm');
             $table->string('bap_name');
             $table->date('bap_birthday');
+            $table->string('bap_gender');
             $table->string('bap_phone');
             $table->string('bap_bpjs');
             $table->string('bap_ppk1');

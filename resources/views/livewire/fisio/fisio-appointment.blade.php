@@ -44,8 +44,10 @@
             <label for="service" class="form-label fs-4">Pilihan Layanan</label>
             <select class="form-select form-select-lg" name="service" id="service" wire:model="service" required>
                 <option value="" selected>Pilihan Layanan</option>
-                <option value="fisio_umum">Pasien Fisioterapi Umum</option>
-                <option value="fisio_bpjs">Pasien Fisioterapi BPJS</option>
+                <option value="fisio_umum_pagi" class="text-uppercase">Pasien Fisioterapi Umum -- Pagi</option>
+                <option value="fisio_umum_sore" class="text-uppercase">Pasien Fisioterapi Umum -- Sore</option>
+                <option value="fisio_bpjs_pagi" class="text-uppercase">Pasien Fisioterapi BPJS -- Pagi</option>
+                <option value="fisio_bpjs_sore" class="text-uppercase">Pasien Fisioterapi BPJS -- Sore</option>
             </select>
         </div>
         <div class="mb-3">

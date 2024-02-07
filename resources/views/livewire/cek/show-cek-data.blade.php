@@ -36,7 +36,11 @@
             <h5 class="fs-4 text-white">FISIOTERAPI</h5>
             @foreach($fisioterapiData as $fap)
                 <div class="card card-body bg-black bg-opacity-25">
-                    <h4 class="card-title text-white">{{ $fap->fap_type == 'bpjs_umum' ? 'FISIOTERAPI UMUM' : 'FISIOTERAPI BPJS' }}</h4>
+                    <h4 class="card-title text-white">
+                        {{ $fap->fap_type === 'fisio_umum_pagi' ? 'FISIOTERAPI UMUM PAGI' :
+                            ($fap->fap_type == 'fisio_umum_sore' ? 'FISIOTERAPI UMUM SORE' :
+                            ($fap->fap_type == 'fisio_bpjs_pagi' ? 'FISIOTERAPI BPJS PAGI' : 'FISIOTERAPI BPJS SORE')) }}
+                    </h4>
                     <a href="{{ route('fisioterapi.final', $fap->fap_ucode) }}" class="w-100 btn btn-one btn-lg mt-2 fw-bold">Bukti Pendaftaran</a>
                 </div>
             @endforeach

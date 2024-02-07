@@ -168,6 +168,7 @@ class Appointment extends Component
                             'uap_norm' => $dataField['MedicalNo'],
                             'uap_name' => $dataField['PatientName'],
                             'uap_birthday' => $this->patientData['DateOfBirth'],
+                            'uap_gender' => $this->patientData['Gender'],
                             'uap_phone' => $this->phone_number,
                         ]);
                         Schedule::where('id', $doctorData['id'])->increment('sc_counter_max_umum');
@@ -190,6 +191,7 @@ class Appointment extends Component
                             'aap_norm' => $dataField['MedicalNo'],
                             'aap_name' => $dataField['PatientName'],
                             'aap_birthday' => $this->patientData['DateOfBirth'],
+                            'aap_gender' => $this->patientData['Gender'],
                             'aap_phone' => $this->phone_number,
                         ]);
                         Schedule::where('id', $doctorData['id'])->increment('sc_counter_max_umum');

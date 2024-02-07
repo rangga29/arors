@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AsuransiAppointment extends Model
 {
-    protected $fillable = ['ap_id', 'bp_id', 'aap_norm', 'aap_name', 'aap_birthday', 'aap_phone'];
+    protected $fillable = ['ap_id', 'bp_id', 'aap_norm', 'aap_name', 'aap_birthday', 'aap_gender', 'aap_phone'];
 
     public function getRouteKeyName(): string
     {

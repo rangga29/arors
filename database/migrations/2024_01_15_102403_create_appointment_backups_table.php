@@ -20,13 +20,13 @@ return new class extends Migration {
             $table->string('apb_norm');
             $table->string('apb_name');
             $table->date('apb_birthday');
+            $table->string('apb_gender');
             $table->string('apb_phone');
             $table->string('apb_business_partner')->nullable();
             $table->string('apb_bpjs')->nullable();
             $table->string('apb_ppk1')->nullable();
             $table->string('apb_skdp')->nullable();
             $table->string('apb_ssn')->nullable();
-            $table->string('apb_gender')->nullable();
             $table->text('apb_address')->nullable();
             $table->string('apb_email')->nullable();
             $table->timestamps();

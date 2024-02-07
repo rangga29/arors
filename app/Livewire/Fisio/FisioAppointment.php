@@ -112,17 +112,32 @@ class FisioAppointment extends Component
                                     $token = Str::random(6);
                                     $tokenCheck = FisioterapiAppointment::where('fap_token', $token)->exists();
                                 } while ($tokenCheck);
+
+                                if(($this->service === 'fisio_umum_pagi' || $this->service === 'fisio_bpjs_pagi')) {
+                                    $reg_time = Carbon::createFromFormat('H:i', '07:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
+                                    $app_time = Carbon::createFromFormat('H:i', '07:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
+                                } else {
+                                    if($selectedDateNumber !== 6) {
+                                        $reg_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
+                                        $app_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
+                                    } else {
+                                        $reg_time = Carbon::createFromFormat('H:i', '12:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
+                                        $app_time = Carbon::createFromFormat('H:i', '12:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
+                                    }
+                                }
+
                                 FisioterapiAppointment::create([
                                     'sd_id' => $selectedDateFormat['id'],
                                     'fap_ucode' => $ucode,
                                     'fap_token' => strtoupper($token),
                                     'fap_type' => $this->service,
                                     'fap_queue' => $currentPatients + 1,
-                                    'fap_registration_time' => Carbon::createFromFormat('H:i', '07:30')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i'),
-                                    'fap_appointment_time' => Carbon::createFromFormat('H:i', '07:30')->addMinutes((7 * ($currentPatients)))->format('H:i'),
+                                    'fap_registration_time' => $reg_time,
+                                    'fap_appointment_time' => $app_time,
                                     'fap_norm' => $dataField['MedicalNo'],
                                     'fap_name' => $dataField['FullName'],
                                     'fap_birthday' => Carbon::createFromFormat('Ymd', $dataField['DateOfBirth'])->format('Y-m-d'),
+                                    'fap_gender' => $dataField['Gender'],
                                     'fap_phone' => $this->phone_number
                                 ]);
                                 return redirect()->route('fisioterapi.final', $ucode)->with('success', 'Registrasi Berhasil Dilakukan');
