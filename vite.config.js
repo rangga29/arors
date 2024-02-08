@@ -11,7 +11,7 @@ export default defineConfig({
 
                 'node_modules/daterangepicker/daterangepicker.css',
                 'node_modules/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css',
-                'node_modules/fullcalendar/main.min.css',
+                // 'node_modules/fullcalendar/main.min.css',
                 'node_modules/quill/dist/quill.core.css',
                 'node_modules/quill/dist/quill.snow.css',
                 'node_modules/quill/dist/quill.bubble.css',
