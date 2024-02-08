@@ -46,7 +46,7 @@ class Appointment extends Component
         $this->patientData = $patientData;
         $this->serviceType = $serviceType;
         $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
-        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->format('Y-m-d'))->get();
         //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
         $this->clinics = Clinic::where('cl_active', true)->where('cl_umum', true)->orderBy('cl_order', 'ASC')->get();
         $this->businessPartners = BusinessPartner::where('bp_active', true)->orderBy('bp_order', 'ASC')->get();
@@ -139,7 +139,7 @@ class Appointment extends Component
 
         try {
             $client = new Client(['handler' => $handlerStack, 'verify' => false]);
-            $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/v2/centerback/ADT_A05_01", [
+        $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/v2/centerback/ADT_A05_01", [
                 'headers' => $headers,
                 'form_params' => $requestData
             ]);

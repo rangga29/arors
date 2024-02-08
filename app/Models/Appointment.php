@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Appointment extends Model
 {
-    protected $fillable = ['sc_id', 'ap_ucode', 'ap_no', 'ap_opr', 'ap_token', 'ap_queue', 'ap_type', 'ap_registration_time', 'ap_appointment_time'];
+    protected $fillable = ['sc_id', 'ap_ucode', 'ap_no', 'ap_token', 'ap_queue', 'ap_type', 'ap_registration_time', 'ap_appointment_time'];
 
     public function getRouteKeyName(): string
     {

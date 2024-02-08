@@ -12,7 +12,6 @@ return new class extends Migration {
             $table->foreignId('sc_id')->constrained('schedules')->cascadeOnDelete();
             $table->string('ap_ucode')->unique();
             $table->string('ap_no');
-            $table->string('ap_opr')->nullable();
             $table->string('ap_token');
             $table->string('ap_queue');
             $table->string('ap_type');
