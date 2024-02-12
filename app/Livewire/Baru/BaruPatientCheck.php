@@ -15,6 +15,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function now;
 use function strtotime;
 use function strval;
 use function time;
@@ -42,7 +43,8 @@ class BaruPatientCheck extends Component
         return view('livewire.baru.baru-patient-check', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
-            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen(),
+            'currentHour' => now()->hour
         ])->layout('frontend.layout');
     }
 

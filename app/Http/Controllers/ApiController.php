@@ -84,7 +84,7 @@ class ApiController extends Controller
                                 'uar_ucode' => $dataField['RegistrationID'],
                                 'uar_no' => $dataField['RegistrationNo'],
                                 'uar_date' => Carbon::createFromFormat('d-M-Y', $dataField['RegistrationDate'])->format('Y-m-d'),
-                                'uar_time' => Carbon::createFromFormat('H:i', $dataField['RegistrationTime']),
+                                'uar_time' => Carbon::createFromFormat('H:i', $dataField['RegistrationTime'])->format('H:i:s'),
                                 'uar_reg_no' => $dataField['RegistrationTicketNo'],
                                 'uar_reg_status' => $dataField['RegistrationStatus'],
                                 'uar_session' => $dataField['Session'],

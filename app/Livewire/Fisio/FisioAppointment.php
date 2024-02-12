@@ -19,6 +19,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use function now;
 
 class FisioAppointment extends Component
 {
@@ -46,7 +47,8 @@ class FisioAppointment extends Component
         return view('livewire.fisio.fisio-appointment', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
-            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen(),
+            'currentHour' => now()->hour
         ])->layout('frontend.layout');
     }
 

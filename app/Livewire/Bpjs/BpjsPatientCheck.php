@@ -16,6 +16,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function now;
 
 class BpjsPatientCheck extends Component
 {
@@ -42,7 +43,8 @@ class BpjsPatientCheck extends Component
         return view('livewire.bpjs.bpjs-patient-check', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
-            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen(),
+            'currentHour' => now()->hour
         ])->layout('frontend.layout');
     }
 

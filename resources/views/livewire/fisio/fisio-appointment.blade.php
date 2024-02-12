@@ -17,7 +17,11 @@
         <p class="lead fs-5">Form Registrasi Dikhususkan Untuk Pasien Fisioterapi</p>
         @if(!$isOpen)
             <div class="alert alert-danger">
-                <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
+                @if($currentHour < 23 && $currentHour > 6)
+                    <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $appointmentDate)->isoFormat('dddd, DD MMMM YYYY')  }} Belum Dibuka</span>
+                @else
+                    <span class="fs-4">Registrasi Untuk Tanggal {{ \Carbon\Carbon::createFromFormat('Y-m-d', $todayDate)->isoFormat('dddd, DD MMMM YYYY')  }} Sudah Ditutup</span>
+                @endif
             </div>
         @endif
     </div>

@@ -14,6 +14,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
+use function now;
 
 class PatientCheck extends Component
 {
@@ -38,7 +39,8 @@ class PatientCheck extends Component
         return view('livewire.umum.patient-check', [
             'todayDate' => Carbon::today()->format('Y-m-d'),
             'appointmentDate' => $this->appointmentDate->selectAppointmentDate(),
-            'isOpen' => $this->appointmentOpen->selectAppointmentOpen()
+            'isOpen' => $this->appointmentOpen->selectAppointmentOpen(),
+            'currentHour' => now()->hour
         ])->layout('frontend.layout');
     }
 
