@@ -43,7 +43,7 @@ class BaruAppointment extends Component
         $this->patientData = $patientData;
         $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
         //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
-        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->format('Y-m-d'))->get();
         $this->clinics = Clinic::where('cl_active', true)->where('cl_umum', true)->orderBy('cl_order', 'ASC')->get();
     }
 

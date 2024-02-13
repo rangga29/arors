@@ -12,7 +12,9 @@ class AppointmentOpen {
         $currentHour = now()->hour;
         $dateData = ScheduleDate::where('sd_date', now()->copy()->addDay()->format('Y-m-d'))->first();
 
-        if ($currentHour > 17 || $currentHour < 6) {
+        //return true;
+
+        if ($currentHour >= 17 || $currentHour <= 6) {
             if ($dateData->sd_is_holiday) {
                 return true;
             } else {
