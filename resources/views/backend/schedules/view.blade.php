@@ -78,10 +78,10 @@
                                 <th>Nama</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
+                                <th>Used</th>
                                 <th>Max</th>
-                                <th>Online</th>
+                                <th>Used</th>
                                 <th>Max</th>
-                                <th>Online</th>
                             </tr>
                         </thead>
                         <tbody>

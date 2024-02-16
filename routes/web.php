@@ -62,6 +62,7 @@ Route::prefix('administrator')->group(function () {
             });
             Route::post('/show', [AppointmentController::class, 'redirectDate'])->name('appointments.show.redirect');
             Route::get('/{date}', [AppointmentController::class, 'index'])->name('appointments');
+            Route::get('/{date}/print', [AppointmentController::class, 'printAppointment'])->name('appointments.print');
             Route::post('/show/doctor', [AppointmentController::class, 'redirectDateDoctor'])->name('appointments.doctor.show.redirect');
             Route::get('/{date}/{doctor}', [AppointmentController::class, 'indexDoctor'])->name('appointments.doctor');
         });
