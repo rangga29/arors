@@ -16,3 +16,26 @@ $(document).ready(function () {
         maxDate: maxDate
     });
 });
+
+$(document).on('click', '.cl-quota', function () {
+    let scheduleDate = $(this).data('schedule-date');
+    let scheduleUcode = $(this).data('schedule-ucode');
+    $('#editQuota').attr('action', '/administrator/schedules/' + scheduleDate + '/' + scheduleUcode + '/quota');
+    $.ajax({
+        url: '/administrator/schedules/' + scheduleUcode + '/quota',
+        type: 'GET',
+        dataType: 'json',
+        beforeSend: function () {
+            $('#overlay').show(); // Show spinner
+        },
+        success: function (schedule) {
+            $('#edit_sc_online_umum').val(schedule.sc_online_umum);
+            $('#edit_sc_online_bpjs').val(schedule.sc_online_bpjs);
+            $('#overlay').hide(); // Hide spinner
+        },
+        error: function (error) {
+            console.log('Error:', error);
+            $('#overlay').hide(); // Hide spinner
+        }
+    });
+});

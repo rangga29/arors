@@ -100,7 +100,13 @@
             <p><strong>TANGGAL PENDAFTARAN : </strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $scheduleDateData['sd_date'])->isoFormat('dddd, DD MMMM YYYY') }}</p>
         </div>
         <div class="items">
-            <p><strong>NAMA KLINIK : </strong>{{ $patientData['fap_type'] == 'fisio_umum' ? 'FISIOTERAPI UMUM' : 'FISIOTERAPI BPJS' }}</p>
+            <p>
+                <strong>NAMA KLINIK : </strong>
+                {{ $patientData['fap_type'] == 'fisio_umum_pagi' ? 'FISIOTERAPI UMUM PAGI' :
+                    ($patientData['fap_type'] == 'fisio_umum_sore' ? 'FISIOTERAPI UMUM SORE' :
+                    ($patientData['fap_type'] == 'fisio_bpjs_pagi' ? 'FISIOTERAPI BPJS PAGI' : 'FISIOTERAPI BPJS SORE'))
+                }}
+            </p>
         </div>
         <div class="items">
             <p><strong>NO ANTRIAN : </strong>{{ $patientData['fap_queue'] }}</p>

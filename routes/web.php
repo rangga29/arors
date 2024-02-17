@@ -89,6 +89,8 @@ Route::prefix('administrator')->group(function () {
             Route::post('/{date}/available/{schedule}', [ScheduleController::class, 'available'])->name('schedule.available');
             Route::get('/{date}/update/{schedule}', [ScheduleController::class, 'update'])->name('schedule.update');
             Route::get('/{date}/print', [ScheduleController::class, 'printSchedule'])->name('schedule.print');
+            Route::get('/{schedule}/quota', [ScheduleController::class, 'show'])->name('schedule.show');
+            Route::put('/{date}/{schedule}/quota', [ScheduleController::class, 'updateQuota'])->name('schedule.quota.update');
         });
 
         Route::prefix('cekBpjs')->group(function () {

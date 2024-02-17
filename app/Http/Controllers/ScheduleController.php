@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clinic;
 use App\Models\Log;
 use App\Models\Schedule;
 use App\Models\ScheduleDate;
@@ -14,6 +13,10 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use function auth;
+use function date_default_timezone_set;
+use function redirect;
+use function response;
 
 class ScheduleController extends Controller
 {
@@ -160,5 +163,39 @@ class ScheduleController extends Controller
         return response()->streamDownload(function () use ($pdf) {
             echo $pdf->output();
         }, $fileName . '.pdf');
+    }
+
+    public function show(Schedule $schedule)
+    {
+        $this->authorize('update', Schedule::class);
+
+        $data = Schedule::where('sc_ucode', $schedule->sc_ucode)->first();
+
+        return response()->json($data);
+    }
+
+    public function updateQuota($date, Schedule $schedule, Request $request)
+    {
+        $this->authorize('update', Schedule::class);
+
+        if($schedule->sc_counter_online_umum > $request['sc_online_umum'] || $schedule->sc_counter_online_bpjs > $request['sc_online_bpjs']) {
+            return back()->with('danger', 'Kuota Maksimal Umum / BPJS Lebih Kecil Dari Yang Sudah Digunakan');
+        }
+
+        $schedule->update([
+            'sc_online_umum' => $request['sc_online_umum'],
+            'sc_online_bpjs' => $request['sc_online_bpjs'],
+            'updated_by' => auth()->user()->username
+        ]);
+
+        date_default_timezone_set('Asia/Jakarta');
+        Log::create([
+            'lo_time' => Carbon::now()->format('Y-m-d H:i:s'),
+            'lo_user' => auth()->user()->username,
+            'lo_ip' => \Request::ip(),
+            'lo_module' => 'SCHEDULE',
+            'lo_message' => 'UPDATE KUOTA ' .  $schedule['sc_doctor_name'] . ' TANGGAL ' . Carbon::create($date)->isoFormat('DD MMMM YYYY')
+        ]);
+        return redirect()->route('schedules', $date)->with('success', 'Kuota Dokter ' . $schedule['sc_doctor_name'] . ' Tanggal ' . Carbon::create($date)->isoFormat('DD MMMM YYYY') . ' Berhasil Diubah');
     }
 }

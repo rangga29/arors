@@ -25,10 +25,14 @@
             </div>
             <div class="col-12 mb-1">
                 <p class="mb-0"><strong>NAMA KLINIK</strong></p>
-                @if($patientData['fap_type'] == 'fisio_umum')
-                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI UMUM </p>
+                @if($patientData['fap_type'] == 'fisio_umum_pagi')
+                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI UMUM PAGI</p>
+                @elseif($patientData['fap_type'] == 'fisio_umum_sore')
+                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI UMUM SORE</p>
+                @elseif($patientData['fap_type'] == 'fisio_bpjs_pagi')
+                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI BPJS PAGI</p>
                 @else
-                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI BPJS </p>
+                    <p class="ms-2 text-uppercase"><i class="ri-arrow-right-double-line"></i> FISIOTERAPI BPJS SORE</p>
                 @endif
             </div>
             <div class="col-12 mb-1">
