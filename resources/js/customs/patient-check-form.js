@@ -1,3 +1,4 @@
+// Define formatDate globally
 function formatDate(event) {
     let input = event.target;
     let value = input.value.replace(/\D/g, '').substring(0, 8); // Remove non-numeric characters and limit to 8 digits
@@ -11,9 +12,10 @@ function formatDate(event) {
     input.value = value;
 }
 
+// Event listener to format input as date when typing
 document.addEventListener('input', function (event) {
-    if (event.target.matches('#birthday')) {
-        formatDate(event);
+    if (event.target.id === 'birthday') {
+        formatDate(event.target);
     }
 });
 

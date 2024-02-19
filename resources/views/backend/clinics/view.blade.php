@@ -44,7 +44,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="basic-datatable" class="table table-striped table-bordered table-centered dt-responsive nowrap w-100">
+                    <table id="basic-datatable" class="table table-striped table-bordered table-centered dt-responsive nowrap w-100">
                             <thead>
                             <tr>
                                 <th>No</th>

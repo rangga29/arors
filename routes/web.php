@@ -57,8 +57,14 @@ Route::prefix('administrator')->group(function () {
 
         Route::prefix('appointments')->group(function () {
             Route::prefix('fisioterapi')->group(function () {
+                Route::get('/', function() {
+                    return redirect()->to('/administrator/appointments/fisioterapi/'.now()->format('Y-m-d'));
+                });
                 Route::post('/show', [AppointmentController::class, 'redirectFisio'])->name('appointments.fisioterapi.show.redirect');
                 Route::get('/{date}', [AppointmentController::class, 'indexFisio'])->name('appointments.fisioterapi');
+            });
+            Route::get('/', function() {
+                return redirect()->to('/administrator/appointments/'.now()->format('Y-m-d'));
             });
             Route::post('/show', [AppointmentController::class, 'redirectDate'])->name('appointments.show.redirect');
             Route::get('/{date}', [AppointmentController::class, 'index'])->name('appointments');
@@ -84,6 +90,9 @@ Route::prefix('administrator')->group(function () {
                 Route::get('/{scheduleDate}', [ScheduleDateController::class, 'show'])->name('schedules.dates.show');
                 Route::put('/{scheduleDate}', [ScheduleDateController::class, 'update'])->name('schedules.dates.update');
                 Route::delete('/{scheduleDate}', [ScheduleDateController::class, 'destroy'])->name('schedules.dates.destroy');
+            });
+            Route::get('/', function() {
+                return redirect()->to('/administrator/schedules/'.now()->format('Y-m-d'));
             });
             Route::get('/{date}', [ScheduleController::class, 'index'])->name('schedules');
             Route::post('/{date}/available/{schedule}', [ScheduleController::class, 'available'])->name('schedule.available');

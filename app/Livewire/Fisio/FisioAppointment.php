@@ -54,9 +54,9 @@ class FisioAppointment extends Component
 
     public function mount(): void
     {
-        //$this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
+        $this->appointmentDates = ScheduleDate::where('sd_date', '>=', Carbon::today()->addDay()->format('Y-m-d'))->where('sd_date', '<=', Carbon::today()->addWeek()->format('Y-m-d'))->get();
         //$this->appointmentDates = ScheduleDate::where('sd_date', Carbon::today()->addDay()->format('Y-m-d'))->get();
-        $this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
+        //$this->appointmentDates = ScheduleDate::where('sd_date', $this->appointmentDate->selectAppointmentDate())->get();
     }
 
     public function checkPatient()
@@ -119,12 +119,12 @@ class FisioAppointment extends Component
                                     $reg_time = Carbon::createFromFormat('H:i', '07:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
                                     $app_time = Carbon::createFromFormat('H:i', '07:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
                                 } else {
-                                    if($selectedDateNumber !== 6) {
-                                        $reg_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
-                                        $app_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
-                                    } else {
+                                    if($selectedDateNumber == 6) {
                                         $reg_time = Carbon::createFromFormat('H:i', '12:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
                                         $app_time = Carbon::createFromFormat('H:i', '12:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
+                                    } else {
+                                        $reg_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->subMinutes(30)->format('H:i');
+                                        $app_time = Carbon::createFromFormat('H:i', '14:00')->addMinutes((7 * ($currentPatients)))->format('H:i');
                                     }
                                 }
 

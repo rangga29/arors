@@ -32,18 +32,6 @@ export default defineConfig({
                 'resources/js/head.js',
                 'resources/js/layout.js',
 
-                'resources/js/customs/patient-check-form.js',
-
-                'resources/js/customs/datatable.js',
-
-                'resources/js/customs/dashboard.js',
-                'resources/js/customs/appointments.js',
-                'resources/js/customs/clinics.js',
-                'resources/js/customs/schedule-dates.js',
-                'resources/js/customs/schedules.js',
-                'resources/js/customs/users.js',
-                'resources/js/customs/business-partners.js',
-
                 'node_modules/jquery/dist/jquery.js',
                 'node_modules/daterangepicker/moment.min.js',
                 'node_modules/dragula/dist/dragula.min.js',
@@ -73,6 +61,16 @@ export default defineConfig({
                 'typeahead.js/dist/typeahead.bundle.js',
                 'typeahead.js/dist/typeahead.bundle.min.js',
                 'jquery.rateit/scripts/jquery.rateit.js',
+
+                'resources/js/customs/patient-check-form.js',
+                'resources/js/customs/datatable.js',
+                'resources/js/customs/dashboard.js',
+                'resources/js/customs/appointments.js',
+                'resources/js/customs/clinics.js',
+                'resources/js/customs/schedule-dates.js',
+                'resources/js/customs/schedules.js',
+                'resources/js/customs/users.js',
+                'resources/js/customs/business-partners.js',
             ],
             refresh: true,
         }),

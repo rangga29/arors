@@ -30,11 +30,11 @@ table.dataTable {
         }
     }
     thead:not.table-light {
-        th {
-            background-color: transparent;
-            border-bottom-color: var(--#{$prefix}gray-300);
-        }
+    th {
+        background-color: transparent;
+        border-bottom-color: var(--#{$prefix}gray-300);
     }
+}
     tbody {
         tr.even,
         tr.odd {
