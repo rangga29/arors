@@ -16,7 +16,11 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use LZCompressor\LZString;
+use function base64_decode;
+use function dd;
 use function now;
+use function openssl_decrypt;
+use const OPENSSL_RAW_DATA;
 
 class BpjsPatientCheck extends Component
 {
@@ -58,6 +62,8 @@ class BpjsPatientCheck extends Component
         $medicalNo = $this->normConverter->normConverter($this->norm);
         $headers = $this->apiHeaderGenerator->generateApiHeader();
         $headerBpjs = $this->apiBpjsHeaderGenerator->generateApiBpjsHeader();
+        $asd = $headerBpjs['X-timestamp'];
+
 
         try {
             $birthdate = Carbon::createFromFormat('d/m/Y', $this->birthday)->format('Ymd');
@@ -105,7 +111,7 @@ class BpjsPatientCheck extends Component
                                     {
                                         date_default_timezone_set('UTC');
                                         //$bpjs_time_stamp = strtotime('now');
-                                        $bpjs_time_stamp = strval(time() - strtotime('1970-01-01 00:00:00'));
+                                        $bpjs_time_stamp = $headerBpjs['X-timestamp'];
 
                                         $bpjs_consumer_id = "25796";
                                         $bpjs_consumer_secret = "4qP1E30D6D";
@@ -124,24 +130,6 @@ class BpjsPatientCheck extends Component
                                                 break;
                                             }
                                         }
-
-//                                        do {
-//                                            date_default_timezone_set('UTC');
-//                                            $bpjs_time_stamp = strtotime('now');
-//
-//                                            $bpjs_consumer_id = "25796";
-//                                            $bpjs_consumer_secret = "4qP1E30D6D";
-//
-//                                            $bpjs_key_dec = $bpjs_consumer_id . $bpjs_consumer_secret . $bpjs_time_stamp;
-//                                            $bpjs_key_hash = hex2bin(hash('SHA256', $bpjs_key_dec));
-//                                            $bpjs_key_iv = substr($bpjs_key_hash, 0, 16);
-//
-//                                            $bpjs_decryptResult = openssl_decrypt(base64_decode($dataBpjs['response']), 'AES-256-CBC', $bpjs_key_hash, OPENSSL_RAW_DATA, $bpjs_key_iv);
-//                                        } while (!$bpjs_decryptResult);
-//
-//                                        if(!$bpjs_decryptResult) {
-//                                            return back()->with('error', 'Terjadi Kesalahan. Silahkan Dicoba Kembali.');
-//                                        }
 
                                         $bpjs_unCompressedResult = LZString::decompressFromEncodedURIComponent($bpjs_decryptResult);
                                         $bpjs_result = json_decode($bpjs_unCompressedResult, TRUE);

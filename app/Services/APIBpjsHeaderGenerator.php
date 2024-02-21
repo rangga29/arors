@@ -2,11 +2,16 @@
 
 namespace App\Services;
 
+use function strtotime;
+use function strval;
+use function time;
+
 class APIBpjsHeaderGenerator {
     public function generateApiBpjsHeader(): array
     {
         date_default_timezone_set('UTC');
-        $time_stamp = strtotime('now');
+        //$time_stamp = strtotime('now');
+        $time_stamp = strval(time() - strtotime('1970-01-01 00:00:00'));
 
         $consumer_id = "25796";
         $consumer_secret = "4qP1E30D6D";

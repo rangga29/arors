@@ -24,51 +24,59 @@ class ApiController extends Controller
 
     public function getAppointmentByToken($date, $token)
     {
-        $appointment = ScheduleDate::where('sd_date', $date)
-            ->with([
-                'schedules' => function ($query) use ($token) {
-                    $query->whereHas('appointments', function ($subQuery) use ($token) {
-                        $subQuery->where('ap_token', $token);
-                    })->with([
-                        'appointments' => function ($subQuery) use ($token) {
+        try {
+            $appointment = ScheduleDate::where('sd_date', $date)
+                ->with([
+                    'schedules' => function ($query) use ($token) {
+                        $query->whereHas('appointments', function ($subQuery) use ($token) {
                             $subQuery->where('ap_token', $token);
-                        },
-                        'appointments.umumAppointment',
-                        'appointments.asuransiAppointment',
-                        'appointments.bpjsKesehatanAppointment',
-                        'appointments.newAppointment',
-                    ]);
-                },
-            ])
-            ->first()->toArray();
+                        })->with([
+                            'appointments' => function ($subQuery) use ($token) {
+                                $subQuery->where('ap_token', $token);
+                            },
+                            'appointments.umumAppointment',
+                            'appointments.asuransiAppointment',
+                            'appointments.bpjsKesehatanAppointment',
+                            'appointments.newAppointment',
+                        ]);
+                    },
+                ])
+                ->first()->toArray();
 
-        $umumAppointment = data_get($appointment, 'schedules.0.appointments.0.umum_appointment');
-        $asuransiAppointment = data_get($appointment, 'schedules.0.appointments.0.asuransi_appointment');
-        $bpjsKesehatanAppointment = data_get($appointment, 'schedules.0.appointments.0.bpjs_kesehatan_appointment');
-        $newAppointment = data_get($appointment, 'schedules.0.appointments.0.new_appointment');
+            if (!$appointment['schedules']) {
+                return response()->json([
+                    'type' => 'TIDAK ADA',
+                    'message' => 'KODE TOKEN TIDAK DITEMUKAN'
+                ], 404);
+            }
 
-        if ($umumAppointment !== null) {
-            if (UmumAppointmentRegistration::where('uap_id', $umumAppointment['id'])->doesntExist()) {
-                $app_data = Appointment::where('ap_ucode', data_get($appointment, 'schedules.0.appointments.0.ap_ucode'))->first();
-                $umum_data = UmumAppointment::where('ap_id', $app_data['id'])->first();
+            $umumAppointment = data_get($appointment, 'schedules.0.appointments.0.umum_appointment');
+            $asuransiAppointment = data_get($appointment, 'schedules.0.appointments.0.asuransi_appointment');
+            $bpjsKesehatanAppointment = data_get($appointment, 'schedules.0.appointments.0.bpjs_kesehatan_appointment');
+            $newAppointment = data_get($appointment, 'schedules.0.appointments.0.new_appointment');
 
-                $responses = [];
-                $link = env('API_KEY', 'rsck');
-                $headers = $this->apiHeaderGenerator->generateApiHeader();
+            $uar_data = null;
+            if ($umumAppointment !== null) {
+                if (UmumAppointmentRegistration::where('uap_id', $umumAppointment['id'])->doesntExist()) {
+                    $app_data = Appointment::where('ap_ucode', data_get($appointment, 'schedules.0.appointments.0.ap_ucode'))->first();
+                    $umum_data = UmumAppointment::where('ap_id', $app_data['id'])->first();
 
-                $requestData = [
-                    'AppointmentNo' => $app_data['ap_no'],
-                    'MedicalNo' => $umum_data['uap_norm']
-                ];
+                    $responses = [];
+                    $link = env('API_KEY', 'rsck');
+                    $headers = $this->apiHeaderGenerator->generateApiHeader();
 
-                $handlerStack = HandlerStack::create();
-                $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
-                    return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
-                }, function ($retry) {
-                    return 1000 * pow(2, $retry);
-                }));
+                    $requestData = [
+                        'AppointmentNo' => $app_data['ap_no'],
+                        'MedicalNo' => $umum_data['uap_norm']
+                    ];
 
-                try {
+                    $handlerStack = HandlerStack::create();
+                    $handlerStack->push(Middleware::retry(function ($retry, $request, $response, $exception) {
+                        return $retry < 3 && $exception instanceof RequestException && $exception->getCode() === 28;
+                    }, function ($retry) {
+                        return 1000 * pow(2, $retry);
+                    }));
+
                     $client = new Client(['handler' => $handlerStack, 'verify' => false]);
                     $response = $client->post("https://mobilejkn.rscahyakawaluyan.com/medinfrasAPI/{$link}/api/appointment/insert/apm/registration1", [
                         'headers' => $headers,
@@ -97,46 +105,33 @@ class ApiController extends Controller
                     } else {
                         $message = 'Request failed. Status code: ' . $response->getStatusCode();
                     }
-                } catch (RequestException $e) {
-                    $type = 'danger';
-                    $message = response()->json(['error' => $e->getMessage()], 500);
-                }
 
+                    return response()->json([
+                        'type' => 'UMUM',
+                        'message' => $message ?? 'OPR BERHASIL DIBUAT',
+                        'appointment' => $appointment,
+                        'uar' => $uar_data
+                    ]);
+                } else {
+                    $uar_data = UmumAppointmentRegistration::where('uap_id', $umumAppointment['id'])->first();
+                    return response()->json([
+                        'type' => 'UMUM',
+                        'message' => 'OPR SUDAH PERNAH DIBUAT SEBELUMNYA',
+                        'appointment' => $appointment,
+                        'uar' => $uar_data
+                    ]);
+                }
+            } elseif ($asuransiAppointment !== null || $bpjsKesehatanAppointment !== null || $newAppointment !== null) {
                 return response()->json([
-                    'type' => 'UMUM',
-                    'message' => $message ?? 'OPR BERHASIL DIBUAT',
-                    'appointment' => $appointment,
-                    'uar' => $uar_data
-                ]);
-            } else {
-                $uar_data = UmumAppointmentRegistration::where('uap_id', $umumAppointment['id'])->first();
-                return response()->json([
-                    'type' => 'UMUM',
-                    'message' => 'OPR SUDAH PERNAH DIBUAT SEBELUMNYA',
-                    'appointment' => $appointment,
-                    'uar' => $uar_data
-                ]);
+                    'type' => 'NON-UMUM',
+                    'message' => 'MOHON MAAF ANDA TIDAK TERDAFTAR SEBAGAI PASIEN UMUM'
+                ], 400);
             }
-        } elseif ($asuransiAppointment !== null) {
+        } catch (\Exception $e) {
             return response()->json([
-                'type' => 'ASURANSI',
-                'message' => 'MOHON MAAF ANDA TIDAK TERDAFTAR SEBAGAI PASIEN UMUM'
-            ]);
-        } elseif ($bpjsKesehatanAppointment !== null) {
-            return response()->json([
-                'type' => 'BPJS',
-                'message' => 'MOHON MAAF ANDA TIDAK TERDAFTAR SEBAGAI PASIEN UMUM'
-            ]);
-        } elseif ($newAppointment !== null) {
-            return response()->json([
-                'type' => 'BARU',
-                'message' => 'MOHON MAAF ANDA TIDAK TERDAFTAR SEBAGAI PASIEN UMUM'
-            ]);
-        } else {
-            return response()->json([
-                'type' => 'TIDAK ADA',
-                'message' => 'KODE TOKEN TIDAK DITEMUKAN'
-            ]);
+                'type' => 'ERROR',
+                'message' => $e->getMessage()
+            ], 500);
         }
     }
 }
